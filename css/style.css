@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* [ -- Master Stylesheet -- ]
 
 ------------------------------------------------------
@@ -2099,6 +2100,43 @@ textarea:focus ~ .highlight {
   height: 100%;
   margin: 0;
   padding: 20;
+}
+
+/*登入後的品牌顯示頁面*/
+.logo {
+  height: 100%;
+  margin: 0;
+  padding: 30;
+}
+
+.D1 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  animation: TestMove 3s infinite;
+  /*IE*/
+  -moz-animation: TestMove 3s infinite;
+  /*FireFox*/
+  -webkit-animation: TestMove 3s infinite;
+  /*Chrome, Safari*/
+}
+
+@keyframes TestMove {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 26%;
+  }
+}
+
+@-webkit-keyframes TestMove {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 26%;
+  }
 }
 
 /* The End */
