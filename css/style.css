@@ -1604,7 +1604,7 @@ textarea:focus ~ .highlight {
 
 #search-wrapper:after {
   position: absolute;
-  bottom: 15px;
+  bottom: 3px;
   right: -9px;
   display: block;
   content: "";
@@ -2137,6 +2137,36 @@ textarea:focus ~ .highlight {
   to {
     left: 26%;
   }
+}
+
+/* searching CSS*/
+#searching {
+  background-color: #ffffff;
+  width: 94.5%;
+  height: 4em;
+  -webkit-box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.15);
+  -webkit-transform: translate(3%, 30%);
+          transform: translate(3%, 30%);
+  border-radius: 0.3em;
+}
+
+#searching #searching_keyword {
+  width: 66%;
+  height: 3.1em;
+  margin-left: 2em;
+  border: none;
+  -webkit-transform: translateY(15%);
+          transform: translateY(15%);
+}
+
+#searching #searching_submit {
+  width: 2em;
+  height: 2em;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  margin-right: 1em;
+  float: right;
 }
 
 /* The End */
