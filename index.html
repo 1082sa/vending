@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="description" content="" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
@@ -25,175 +23,253 @@
     <!--animation-->
 
     <script>
-      if ("serviceWorker.js" in navigator) {
-        console.log("Will service worker register?");
-        navigator.serviceWorker
-          .register("service-worker.js")
-          .then(function (reg) {
-            console.log("yes it did.");
-          })
-          .catch(function (err) {
-            console.log("No it didn,t This happened: ", err);
-          });
-      }
+        if ("serviceWorker.js" in navigator) {
+            console.log("Will service worker register?");
+            navigator.serviceWorker
+                .register("service-worker.js")
+                .then(function(reg) {
+                    console.log("yes it did.");
+                })
+                .catch(function(err) {
+                    console.log("No it didn,t This happened: ", err);
+                });
+        }
     </script>
 
     <!-- margin是調整border外的邊界；padding則是調整border內到內文之間的距離-->
     <style type="text/css">
-      html,
-      body,
-      #map-canvas {
-        height: 100%;
-        margin: 0;
-        padding: 20;
-      }
+        html,
+        body,
+        #map-canvas {
+            height: 100%;
+            margin: 0;
+            padding: 20;
+        }
+        
+        .infoImg {
+            width: 200px;
+            margin: 8px 0;
+        }
+        
+        .infoDiv div {
+            margin: 10px 0;
+            width: 70px;
+            height: 40px;
+            background: url('http://example.oxxostudio.tw/it2016/it2016-day22-btn.jpg');
+            cursor: pointer;
+            background-position: -70px 0;
+        }
     </style>
     <!---The async attribute allows the browser to render the page while the API loads--->
-    <script
-      async
-      defer
-      type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBstjRsNEnzJo4CYLYDSMu7lJ_Bu-A9w4c&callback=initialize"
-    ></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBstjRsNEnzJo4CYLYDSMu7lJ_Bu-A9w4c&callback=initMap">
+    </script>
 
     <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
 
     <script type="text/javascript">
-      var map, lat, lng;
-      var markers = [];
-      var marker = [];
-      var infowindow = [];
-      var infowindows = [];
-      var a = 1;
-      var position = [
-        { label: "A", lat: 25.038, lng: 121.431927 },
-        { label: "B", lat: 25.037342, lng: 121.430894 },
-        { label: "C", lat: 25.036645, lng: 121.430537 },
-        { label: "D", lat: 25.036023, lng: 121.432333 },
-        { label: "E", lat: 25.038759, lng: 121.43143 },
-        { label: "F", lat: 25.036061, lng: 121.429154 },
-        { label: "G", lat: 25.035939, lng: 121.430465 },
-        { label: "H", lat: 25.034948, lng: 121.433882 },
-        { label: "I", lat: 25.038934, lng: 121.431146 },
-        { label: "J", lat: 25.035079, lng: 121.43437 },
-      ];
+        function initMap() {
+            var markers = [];
+            var infoWindows = [];
 
-      function initialize() {
-        // 載入路線服務與路線顯示圖層
-        var directionsService = new google.maps.DirectionsService();
-        var directionsDisplay = new google.maps.DirectionsRenderer();
+            var map = new google.maps.Map(document.getElementById('map-canvas'), {
+                center: {
+                    lat: 25.036645,
+                    lng: 121.430537
+                },
+                zoom: 14
+            });
+            var geocoder = new google.maps.Geocoder();
+            console.log(geocoder);
 
-        navigator.geolocation.watchPosition((positions) => {
-          console.log(positions.coords);
-          lat = positions.coords.latitude;
-          lng = positions.coords.longitude;
-          // 初始化地圖
-          map = new google.maps.Map(document.getElementById("map-canvas"), {
-            zoom: 5,
-            center: { lat: lat, lng: lng },
-          });
+            //info windows
+            var info_config = [
+                '<div id="infoDiv0" class="infoDiv">' +
+                '  <h2>z販賣機1</h2>' +
+                '  <div></div>' +
+                '</div>',
+                '<div id="infoDiv0" class="infoDiv">' +
+                '  <h2>販賣機2</h2>' +
+                '  <div></div>' +
+                '</div>',
+                '<div id="infoDiv0" class="infoDiv">' +
+                '  <h2>販賣機3</h2>' +
+                '  <div></div>' +
+                '</div>',
+                '<div id="infoDiv0" class="infoDiv">' +
+                '  <h2>販賣機4</h2>' +
+                '  <span></span><br/>' +
+                '  <div></div>' +
+                '</div>',
+                '<div id="infoDiv0" class="infoDiv">' +
+                '  <h2>販賣機5</h2>' +
+                '  <span></span><br/>' +
+                '  <div></div>' +
+                '</div>',
+                '<div id="infoDiv0" class="infoDiv">' +
+                '  <h2>販賣機6</h2>' +
+                '  <span></span><br/>' +
+                '  <div></div>' +
+                '</div>',
+                '<div id="infoDiv0" class="infoDiv">' +
+                '  <h2>販賣機7</h2>' +
+                '  <span></span><br/>' +
+                '  <div></div>' +
+                '</div>',
+                '<div id="infoDiv0" class="infoDiv">' +
+                '  <h2>販賣機8</h2>' +
+                '  <span></span><br/>' +
+                '  <div></div>' +
+                '</div>',
+                '<div id="infoDiv0" class="infoDiv">' +
+                '  <h2>販賣機9</h2>' +
+                '  <span></span><br/>' +
+                '  <div></div>' +
+                '</div>',
+                '<div id="infoDiv0" class="infoDiv">' +
+                '  <h2>販賣機10</h2>' +
+                '  <span></span><br/>' +
+                '  <div></div>' +
+                '</div>',
+            ];
 
-          // 放置路線圖層
-          directionsDisplay.setMap(map);
+            //建立地圖 marker 的集合
+            var marker_config = [{
+                position: {
+                    lat: 25.038000,
+                    lng: 121.431927
+                },
+                map: map,
+                icon: 'img/marker.png',
+                title: '1'
+            }, {
+                position: {
+                    lat: 25.037342,
+                    lng: 121.430894
+                },
+                map: map,
+                icon: 'img/marker.png',
+                title: '2'
+            }, {
+                position: {
+                    lat: 25.036023,
+                    lng: 121.432333
+                },
+                map: map,
+                icon: 'img/marker.png',
+                title: '3'
+            }, {
+                position: {
+                    lat: 25.038759,
+                    lng: 121.431430
+                },
+                map: map,
+                icon: 'img/marker.png',
+                title: '4'
+            }, {
+                position: {
+                    lat: 25.036061,
+                    lng: 121.429154
+                },
+                map: map,
+                icon: 'img/marker.png',
+                title: '5'
+            }, {
+                position: {
+                    lat: 25.035939,
+                    lng: 121.430465
+                },
+                map: map,
+                icon: 'img/marker.png',
+                title: '6'
+            }, {
+                position: {
+                    lat: 25.034948,
+                    lng: 121.433882
+                },
+                map: map,
+                icon: 'img/marker.png',
+                title: '7'
+            }, {
+                position: {
+                    lat: 25.038934,
+                    lng: 121.431146
+                },
+                map: map,
+                icon: 'img/marker.png',
+                title: '8'
+            }, {
+                position: {
+                    lat: 25.035079,
+                    lng: 121.434370
+                },
+                map: map,
+                icon: 'img/marker.png',
+                title: '9'
+            }, {
+                position: {
+                    lat: 25.036645,
+                    lng: 121.430537
+                },
+                map: map,
+                icon: 'img/marker.png',
+                title: '10'
+            }];
 
-          // 路線相關設定
-          var request = {
-            origin: { lat: lat, lng: lng },
-            destination: { lat: 25.037906, lng: 121.549781 },
-            travelMode: "DRIVING",
-          };
+            //設定 Info window 內容
 
-          //繪製路線
-          directionsService.route(request, function (result, status) {
-            if (status == "OK") {
-              // 回傳路線上每個步驟的細節
-              var steps = result.routes[0].legs[0].steps;
-              steps.forEach((e, i) => {
-                console.log(steps);
-                // 加入地圖標記
-                markers[i] = new google.maps.Marker({
-                  position: {
-                    lat: e.start_location.lat(),
-                    lng: e.start_location.lng(),
-                  },
-                  map: map,
-                  label: { text: i + "", color: "#fff" },
+            info_config.forEach(function(e, i) {
+                infoWindows[i] = new google.maps.InfoWindow({
+                    content: e
                 });
-                // 加入路線指示的資訊視窗
-                infowindows[i] = new google.maps.InfoWindow({
-                  content: e.instructions,
-                });
-                // 加入地圖標記點擊事件
-                markers[i].addListener("click", function () {
-                  if (infowindows[i].anchor) {
-                    infowindows[i].close();
-                  } else {
-                    infowindows[i].open(map, markers[i]);
-                  }
-                });
-              });
-              directionsDisplay.setDirections(result);
-            } else {
-              console.log(status);
-            }
-          });
 
-          var infowindow = new google.maps.InfoWindow();
-          //利用迴圈去跑每個販賣機location
-          for (var i = 0; i < position.length; i++) {
-            var marker = new google.maps.Marker({
-              position: {
-                lat: position[i].lat,
-                lng: position[i].lng,
-              },
-              map: map,
-              animation: google.maps.Animation.DROP,
+                //設定監聽事件，在資訊視窗準備好之後，就綁定對應的流程
+                google.maps.event.addListener(infoWindows[i], 'domready', function() {
+                    _content(i);
+                });
             });
 
-            google.maps.event.addListener(
-              marker,
-              "click",
-              (function (marker, i) {
-                return function () {
-                  infowindow.setContent(
-                    '<h1>大家好我是資訊視窗</h1><button id="btn">點我</button>'
-                  );
-                  infowindow.open(map, marker);
-                };
-              })(marker, i)
-            );
 
-            //點擊各個販賣機圖標
-            marker.addListener("click", function () {
-              infowindow[i].open(map, marker);
+            //標出 marker
+            marker_config.forEach(function(e, i) {
+                markers[i] = new google.maps.Marker(e);
+                markers[i].setMap(map);
+                markers[i].addListener('click', function() {
+                    infoWindows[i].open(map, markers[i]);
+                });
             });
-          }
-        });
-      }
+
+
+
+
+
+
+            console.log(_geocoder('高雄市'));
+
+        }
     </script>
-  </head>
+</head>
 
-  <body>
+<body>
     <!-- Preloader -->
     <div id="preloader">
-      <div class="preload-content">
-        <div id="original-load"></div>
-      </div>
+        <div class="preload-content">
+            <div id="original-load"></div>
+        </div>
     </div>
 
     <!--Map-->
     <div id="map-canvas"></div>
 
     <footer>
-      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-      Copyright &copy;
-      <script>
-        document.write(new Date().getFullYear());
-      </script>
-      All rights reserved | This template is made with
-      <i class="fa fa-heart-o" aria-hidden="true"></i> by
-      <a href="https://colorlib.com" target="_blank">Colorlib</a>
-      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy;
+        <script>
+            document.write(new Date().getFullYear());
+        </script>
+        All rights reserved | This template is made with
+        <i class="fa fa-heart-o" aria-hidden="true"></i> by
+        <a href="https://colorlib.com" target="_blank">Colorlib</a>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
     </footer>
     <!-- ##### Footer Area End ##### -->
 
@@ -207,5 +283,6 @@
     <script src="js/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
-  </body>
+</body>
+
 </html>
