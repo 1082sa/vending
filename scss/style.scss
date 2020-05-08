@@ -1816,29 +1816,29 @@ textarea:focus ~ .highlight {
     -webkit-animation:TestMove 3s infinite; /*Chrome, Safari*/
 }
 
-  @keyframes TestMove{
-    from {
-        left:0%;
-    }
-    to {
-        left:26%;
-    }
-  }
-  @-moz-keyframes TestMove{
-    from {
-        left:0%;
-    }
-    to {
-        left:26%;
-    }
-  }
-  @-webkit-keyframes TestMove{
-    from {
-        left:0%;
-    }
-    to {
-        left:26%;
-    }
-  }
+@keyframes TestMove{
+from {
+    left:0%;
+}
+to {
+    left:26%;
+}
+}
+@-moz-keyframes TestMove{
+from {
+    left:0%;
+}
+to {
+    left:26%;
+}
+}
+@-webkit-keyframes TestMove{
+from {
+    left:0%;
+}
+to {
+    left:26%;
+}
+}
 
 /* The End */
