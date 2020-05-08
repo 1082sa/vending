@@ -15,7 +15,7 @@
     <link rel="icon" href="img/core-img/favicon.ico" />
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
 
     <!--manifest.json-->
     <link rel="manifest" href="/manifest.json" />
@@ -37,6 +37,239 @@
     </script>
 
     <!-- margin是調整border外的邊界；padding則是調整border內到內文之間的距離-->
+<<<<<<< HEAD
+    <style type="text/css"> 
+        html, body, #map-canvas { height: 100%; margin: 0; padding: 20;}
+      </style>
+        <!---The async attribute allows the browser to render the page while the API loads--->
+      <script async defer type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBstjRsNEnzJo4CYLYDSMu7lJ_Bu-A9w4c&callback=initialize">
+        </script>
+     
+        <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
+        
+      <script type="text/javascript">
+        
+        
+
+    
+        var map, marker, lat, lng;
+        var markers = [];
+        var infowindows = [];
+        var position = [
+            {label:'A',lat: 25.038000, lng: 121.431927},
+            {label:'B',lat: 25.037342, lng: 121.430894},
+            {label:'C',lat: 25.036645, lng:  121.430537},
+            {label:'D',lat: 25.036023, lng: 121.432333},
+            {label:'E',lat: 25.038759, lng: 121.431430},
+            {label:'F',lat: 25.036061, lng:  121.429154},
+            {label:'G',lat: 25.035939, lng: 121.430465},
+            {label:'H',lat: 25.034948, lng:  121.433882},
+            {label:'I',lat: 25.038934, lng:  121.431146},
+            {label:'J',lat: 25.035079, lng: 121.434370}
+        ];
+        
+        function initialize() 
+        {
+
+            // 載入路線服務與路線顯示圖層
+            var directionsService = new google.maps.DirectionsService();
+            var directionsDisplay = new google.maps.DirectionsRenderer();
+
+            navigator.geolocation.watchPosition((positions) => {
+                console.log(positions.coords);
+                lat = positions.coords.latitude;
+                lng = positions.coords.longitude;
+                // 初始化地圖
+                map = new google.maps.Map(document.getElementById('map-canvas'), {
+                    zoom: 5,
+                    center: { lat: lat, lng: lng }
+                });
+
+                
+                
+                // 放置路線圖層
+                directionsDisplay.setMap(map);
+
+                // 路線相關設定
+                var request = {
+                    origin: { lat: lat, lng: lng },
+                    destination: { lat: 25.037906, lng: 121.549781 },
+                    travelMode: 'DRIVING'
+                };
+
+                //繪製路線
+                directionsService.route(request, function (result, status) {
+                if (status == 'OK') {
+                // 回傳路線上每個步驟的細節
+                var steps = result.routes[0].legs[0].steps;
+                steps.forEach((e, i) => {
+                    console.log(steps);
+                    // 加入地圖標記
+                    markers[i] = new google.maps.Marker({
+                    position: { lat: e.start_location.lat(), lng: e.start_location.lng() },
+                    map: map,
+                    label: { text: i + '', color: "#fff" }
+                    });
+                    // 加入資訊視窗
+                    infowindows[i] = new google.maps.InfoWindow({
+                    content: e.instructions
+                    });
+                    // 加入地圖標記點擊事件
+                    markers[i].addListener('click', function () {
+                    if(infowindows[i].anchor){
+                        infowindows[i].close();
+                    }else{
+                        infowindows[i].open(map, markers[i]);
+                    }
+                    });
+                });
+                    directionsDisplay.setDirections(result);
+                    } else {
+                    console.log(status);
+                    }
+                });
+
+                for (var i = 0; i < position.length; i++) 
+                {
+                var infowindow = new google.maps.InfoWindow({
+                    content: 'MAVIS',
+                    position: {
+                            lat: position[i].lat,
+                            lng: position[i].lng
+                    },
+                    });
+
+                    var marker1 = new google.maps.Marker({
+                                    position: {
+                                        lat: position[0].lat,
+                                        lng: position[0].lng
+                                    },
+                                    map: map,
+                                    animation: google.maps.Animation.DROP
+                                });
+                    var marker2 = new google.maps.Marker({
+                                    position: {
+                                        lat: position[1].lat,
+                                        lng: position[1].lng
+                                    },
+                                    map: map,
+                                    animation: google.maps.Animation.DROP
+                                });
+                    var marker3 = new google.maps.Marker({
+                                    position: {
+                                        lat: position[2].lat,
+                                        lng: position[2].lng
+                                    },
+                                    map: map,
+                                    animation: google.maps.Animation.DROP
+                                });
+                    var marker4 = new google.maps.Marker({
+                        position: {
+                            lat: position[3].lat,
+                            lng: position[3].lng
+                        },
+                        map: map,
+                        animation: google.maps.Animation.DROP
+                    });
+                    var marker5 = new google.maps.Marker({
+                        position: {
+                            lat: position[4].lat,
+                            lng: position[4].lng
+                        },
+                        map: map,
+                        animation: google.maps.Animation.DROP
+                    });
+                    var marker6 = new google.maps.Marker({
+                        position: {
+                            lat: position[5].lat,
+                            lng: position[5].lng
+                        },
+                        map: map,
+                        animation: google.maps.Animation.DROP
+                    });
+                    var marker7 = new google.maps.Marker({
+                        position: {
+                            lat: position[6].lat,
+                            lng: position[6].lng
+                        },
+                        map: map,
+                        animation: google.maps.Animation.DROP
+                    });
+                    var marker8 = new google.maps.Marker({
+                        position: {
+                            lat: position[7].lat,
+                            lng: position[7].lng
+                        },
+                        map: map,
+                        animation: google.maps.Animation.DROP
+                    });
+                    var marker9 = new google.maps.Marker({
+                        position: {
+                            lat: position[8].lat,
+                            lng: position[8].lng
+                        },
+                        map: map,
+                        animation: google.maps.Animation.DROP
+                    });
+                    var marker10 = new google.maps.Marker({
+                        position: {
+                            lat: position[9].lat,
+                            lng: position[9].lng
+                        },
+                        map: map,
+                        animation: google.maps.Animation.DROP
+                    });
+
+                    marker1.addListener('click', function() {
+                        infowindow.open(map, marker1);
+                            
+                            });
+                    marker2.addListener('click', function() {
+                    infowindow.open(map, marker2);
+                        
+                        });
+                    marker3.addListener('click', function() {
+                    infowindow.open(map, marker3);
+                        
+                        });
+                    marker4.addListener('click', function() {
+                    infowindow.open(map, marker4);
+                        
+                        });
+                        marker5.addListener('click', function() {
+                    infowindow.open(map, marker5);
+                        
+                        });
+                        marker6.addListener('click', function() {
+                    infowindow.open(map, marker6);
+                        
+                        });
+                        marker7.addListener('click', function() {
+                    infowindow.open(map, marker7);
+                        
+                        });
+                        marker8.addListener('click', function() {
+                    infowindow.open(map, marker8);
+                        
+                        });
+                        marker9.addListener('click', function() {
+                    infowindow.open(map, marker9);
+                        
+                        });
+                        marker10.addListener('click', function() {
+                    infowindow.open(map, marker10);
+                        
+                        });
+
+    
+
+                }
+            });
+                    
+    }
+      </script>
+=======
     <style type="text/css">
         html,
         body,
@@ -122,6 +355,31 @@
                         console.log(status);
                     }
                 });
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+              });
+              directionsDisplay.setDirections(result);
+            } else {
+              console.log(status);
+            }
+          });
+>>>>>>> 20b1155592011f0d6a4bd264e401214f017ccc77
+
+          var infowindow = new google.maps.InfoWindow();
+          //利用迴圈去跑每個販賣機location
+          for (var i = 0; i < position.length; i++) {
+            var marker = new google.maps.Marker({
+              position: {
+                lat: position[i].lat,
+                lng: position[i].lng,
+              },
+              map: map,
+              animation: google.maps.Animation.DROP,
+=======
+>>>>>>> 9aa1d1b3678ad0ed97728b1311afdc4738060332
+            });
+>>>>>>> e0a32f9ccfaee3951ba4e2ab7caf9398e7d9a8a6
 
                 var geocoder = new google.maps.Geocoder();
                 console.log(geocoder);
@@ -303,8 +561,22 @@
         </div>
     </div>
 
+<<<<<<< HEAD
+     
+    
+
+
     <!--Map-->
     <div id="map-canvas"></div>
+    
+    <footer>
+   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+=======
+    <!--Map-->
+    <div id="map-canvas"></div>
+>>>>>>> 20b1155592011f0d6a4bd264e401214f017ccc77
 
     <footer>
         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -329,6 +601,19 @@
     <script src="js/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+<<<<<<< HEAD
+<<<<<<< HEAD
+
 </body>
 
 </html>
+        
+=======
+  </body>
+</html>
+>>>>>>> 20b1155592011f0d6a4bd264e401214f017ccc77
+=======
+</body>
+
+</html>
+>>>>>>> 9aa1d1b3678ad0ed97728b1311afdc4738060332
