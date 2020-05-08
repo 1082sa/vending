@@ -1,12 +1,12 @@
 {
-    "short_name": "VEN","name":"VEN",
-    "icons": [ {
-                "src": "icon.png",
-                "sizes": "512x512"
-              }],
-    "start_url":"http://192.168.0.103:5500/",
+    "short_name": "VEN",
+    "name": "VEN",
+    "icons": [{
+        "src": "icon.png",
+        "sizes": "512x512"
+    }],
+    "start_url": "http://127.0.0.1:8887/nav.html",
     "background_color": "#000",
     "theme_color": "#536878",
     "display": "standalone"
 }
-
