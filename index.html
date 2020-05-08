@@ -15,7 +15,7 @@
     <link rel="icon" href="img/core-img/favicon.ico" />
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
 
     <!--manifest.json-->
     <link rel="manifest" href="/manifest.json" />
@@ -70,180 +70,256 @@
         function initMap() {
             var markers = [];
             var infoWindows = [];
+            var infoWindow = [];
 
-            var map = new google.maps.Map(document.getElementById('map-canvas'), {
-                center: {
-                    lat: 25.036645,
-                    lng: 121.430537
-                },
-                zoom: 14
-            });
-            var geocoder = new google.maps.Geocoder();
-            console.log(geocoder);
+            navigator.geolocation.watchPosition((position) => {
+                console.log(position.coords);
+                var lat = position.coords.latitude;
+                var lng = position.coords.longitude;
+                // 載入路線服務與路線顯示圖層
+                var directionsService = new google.maps.DirectionsService();
+                var directionsDisplay = new google.maps.DirectionsRenderer();
 
-            //info windows
-            var info_config = [
-                '<div id="infoDiv0" class="infoDiv">' +
-                '  <h2>z販賣機1</h2>' +
-                '  <div></div>' +
-                '</div>',
-                '<div id="infoDiv0" class="infoDiv">' +
-                '  <h2>販賣機2</h2>' +
-                '  <div></div>' +
-                '</div>',
-                '<div id="infoDiv0" class="infoDiv">' +
-                '  <h2>販賣機3</h2>' +
-                '  <div></div>' +
-                '</div>',
-                '<div id="infoDiv0" class="infoDiv">' +
-                '  <h2>販賣機4</h2>' +
-                '  <span></span><br/>' +
-                '  <div></div>' +
-                '</div>',
-                '<div id="infoDiv0" class="infoDiv">' +
-                '  <h2>販賣機5</h2>' +
-                '  <span></span><br/>' +
-                '  <div></div>' +
-                '</div>',
-                '<div id="infoDiv0" class="infoDiv">' +
-                '  <h2>販賣機6</h2>' +
-                '  <span></span><br/>' +
-                '  <div></div>' +
-                '</div>',
-                '<div id="infoDiv0" class="infoDiv">' +
-                '  <h2>販賣機7</h2>' +
-                '  <span></span><br/>' +
-                '  <div></div>' +
-                '</div>',
-                '<div id="infoDiv0" class="infoDiv">' +
-                '  <h2>販賣機8</h2>' +
-                '  <span></span><br/>' +
-                '  <div></div>' +
-                '</div>',
-                '<div id="infoDiv0" class="infoDiv">' +
-                '  <h2>販賣機9</h2>' +
-                '  <span></span><br/>' +
-                '  <div></div>' +
-                '</div>',
-                '<div id="infoDiv0" class="infoDiv">' +
-                '  <h2>販賣機10</h2>' +
-                '  <span></span><br/>' +
-                '  <div></div>' +
-                '</div>',
-            ];
-
-            //建立地圖 marker 的集合
-            var marker_config = [{
-                position: {
-                    lat: 25.038000,
-                    lng: 121.431927
-                },
-                map: map,
-                icon: 'img/marker.png',
-                title: '1'
-            }, {
-                position: {
-                    lat: 25.037342,
-                    lng: 121.430894
-                },
-                map: map,
-                icon: 'img/marker.png',
-                title: '2'
-            }, {
-                position: {
-                    lat: 25.036023,
-                    lng: 121.432333
-                },
-                map: map,
-                icon: 'img/marker.png',
-                title: '3'
-            }, {
-                position: {
-                    lat: 25.038759,
-                    lng: 121.431430
-                },
-                map: map,
-                icon: 'img/marker.png',
-                title: '4'
-            }, {
-                position: {
-                    lat: 25.036061,
-                    lng: 121.429154
-                },
-                map: map,
-                icon: 'img/marker.png',
-                title: '5'
-            }, {
-                position: {
-                    lat: 25.035939,
-                    lng: 121.430465
-                },
-                map: map,
-                icon: 'img/marker.png',
-                title: '6'
-            }, {
-                position: {
-                    lat: 25.034948,
-                    lng: 121.433882
-                },
-                map: map,
-                icon: 'img/marker.png',
-                title: '7'
-            }, {
-                position: {
-                    lat: 25.038934,
-                    lng: 121.431146
-                },
-                map: map,
-                icon: 'img/marker.png',
-                title: '8'
-            }, {
-                position: {
-                    lat: 25.035079,
-                    lng: 121.434370
-                },
-                map: map,
-                icon: 'img/marker.png',
-                title: '9'
-            }, {
-                position: {
-                    lat: 25.036645,
-                    lng: 121.430537
-                },
-                map: map,
-                icon: 'img/marker.png',
-                title: '10'
-            }];
-
-            //設定 Info window 內容
-
-            info_config.forEach(function(e, i) {
-                infoWindows[i] = new google.maps.InfoWindow({
-                    content: e
+                // 初始化地圖
+                var map = new google.maps.Map(document.getElementById('map-canvas'), {
+                    zoom: 18,
+                    center: {
+                        lat: lat,
+                        lng: lng
+                    }
+                });
+                var marker = new google.maps.Marker({
+                    position: {
+                        lat: lat,
+                        lng: lng
+                    },
+                    map: map
                 });
 
-                //設定監聽事件，在資訊視窗準備好之後，就綁定對應的流程
-                google.maps.event.addListener(infoWindows[i], 'domready', function() {
-                    _content(i);
+                // 放置路線圖層
+                directionsDisplay.setMap(map);
+
+                // 路線相關設定
+                var request = {
+                    origin: {
+                        lat: lat,
+                        lng: lng
+                    },
+                    destination: {
+                        lat: 25.037906,
+                        lng: 121.549781
+                    },
+                    travelMode: google.maps.TravelMode["WALKING"]
+                };
+
+                // 繪製路線
+                directionsService.route(request, function(result, status) {
+                    if (status == 'OK') {
+                        // 回傳路線上每個步驟的細節
+                        console.log(result.routes[0].legs[0].steps);
+                        directionsDisplay.setDirections(result);
+                    } else {
+                        console.log(status);
+                    }
                 });
-            });
 
+                var geocoder = new google.maps.Geocoder();
+                console.log(geocoder);
 
-            //標出 marker
-            marker_config.forEach(function(e, i) {
-                markers[i] = new google.maps.Marker(e);
-                markers[i].setMap(map);
-                markers[i].addListener('click', function() {
-                    infoWindows[i].open(map, markers[i]);
+                //info windows
+                var info_config = [
+                    '<div id="infoDiv0" class="infoDiv">' +
+                    '  <h2>z販賣機1</h2>' +
+                    '  <div class="list_item">' +
+                    '<div class="item_img">' +
+                    '<img src="/img/blog-img/4.jpg">' +
+                    '</div>' +
+                    '<div class="item_name text-center">' +
+                    '<p>商品二</p>' +
+                    '</div>' +
+                    '<div class="item_info text-center">' +
+                    '<p><span class="item_price">QQ</span>元，剩餘<span class="item_quantity">XX</span>個</p>' +
+                    '</div>' +
+                    '</div>',
+
+                    '<div id="infoDiv0" class="infoDiv">' +
+                    '  <h2>z販賣機1</h2>' +
+                    '  <div class="list_item">' +
+                    '<div class="item_img">' +
+                    '<img src="/img/blog-img/4.jpg">' +
+                    '</div>' +
+                    '<div class="item_name text-center">' +
+                    '<p>商品二</p>' +
+                    '</div>' +
+                    '<div class="item_info text-center">' +
+                    '<p><span class="item_price">QQ</span>元，剩餘<span class="item_quantity">XX</span>個</p>' +
+                    '</div>' +
+                    '</div>',
+
+                    '<div id="infoDiv0" class="infoDiv">' +
+                    '  <h2>z販賣機1</h2>' +
+                    '  <div class="list_item">' +
+                    '<div class="item_img">' +
+                    '<img src="/img/blog-img/4.jpg">' +
+                    '</div>' +
+                    '<div class="item_name text-center">' +
+                    '<p>商品二</p>' +
+                    '</div>' +
+                    '<div class="item_info text-center">' +
+                    '<p><span class="item_price">QQ</span>元，剩餘<span class="item_quantity">XX</span>個</p>' +
+                    '</div>' +
+                    '</div>',
+
+                    '<div id="infoDiv0" class="infoDiv">' +
+                    '  <h2>販賣機4</h2>' +
+                    '  <span></span><br/>' +
+                    '  <div></div>' +
+                    '</div>',
+                    '<div id="infoDiv0" class="infoDiv">' +
+                    '  <h2>販賣機5</h2>' +
+                    '  <span></span><br/>' +
+                    '  <div></div>' +
+                    '</div>',
+                    '<div id="infoDiv0" class="infoDiv">' +
+                    '  <h2>販賣機6</h2>' +
+                    '  <span></span><br/>' +
+                    '  <div></div>' +
+                    '</div>',
+                    '<div id="infoDiv0" class="infoDiv">' +
+                    '  <h2>販賣機7</h2>' +
+                    '  <span></span><br/>' +
+                    '  <div></div>' +
+                    '</div>',
+                    '<div id="infoDiv0" class="infoDiv">' +
+                    '  <h2>販賣機8</h2>' +
+                    '  <span></span><br/>' +
+                    '  <div></div>' +
+                    '</div>',
+                    '<div id="infoDiv0" class="infoDiv">' +
+                    '  <h2>販賣機9</h2>' +
+                    '  <span></span><br/>' +
+                    '  <div></div>' +
+                    '</div>',
+                    '<div id="infoDiv0" class="infoDiv">' +
+                    '  <h2>販賣機10</h2>' +
+                    '  <span></span><br/>' +
+                    '  <div></div>' +
+                    '</div>',
+                ];
+
+                //建立地圖 marker 的集合
+                var marker_config = [{
+                    position: {
+                        lat: 25.038000,
+                        lng: 121.431927
+                    },
+                    map: map,
+                    icon: 'img/marker.png',
+                    title: '1'
+                }, {
+                    position: {
+                        lat: 25.037342,
+                        lng: 121.430894
+                    },
+                    map: map,
+                    icon: 'img/marker.png',
+                    title: '2'
+                }, {
+                    position: {
+                        lat: 25.036023,
+                        lng: 121.432333
+                    },
+                    map: map,
+                    icon: 'img/marker.png',
+                    title: '3'
+                }, {
+                    position: {
+                        lat: 25.038759,
+                        lng: 121.431430
+                    },
+                    map: map,
+                    icon: 'img/marker.png',
+                    title: '4'
+                }, {
+                    position: {
+                        lat: 25.036061,
+                        lng: 121.429154
+                    },
+                    map: map,
+                    icon: 'img/marker.png',
+                    title: '5'
+                }, {
+                    position: {
+                        lat: 25.035939,
+                        lng: 121.430465
+                    },
+                    map: map,
+                    icon: 'img/marker.png',
+                    title: '6'
+                }, {
+                    position: {
+                        lat: 25.034948,
+                        lng: 121.433882
+                    },
+                    map: map,
+                    icon: 'img/marker.png',
+                    title: '7'
+                }, {
+                    position: {
+                        lat: 25.038934,
+                        lng: 121.431146
+                    },
+                    map: map,
+                    icon: 'img/marker.png',
+                    title: '8'
+                }, {
+                    position: {
+                        lat: 25.035079,
+                        lng: 121.434370
+                    },
+                    map: map,
+                    icon: 'img/marker.png',
+                    title: '9'
+                }, {
+                    position: {
+                        lat: 25.036645,
+                        lng: 121.430537
+                    },
+                    map: map,
+                    icon: 'img/marker.png',
+                    title: '10'
+                }];
+
+                //設定 Info window 內容
+
+                info_config.forEach(function(e, i) {
+                    infoWindows[i] = new google.maps.InfoWindow({
+                        content: e
+                    });
+
+                    //設定監聽事件，在資訊視窗準備好之後，就綁定對應的流程
+                    google.maps.event.addListener(infoWindows[i], 'domready', function() {
+                        _content(i);
+                    });
                 });
+
+
+                //標出 marker
+                marker_config.forEach(function(e, i) {
+                    markers[i] = new google.maps.Marker(e);
+                    markers[i].setMap(map);
+                    markers[i].addListener('click', function() {
+                        infoWindows[i].open(map, markers[i]);
+                    });
+                });
+
+
+
+
+
+
+                console.log(_geocoder('高雄市'));
             });
-
-
-
-
-
-
-            console.log(_geocoder('高雄市'));
 
         }
     </script>

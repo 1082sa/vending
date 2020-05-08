@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  
+  <!-- Title -->
+  <title>商品搜尋</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="img/core-img/favicon.ico" />
+
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- Vue.js --> 
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <!-- searching bar -->
+  <div class="container">
+    <div class="col-12" id="searching">
+      <form name="searched" action="#" method="POST/GET">
+          <input type="text" name="searching_keyword" id="searching_keyword" placeholder="請輸入商品關鍵字">
+          <input type="image" src="img/searching.svg" id="searching_submit" onClick="document.searched.submit();">
+      </form>
+      <!-- form表單結構說明：https://reurl.cc/X6R4ga -->
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="col-12" id="result_block">
+      <div class="row" id="result_list">      
+        <div class="list_item">
+          <div class="item_img">
+            <img src="/img/blog-img/3.jpg">
+          </div>
+          <div class="item_name text-center">
+            <p>商品一</p>
+          </div>
+          <div class="item_info text-center">
+            <p><span class="item_price">QQ</span>元，剩餘<span class="item_quantity">XX</span>個</p>
+          </div>
+        </div>
+        <div class="list_item">
+          <div class="item_img">
+            <img src="/img/blog-img/4.jpg">
+          </div>
+          <div class="item_name text-center">
+            <p>商品二</p>
+          </div>
+          <div class="item_info text-center">
+            <p><span class="item_price">QQ</span>元，剩餘<span class="item_quantity">XX</span>個</p>
+          </div>
+        </div>
+        <div class="list_item">
+          <div class="item_img">
+            <img src="/img/blog-img/5.jpg">
+          </div>
+          <div class="item_name text-center">
+            <p>商品三</p>
+          </div>
+          <div class="item_info text-center">
+            <p><span class="item_price">QQ</span>元，剩餘<span class="item_quantity">XX</span>個</p>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+  
+  <!-- jQuery (Necessary for All JavaScript Plugins) -->
+  <script src="js/jquery/jquery-2.2.4.min.js"></script>
+  <!-- Popper js -->
+  <script src="js/popper.min.js"></script>
+  <!-- Bootstrap js -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- Plugins js -->
+  <script src="js/plugins.js"></script>
+  <!-- Active js -->
+  <script src="js/active.js"></script>
+
+  <!-- searching list js -->
+  <script>
+    var item_list = [
+      {
+        name = "沒有符合的商品",
+        price = 0,
+        quantity = 0,
+        img = "",
+        url = ""
+      },
+      {
+        name = "能量補充包",
+        price = 87,
+        quantity = 4,
+        image = "",
+        url = ""
+      },
+      {
+        name = "熬夜補肝丸",
+        price = 941,
+        quantity = 0,
+        img = "",
+        url = ""
+      }
+    ];
+
+    // $('#searching_submit').click({
+    //   function(){
+    //     $('')
+    //   }
+    // })
+  </script>
+
+</body>
+</html>
