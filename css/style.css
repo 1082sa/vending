@@ -11,11 +11,11 @@
 -------------------------------------------------- */
 /* :: Import Fonts */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
-@import url(bootstrap.min.css);
-@import url(classy-nav.css);
-@import url(animate.css);
-@import url(owl.carousel.css);
-@import url(font-awesome.min.css);
+@import url(c:\Users\Ching\Desktop\Ven\css\bootstrap.min.css);
+@import url(c:\Users\Ching\Desktop\Ven\css\classy-nav.css);
+@import url(c:\Users\Ching\Desktop\Ven\css\animate.css);
+@import url(c:\Users\Ching\Desktop\Ven\css\owl.carousel.css);
+@import url(c:\Users\Ching\Desktop\Ven\css\font-awesome.min.css);
 @font-face {
   font-family: 'helveticaneuebold';
   src: url("fonts/helvetica_neu_bold-webfont.woff2") format("woff2"), url("fonts/helvetica_neu_bold-webfont.woff") format("woff");
@@ -2089,10 +2089,10 @@ textarea:focus ~ .highlight {
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: .25rem;
-  -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
-  transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  -webkit-transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
 }
 
 /* Map CSS */
