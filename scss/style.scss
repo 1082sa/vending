@@ -1853,6 +1853,7 @@ textarea:focus~.highlight {
     }
 }
 
+
 /* searching CSS*/
 
 #searching {
@@ -1889,7 +1890,7 @@ textarea:focus~.highlight {
     transform: translate(3%, 6%);
     border-radius: 0.3em;
     overflow: hidden;
-    // font-size: 0.8em;
+    font-size: 0.8em;
     #result_list {
         overflow-y: scroll;
         overflow-x: hidden;
@@ -1952,6 +1953,32 @@ textarea:focus~.highlight {
         margin: 0.5em;
         .ven_item_img {
             margin-bottom: 0.2em;
+        }
+    }
+}
+
+//資訊視窗裡的顯示樣式
+.infoImg {
+    width: 200px;
+    margin: 8px 0;
+}
+
+.bodyContent {
+    div {
+        width: 275px;
+        height: 40px;
+        cursor: pointer;
+        display: inline-flex;
+        justify-content: space-between;
+    }
+}
+
+.bodyContent {
+    div {
+        img {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
         }
     }
 }

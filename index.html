@@ -45,20 +45,6 @@
             margin: 0;
             padding: 20;
         }
-        
-        .infoImg {
-            width: 200px;
-            margin: 8px 0;
-        }
-        
-        .infoDiv div {
-            margin: 10px 0;
-            width: 70px;
-            height: 40px;
-            background: url('http://example.oxxostudio.tw/it2016/it2016-day22-btn.jpg');
-            cursor: pointer;
-            background-position: -70px 0;
-        }
     </style>
     <!---The async attribute allows the browser to render the page while the API loads--->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBstjRsNEnzJo4CYLYDSMu7lJ_Bu-A9w4c&callback=initMap">
@@ -96,6 +82,8 @@
                     map: map
                 });
 
+
+
                 // 放置路線圖層
                 directionsDisplay.setMap(map);
 
@@ -126,84 +114,107 @@
                 var geocoder = new google.maps.Geocoder();
                 console.log(geocoder);
 
-                //info windows
+                //info windows資訊視窗內的內容
                 var info_config = [
-                    '<div id="infoDiv0" class="infoDiv">' +
-                    '  <h2>z販賣機1</h2>' +
-                    '  <div class="list_item">' +
-                    '<div class="item_img">' +
-                    '<img src="/img/blog-img/4.jpg">' +
-                    '</div>' +
-                    '<div class="item_name text-center">' +
-                    '<p>商品二</p>' +
-                    '</div>' +
-                    '<div class="item_info text-center">' +
-                    '<p><span class="item_price">QQ</span>元，剩餘<span class="item_quantity">XX</span>個</p>' +
+                    //販賣機1
+                    '<div>' +
+                    '<h1 id="firstHeading" class="firstHeading">販賣機1</h1>' +
+                    '<div class="bodyContent">' +
+                    '<p><b>&nbsp;請點選功能</b>' +
+                    '<div><img src="img/fav.svg"><img src="img/navigation.svg"><img src="img/warning.svg"><img src="img/good.png"></div>' +
+                    '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
+                    '</p>' +
                     '</div>' +
                     '</div>',
-
-                    '<div id="infoDiv0" class="infoDiv">' +
-                    '  <h2>z販賣機1</h2>' +
-                    '  <div class="list_item">' +
-                    '<div class="item_img">' +
-                    '<img src="/img/blog-img/4.jpg">' +
-                    '</div>' +
-                    '<div class="item_name text-center">' +
-                    '<p>商品二</p>' +
-                    '</div>' +
-                    '<div class="item_info text-center">' +
-                    '<p><span class="item_price">QQ</span>元，剩餘<span class="item_quantity">XX</span>個</p>' +
+                    //販賣機2
+                    '<div>' +
+                    '<h1 id="firstHeading" class="firstHeading">販賣機2</h1>' +
+                    '<div class="bodyContent">' +
+                    '<p><b>&nbsp;請點選功能</b>' +
+                    '<div><img src="img/fav.svg"><img src="img/navigation.svg"><img src="img/warning.svg"><img src="img/good.png"></div>' +
+                    '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
+                    '</p>' +
                     '</div>' +
                     '</div>',
-
-                    '<div id="infoDiv0" class="infoDiv">' +
-                    '  <h2>z販賣機1</h2>' +
-                    '  <div class="list_item">' +
-                    '<div class="item_img">' +
-                    '<img src="/img/blog-img/4.jpg">' +
-                    '</div>' +
-                    '<div class="item_name text-center">' +
-                    '<p>商品二</p>' +
-                    '</div>' +
-                    '<div class="item_info text-center">' +
-                    '<p><span class="item_price">QQ</span>元，剩餘<span class="item_quantity">XX</span>個</p>' +
+                    //販賣機3
+                    '<div>' +
+                    '<h1 id="firstHeading" class="firstHeading">販賣機3</h1>' +
+                    '<div class="bodyContent">' +
+                    '<p><b>&nbsp;請點選功能</b>' +
+                    '<div><img src="img/fav.svg"><img src="img/navigation.svg"><img src="img/warning.svg"><img src="img/good.png"></div>' +
+                    '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
+                    '</p>' +
                     '</div>' +
                     '</div>',
-
-                    '<div id="infoDiv0" class="infoDiv">' +
-                    '  <h2>販賣機4</h2>' +
-                    '  <span></span><br/>' +
-                    '  <div></div>' +
+                    //販賣機4
+                    '<div>' +
+                    '<h1 id="firstHeading" class="firstHeading">販賣機4</h1>' +
+                    '<div class="bodyContent">' +
+                    '<p><b>&nbsp;請點選功能</b>' +
+                    '<div><img src="img/fav.svg"><img src="img/navigation.svg"><img src="img/warning.svg"><img src="img/good.png"></div>' +
+                    '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
+                    '</p>' +
+                    '</div>' +
                     '</div>',
-                    '<div id="infoDiv0" class="infoDiv">' +
-                    '  <h2>販賣機5</h2>' +
-                    '  <span></span><br/>' +
-                    '  <div></div>' +
+                    //販賣機5
+                    '<div>' +
+                    '<h1 id="firstHeading" class="firstHeading">販賣機5</h1>' +
+                    '<div class="bodyContent">' +
+                    '<p><b>&nbsp;請點選功能</b>' +
+                    '<div><img src="img/fav.svg"><img src="img/navigation.svg"><img src="img/warning.svg"><img src="img/good.png"></div>' +
+                    '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
+                    '</p>' +
+                    '</div>' +
                     '</div>',
-                    '<div id="infoDiv0" class="infoDiv">' +
-                    '  <h2>販賣機6</h2>' +
-                    '  <span></span><br/>' +
-                    '  <div></div>' +
+                    //販賣機6
+                    '<div>' +
+                    '<h1 id="firstHeading" class="firstHeading">販賣機6</h1>' +
+                    '<div class="bodyContent">' +
+                    '<p><b>&nbsp;請點選功能</b>' +
+                    '<div><img src="img/fav.svg"><img src="img/navigation.svg"><img src="img/warning.svg"><img src="img/good.png"></div>' +
+                    '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
+                    '</p>' +
+                    '</div>' +
                     '</div>',
-                    '<div id="infoDiv0" class="infoDiv">' +
-                    '  <h2>販賣機7</h2>' +
-                    '  <span></span><br/>' +
-                    '  <div></div>' +
+                    //販賣機7
+                    '<div>' +
+                    '<h1 id="firstHeading" class="firstHeading">販賣機7</h1>' +
+                    '<div class="bodyContent">' +
+                    '<p><b>&nbsp;請點選功能</b>' +
+                    '<div><img src="img/fav.svg"><img src="img/navigation.svg"><img src="img/warning.svg"><img src="img/good.png"></div>' +
+                    '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
+                    '</p>' +
+                    '</div>' +
                     '</div>',
-                    '<div id="infoDiv0" class="infoDiv">' +
-                    '  <h2>販賣機8</h2>' +
-                    '  <span></span><br/>' +
-                    '  <div></div>' +
+                    //販賣機8    
+                    '<div>' +
+                    '<h1 id="firstHeading" class="firstHeading">販賣機8</h1>' +
+                    '<div class="bodyContent">' +
+                    '<p><b>&nbsp;請點選功能</b>' +
+                    '<div><img src="img/fav.svg"><img src="img/navigation.svg"><img src="img/warning.svg"><img src="img/good.png"></div>' +
+                    '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
+                    '</p>' +
+                    '</div>' +
                     '</div>',
-                    '<div id="infoDiv0" class="infoDiv">' +
-                    '  <h2>販賣機9</h2>' +
-                    '  <span></span><br/>' +
-                    '  <div></div>' +
+                    //販賣機9    
+                    '<div>' +
+                    '<h1 id="firstHeading" class="firstHeading">販賣機9</h1>' +
+                    '<div class="bodyContent">' +
+                    '<p><b>&nbsp;請點選功能</b>' +
+                    '<div><img src="img/fav.svg"><img src="img/navigation.svg"><img src="img/warning.svg"><img src="img/good.png"></div>' +
+                    '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
+                    '</p>' +
+                    '</div>' +
                     '</div>',
-                    '<div id="infoDiv0" class="infoDiv">' +
-                    '  <h2>販賣機10</h2>' +
-                    '  <span></span><br/>' +
-                    '  <div></div>' +
+                    //販賣機10    
+                    '<div>' +
+                    '<h1 id="firstHeading" class="firstHeading">販賣機10</h1>' +
+                    '<div class="bodyContent">' +
+                    '<p><b>&nbsp;請點選功能</b>' +
+                    '<div><img src="img/fav.svg"><img src="img/navigation.svg"><img src="img/warning.svg"><img src="img/good.png"></div>' +
+                    '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
+                    '</p>' +
+                    '</div>' +
                     '</div>',
                 ];
 
@@ -313,6 +324,23 @@
                     });
                 });
 
+                function _content(e) {
+                    $('#infoDiv' + e + ' div').on('click', function() {
+                        s = s * -1;
+                        if (s < 0) {
+                            $(this).css({
+                                'background-position': '-70px 0'
+                            });
+                            _setIcon(markers[e], 'http://example.oxxostudio.tw/it2016/it2016-day22-off.png');
+                        } else {
+                            $(this).css({
+                                'background-position': '0 0'
+                            });
+                            _setIcon(markers[e], 'http://example.oxxostudio.tw/it2016/it2016-day22-on.png');
+                        }
+                    });
+                }
+
 
 
 
@@ -332,6 +360,8 @@
             <div id="original-load"></div>
         </div>
     </div>
+
+
 
     <!--Map-->
     <div id="map-canvas"></div>
