@@ -20,11 +20,11 @@
 </head>
 <body>
   <!-- searching bar -->
-  <div class="container">
+  <div class="container" id="searching_bar">
     <div class="col-12" id="searching">
       <form name="searched" action="#" method="POST/GET">
           <input type="text" name="searching_keyword" id="searching_keyword" placeholder="請輸入商品關鍵字">
-          <input type="image" src="img/searching.svg" id="searching_submit" onClick="document.searched.submit();">
+          <input type="image" src="img/searching.svg" id="searching_submit">
       </form>
       <!-- form表單結構說明：https://reurl.cc/X6R4ga -->
     </div>
@@ -83,33 +83,93 @@
 
   <!-- searching list js -->
   <script>
-    var item_list = [
+    var list = [
       {
-        name = "沒有符合的商品",
-        price = 0,
-        quantity = 0,
-        img = "",
-        url = ""
+        name: "沒有符合的商品",
+        price: 0,
+        quantity: 0,
+        img: "/img/blog-img/3.jpg",
+        url: "",
+        keyword: 
       },
       {
-        name = "能量補充包",
-        price = 87,
-        quantity = 4,
-        image = "",
-        url = ""
+        name: "能量補充包",
+        price: 87,
+        quantity: 4,
+        image: "/img/blog-img/4.jpg",
+        url: "販賣機位置超連結",
+        keyword: "熬夜聖品"
       },
       {
-        name = "熬夜補肝丸",
-        price = 941,
-        quantity = 0,
-        img = "",
-        url = ""
+        name: "熬夜補肝丸",
+        price: 941,
+        quantity: 0,
+        img: "/img/blog-img/5.jpg",
+        url: "販賣機位置超連結",
+        keyword: "熬夜聖品"
       }
     ];
-
-  document.searched.submit(
     
-  )
+    var index = []
+    var name = []
+    var price = []
+    var quantity = []
+    var img = []
+    var url = []
+    var keyword = []
+    
+    for(var i=0 ; i<list.length ; i++) {
+      index[i] = i
+      name[i] = list[i].name;
+      price[i] = list[i].price;
+      quantity[i] = list[i].quantity;
+      img[i] = list[i].img;
+      url[i] = list[i].url;
+      keyword[i] = list[i].keyword;
+    }
+
+    var result = {
+      result_block: "<div class='col-12' id='result_block'></div>",
+      result_list: "<div class='row' id='result_list'></div>",
+      list_item: "<div class='list_item'></div>",
+      item_img: "<div class='item_img'></div>",
+      item_name: "<div class='item_name text-center'></div>",
+      item_info: "<div class='item_info text-center'></div>"
+    }
+
+    $("#searching_submit").click(function(){
+      const searching_keyword = $("#searching_keyword").val();
+      $("#searching_bar").after(result.result_block);
+      $("#result_block").prepend(result.result_list);
+      let new_list = list.filter(function(meet){
+        return meet==
+      });
+      if (searching_keyword == keyword){
+        
+        new_list[0] = {
+          new_name = 
+        }
+        
+        $("#result_block").prepend(result.list_item);
+        $(".list_item").prepend(result.item_img);
+        $(".list_img").after(result.item_name);
+        $(".item_name").after(result.item_info);
+        $(".item_img").prepend("<img src='"+list.img+"'")
+      }
+    })
+
+    function creat_result_block(){
+      $("#searchingbar").after(result.result_block);
+      $("#result_block").prepend(result.result_list);
+    };
+
+    function create_list_item(){
+      $("#result_block").prepend(result.list_item);
+      $(".list_item").prepend(result.item_img);
+      $(".list_img").after(result.item_name);
+      $(".item_name").after(result.item_info);
+    };
+
   </script>
 
 </body>
