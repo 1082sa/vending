@@ -32,7 +32,16 @@
                 });
         }
     </script>
-<? include("profile_user.php");?>
+
+    <?php 
+    error_reporting(0);  
+    if(isset($_GET[situation])){?>
+    <script>     
+           alert('密碼更改完畢！');  
+    </script>
+    <?php
+    }
+ include("profile_user.php");?>
 </head>
 
 <body>
