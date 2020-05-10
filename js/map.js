@@ -125,7 +125,7 @@ function initMap() {
 
         // 初始化地圖
         var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 18,
+            zoom: 15,
             center: origin,
             gestureHandling: 'cooperative',
             mapTypeControlOptions: {
@@ -426,6 +426,7 @@ ClickEventHandler.prototype.handleClick = function(event) {
     }
 };
 
+//路線規劃
 ClickEventHandler.prototype.calculateAndDisplayRoute = function(placeId) {
     var me = this;
     this.directionsService.route({
