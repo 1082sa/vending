@@ -34,6 +34,18 @@
                 });
         }
     </script>
+    <?php 
+    error_reporting(0);  
+    if(isset($_GET[situation])){?>
+    <script>     
+           alert('密碼輸入錯誤，請重新確認！');  
+      
+    </script>
+<?php
+  }
+    
+    
+?>
 </head>
 
 <body>
@@ -46,11 +58,11 @@
                     <div class="single-blog-content">
                         <h4 style="font-weight: bold; text-align: center;">修改密碼</h4>
                         <br />
-                        <p>
-                            原始密碼&emsp;&emsp;&nbsp;&emsp;<input type="password" name="txt1" size="18" class="text" placeholder="password" /><br /><br /> 修改密碼&emsp;&emsp;&nbsp;&emsp;
-                            <input type="password" name="txt1" size="18" class="text" placeholder="password" /><br /><br />
+                        <form method="post" action="edit.php">
+                            原始密碼&emsp;&emsp;&nbsp;&emsp;<input type="password" name="password1" size="18" class="text" placeholder="password" required ><br /><br /> 修改密碼&emsp;&emsp;&nbsp;&emsp;
+                            <input type="password" name="password2" size="18" class="text" placeholder="password" required><br /><br />
                             <button type="submit" class="btn original-btn">完成</button>
-                        </p>
+                        </form>
                     </div>
                 </div>
             </div>
