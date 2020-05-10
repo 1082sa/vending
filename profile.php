@@ -92,7 +92,7 @@
                       帳號:<?=$user->account?>&emsp;&emsp;&nbsp;&emsp;&ensp;<br /><br />暱稱:<?=$user->name?>&emsp;&emsp;&nbsp;&emsp;&ensp;
                             <br /><br/>性別:<?=$user->gender?>&emsp;&emsp;&nbsp;&emsp;&ensp;<br><br> 職業:<?=$user->job?>&emsp;&emsp;&nbsp;&emsp;&ensp;
                             <br><br>
-                            <a href="edit-password.html" class="post-tag" onclick="">修改密碼
+                            <a href="edit-password.php" class="post-tag" onclick="">修改密碼
                             </a>  
                        <?php }?>
                    </p>
