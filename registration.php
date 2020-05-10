@@ -50,9 +50,9 @@ function createUser($conn, $data = [])
 
     $user = findUserByAccount($conn, $uAccount);
 
-    if ($user) {
-        header("Location:registration.html?msg=使用者已存在");
-        die;
+    if ($user) {   
+        
+       echo '<script language="JavaScript">;alert("使用者已存在!");location.href="registration.html";</script>;';
     }
 
     /* =============================================================================
@@ -69,6 +69,6 @@ function createUser($conn, $data = [])
     ]);
 
     // 跳轉並將結果帶回註冊頁面。
-   header("Location:registration.html?result=" . $addResult);
-   die();
+       echo '<script language="JavaScript">;alert("註冊成功!");location.href="registration.html";</script>;';
 }
+?>
