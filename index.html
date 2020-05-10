@@ -40,327 +40,19 @@
     <style type="text/css">
         html,
         body,
-        #map-canvas {
+        #map {
             height: 100%;
             margin: 0;
             padding: 20;
         }
     </style>
     <!---The async attribute allows the browser to render the page while the API loads--->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBstjRsNEnzJo4CYLYDSMu7lJ_Bu-A9w4c&callback=initMap">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBstjRsNEnzJo4CYLYDSMu7lJ_Bu-A9w4c&libraries=places&callback=initMap">
     </script>
 
     <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
 
-    <script type="text/javascript">
-        function initMap() {
-            var markers = [];
-            var infoWindows = [];
-            var infoWindow = [];
-
-            navigator.geolocation.watchPosition((position) => {
-                console.log(position.coords);
-                var lat = position.coords.latitude;
-                var lng = position.coords.longitude;
-                // 載入路線服務與路線顯示圖層
-                var directionsService = new google.maps.DirectionsService();
-                var directionsDisplay = new google.maps.DirectionsRenderer();
-
-                // 初始化地圖
-                var map = new google.maps.Map(document.getElementById('map-canvas'), {
-                    zoom: 18,
-                    center: {
-                        lat: lat,
-                        lng: lng
-                    }
-                });
-                var marker = new google.maps.Marker({
-                    position: {
-                        lat: lat,
-                        lng: lng
-                    },
-                    map: map
-                });
-
-
-
-                // 放置路線圖層
-                directionsDisplay.setMap(map);
-
-                // 路線相關設定
-                var request = {
-                    origin: {
-                        lat: lat,
-                        lng: lng
-                    },
-                    destination: {
-                        lat: 25.037906,
-                        lng: 121.549781
-                    },
-                    travelMode: google.maps.TravelMode["WALKING"]
-                };
-
-                // 繪製路線
-                directionsService.route(request, function(result, status) {
-                    if (status == 'OK') {
-                        // 回傳路線上每個步驟的細節
-                        console.log(result.routes[0].legs[0].steps);
-                        directionsDisplay.setDirections(result);
-                    } else {
-                        console.log(status);
-                    }
-                });
-
-                var geocoder = new google.maps.Geocoder();
-                console.log(geocoder);
-
-                //info windows資訊視窗內的內容
-                var info_config = [
-                    //販賣機1
-                    '<div>' +
-                    '<h1 id="firstHeading" class="firstHeading">販賣機1</h1>' +
-                    '<div class="bodyContent">' +
-                    '<p><b>&nbsp;請點選功能</b>' +
-                    '<div><img src="img/fav.svg"><img src="img/navigation.svg"><img src="img/warning.svg">' +
-                    '<img src="img/good.png" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
-                    '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
-                    '</p>' +
-                    '</div>' +
-                    '</div>',
-                    //販賣機2
-                    '<div>' +
-                    '<h1 id="firstHeading" class="firstHeading">販賣機2</h1>' +
-                    '<div class="bodyContent">' +
-                    '<p><b>&nbsp;請點選功能</b>' +
-                    '<div><img src="img/fav.svg"><img src="img/navigation.svg"><img src="img/warning.svg">' +
-                    '<img src="img/good.png" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
-                    '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
-                    '</p>' +
-                    '</div>' +
-                    '</div>',
-                    //販賣機3
-                    '<div>' +
-                    '<h1 id="firstHeading" class="firstHeading">販賣機3</h1>' +
-                    '<div class="bodyContent">' +
-                    '<p><b>&nbsp;請點選功能</b>' +
-                    '<div><img src="img/fav.svg"><img src="img/navigation.svg"><img src="img/warning.svg">' +
-                    '<img src="img/good.png" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
-                    '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
-                    '</p>' +
-                    '</div>' +
-                    '</div>',
-                    //販賣機4
-                    '<div>' +
-                    '<h1 id="firstHeading" class="firstHeading">販賣機4</h1>' +
-                    '<div class="bodyContent">' +
-                    '<p><b>&nbsp;請點選功能</b>' +
-                    '<div><img src="img/fav.svg"><img src="img/navigation.svg"><img src="img/warning.svg">' +
-                    '<img src="img/good.png" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
-                    '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
-                    '</p>' +
-                    '</div>' +
-                    '</div>',
-                    //販賣機5
-                    '<div>' +
-                    '<h1 id="firstHeading" class="firstHeading">販賣機5</h1>' +
-                    '<div class="bodyContent">' +
-                    '<p><b>&nbsp;請點選功能</b>' +
-                    '<div><img src="img/fav.svg"><img src="img/navigation.svg"><img src="img/warning.svg">' +
-                    '<img src="img/good.png" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
-                    '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
-                    '</p>' +
-                    '</div>' +
-                    '</div>',
-                    //販賣機6
-                    '<div>' +
-                    '<h1 id="firstHeading" class="firstHeading">販賣機6</h1>' +
-                    '<div class="bodyContent">' +
-                    '<p><b>&nbsp;請點選功能</b>' +
-                    '<div><img src="img/fav.svg"><img src="img/navigation.svg"><img src="img/warning.svg">' +
-                    '<img src="img/good.png" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
-                    '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
-                    '</p>' +
-                    '</div>' +
-                    '</div>',
-                    //販賣機7
-                    '<div>' +
-                    '<h1 id="firstHeading" class="firstHeading">販賣機7</h1>' +
-                    '<div class="bodyContent">' +
-                    '<p><b>&nbsp;請點選功能</b>' +
-                    '<div><img src="img/fav.svg"><img src="img/navigation.svg"><img src="img/warning.svg">' +
-                    '<img src="img/good.png" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
-                    '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
-                    '</p>' +
-                    '</div>' +
-                    '</div>',
-                    //販賣機8    
-                    '<div>' +
-                    '<h1 id="firstHeading" class="firstHeading">販賣機8</h1>' +
-                    '<div class="bodyContent">' +
-                    '<p><b>&nbsp;請點選功能</b>' +
-                    '<div><img src="img/fav.svg"><img src="img/navigation.svg"><img src="img/warning.svg">' +
-                    '<img src="img/good.png" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
-                    '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
-                    '</p>' +
-                    '</div>' +
-                    '</div>',
-                    //販賣機9    
-                    '<div>' +
-                    '<h1 id="firstHeading" class="firstHeading">販賣機9</h1>' +
-                    '<div class="bodyContent">' +
-                    '<p><b>&nbsp;請點選功能</b>' +
-                    '<div><img src="img/fav.svg"><img src="img/navigation.svg"><img src="img/warning.svg">' +
-                    '<img src="img/good.png" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
-                    '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
-                    '</p>' +
-                    '</div>' +
-                    '</div>',
-                    //販賣機10    
-                    '<div>' +
-                    '<h1 id="firstHeading" class="firstHeading">販賣機10</h1>' +
-                    '<div class="bodyContent">' +
-                    '<p><b>&nbsp;請點選功能</b>' +
-                    '<div><img src="img/fav.svg"><img src="img/navigation.svg"><img src="img/warning.svg">' +
-                    '<img src="img/good.png" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
-                    '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
-                    '</p>' +
-                    '</div>' +
-                    '</div>',
-                ];
-
-                //建立地圖 marker 的集合
-                var marker_config = [{
-                    position: {
-                        lat: 25.038000,
-                        lng: 121.431927
-                    },
-                    map: map,
-                    icon: 'img/marker.png',
-                    title: '1'
-                }, {
-                    position: {
-                        lat: 25.037342,
-                        lng: 121.430894
-                    },
-                    map: map,
-                    icon: 'img/marker.png',
-                    title: '2'
-                }, {
-                    position: {
-                        lat: 25.036023,
-                        lng: 121.432333
-                    },
-                    map: map,
-                    icon: 'img/marker.png',
-                    title: '3'
-                }, {
-                    position: {
-                        lat: 25.038759,
-                        lng: 121.431430
-                    },
-                    map: map,
-                    icon: 'img/marker.png',
-                    title: '4'
-                }, {
-                    position: {
-                        lat: 25.036061,
-                        lng: 121.429154
-                    },
-                    map: map,
-                    icon: 'img/marker.png',
-                    title: '5'
-                }, {
-                    position: {
-                        lat: 25.035939,
-                        lng: 121.430465
-                    },
-                    map: map,
-                    icon: 'img/marker.png',
-                    title: '6'
-                }, {
-                    position: {
-                        lat: 25.034948,
-                        lng: 121.433882
-                    },
-                    map: map,
-                    icon: 'img/marker.png',
-                    title: '7'
-                }, {
-                    position: {
-                        lat: 25.038934,
-                        lng: 121.431146
-                    },
-                    map: map,
-                    icon: 'img/marker.png',
-                    title: '8'
-                }, {
-                    position: {
-                        lat: 25.035079,
-                        lng: 121.434370
-                    },
-                    map: map,
-                    icon: 'img/marker.png',
-                    title: '9'
-                }, {
-                    position: {
-                        lat: 25.036645,
-                        lng: 121.430537
-                    },
-                    map: map,
-                    icon: 'img/marker.png',
-                    title: '10'
-                }];
-
-                //設定 Info window 內容
-
-                info_config.forEach(function(e, i) {
-                    infoWindows[i] = new google.maps.InfoWindow({
-                        content: e
-                    });
-
-                    //設定監聽事件，在資訊視窗準備好之後，就綁定對應的流程
-                    google.maps.event.addListener(infoWindows[i], 'domready', function() {
-                        _content(i);
-                    });
-                });
-
-
-                //標出 marker
-                marker_config.forEach(function(e, i) {
-                    markers[i] = new google.maps.Marker(e);
-                    markers[i].setMap(map);
-                    markers[i].addListener('click', function() {
-                        infoWindows[i].open(map, markers[i]);
-                    });
-                });
-
-                function _content(e) {
-                    $('#infoDiv' + e + ' div').on('click', function() {
-                        s = s * -1;
-                        if (s < 0) {
-                            $(this).css({
-                                'background-position': '-70px 0'
-                            });
-                            _setIcon(markers[e], 'http://example.oxxostudio.tw/it2016/it2016-day22-off.png');
-                        } else {
-                            $(this).css({
-                                'background-position': '0 0'
-                            });
-                            _setIcon(markers[e], 'http://example.oxxostudio.tw/it2016/it2016-day22-on.png');
-                        }
-                    });
-                }
-
-
-
-
-
-
-                console.log(_geocoder('高雄市'));
-            });
-
-        }
-    </script>
+    <script type="text/javascript" src="js/map.js"></script>
 </head>
 
 <body>
@@ -374,8 +66,14 @@
 
 
     <!--Map-->
-    <div id="map-canvas"></div>
+    <div id="map"></div>
+    <div id="infowindow-content">
+        <img id="place-icon" src="" height="16" width="16">
+        <span id="place-name" class="title"></span><br><span id="place-id"></span><br>
+        <span id="place-address"></span>
+    </div>
 
+    <!-- Modal -->
     <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -386,11 +84,33 @@
             <span aria-hidden="true">&times;</span>
           </button>
                 </div>
-                <div class="modal-body" w3-include-html="ven-info.html">
-
+                <div class="modal-body">
+                    填放商品清單
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">販賣機故障回報</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                </div>
+                <div class="modal-body">
+                    填放故障申報網頁
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
@@ -419,6 +139,7 @@
     <script src="js/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+    <!--include html-->
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     <script>
         w3.includeHTML();
