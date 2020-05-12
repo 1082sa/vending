@@ -12,7 +12,7 @@ if (!empty($_POST)) {
     $uAccount = $_POST["account"] ?? "";
     $uPassword = $_POST["password"] ?? "";
     $uName = $_POST["name"] ?? "";
-   $uGender = $_POST["gender"] ?? "";
+    $uGender = $_POST["gender"] ?? "";
     $uJob = $_POST["job"] ?? "";
     
 
