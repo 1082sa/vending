@@ -1817,7 +1817,7 @@ textarea:focus~.highlight {
 .D1 {
     width: 100%;
     height: 100%;
-    position: relative;
+    position: absolute;
     animation: TestMove 3s infinite;
     /*IE*/
     -moz-animation: TestMove 3s infinite;
