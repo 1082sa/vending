@@ -16,6 +16,18 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css" />
+    
+    <?php 
+    error_reporting(0);  
+    if(isset($_GET[situation])){?>
+    <script>     
+           alert('已完成故障回報');   
+    </script>
+<?php
+  }
+    
+    
+?>
 </head>
 
 <body>
@@ -35,20 +47,34 @@
                     <div class="contact-form">
                         <h5>販賣故障回報</h5>
                         <!-- Contact Form -->
-                        <form action="#" method="post">
+                        <form enctype="multipart/form-data" action="contact-upload.php" method="post">
                             <div class="row">
+                            
                                 <div class="col-12">
                                     <div class="group">
-                                        <textarea name="message" id="message" required></textarea>
+                                        <textarea name="message"  required></textarea>
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label>Message</label>
+                                        <label>請敘述故障狀況</label>
+                                    </div>
+                                </div>
+                                
+                                <br> <br> <br>
+                                <div class="col-12">
+                                    <div class="group">
+                                    <input type="file" class="btn btn-outline-dark" name="my_file">
+                             <label>圖片上傳(可忽略)</label>
+                            <br>
+                            <br>
+                                       
+                                        <span class="bar"></span>
+                                       
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn original-btn">
-                      訊息送出
-                    </button>
+                                    <input type="submit" class="btn original-btn">
+                      
+                    
                                 </div>
                             </div>
                         </form>
@@ -61,12 +87,7 @@
                         <div class="sidebar-widget-area">
                             <h5 class="title subscribe-title"></h5>
                             <div class="widget-content">
-                                <form action="#" class="newsletterForm">
-                                    <h5>圖片上傳</h5>
-                                    <button type="submit" class="btn original-btn">
-                      檔案選擇
-                    </button>
-                                </form>
+                                
                             </div>
                         </div>
                     </div>
