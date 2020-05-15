@@ -1827,33 +1827,26 @@ textarea:focus~.highlight {
 }
 
 
-/* searching CSS*/
-.back {
-    display: inline-block;
-    width: 2.5em;
-    margin-top: 0.8em;
-    transform: translateY(-100%);
-    border: 0px;
-}
 
+/* nav css */
 #searching {
     background-color: $color-white;
-    width: 94.5%;
-    height: 4em;
-    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.15);
-    transform: translate(3%, 30%);
+    width: 80.5%;
+    height: 3.6em;
+    // box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.15);
+    // transform: translate(3%, 30%);
     border-radius: 0.3em;
-    z-index: 999;
+    margin-left: 2.3em;
+    float: right;
+    // transform: translateY(-110%);
     #searching_keyword {
-        width: 66%;
-        height: 3.1em;
-        margin-left: 2em;
+        width: 76%;
+        height: 3.4em;
         border: none;
-        transform: translateY(15%);
     }
     #searching_submit {
-        width: 2em;
-        height: 2em;
+        width: 1.8em;
+        height: 1.8em;
         transform: translateY(50%);
         margin-right: 1em;
         float: right;
@@ -1865,6 +1858,7 @@ textarea:focus~.highlight {
     }
 }
 
+/* searching CSS */
 #result_block {
     text-align: center;
     color: $text-color;
@@ -1876,6 +1870,7 @@ textarea:focus~.highlight {
     border-radius: 0.3em;
     overflow: hidden;
     font-size: 0.8em;
+    // top: -3.2em;
     #result_list {
         overflow-y: scroll;
         overflow-x: hidden;
@@ -1900,6 +1895,14 @@ textarea:focus~.highlight {
             margin-bottom: 0.2em;
         }
     }
+}
+
+.back {
+    display: inline-block;
+    width: 2.5em;
+    margin-top: 0.8em;
+    transform: translateY(-100%);
+    border: 0px;
 }
 
 

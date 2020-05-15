@@ -205,7 +205,7 @@ img {
 }
 
 .mt-200 {
-    margin-top: 200px;
+  margin-top: 200px;
 }
 
 .mb-7 {
@@ -249,7 +249,7 @@ img {
 }
 
 .mr-100 {
-    margin-right: 100px;
+  margin-right: 100px;
 }
 
 .mb-70 {
@@ -2112,49 +2112,34 @@ textarea:focus ~ .highlight {
 
 /*登入後的品牌顯示頁面*/
 .logo {
-    width: 300px;
-    height: 300px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-top: -150px;
-    margin-left: -150px;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -150px;
+  margin-left: -150px;
 }
 
-/* searching CSS*/
-.back {
-  display: inline-block;
-  width: 2.5em;
-  margin-top: 0.8em;
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
-  border: 0px;
-}
-
+/* nav css */
 #searching {
   background-color: #ffffff;
-  width: 94.5%;
-  height: 4em;
-  -webkit-box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.15);
-  -webkit-transform: translate(3%, 30%);
-          transform: translate(3%, 30%);
+  width: 80.5%;
+  height: 3.6em;
   border-radius: 0.3em;
-  z-index: 999;
+  margin-left: 2.3em;
+  float: right;
 }
 
 #searching #searching_keyword {
-  width: 66%;
-  height: 3.1em;
-  margin-left: 2em;
+  width: 76%;
+  height: 3.4em;
   border: none;
-  -webkit-transform: translateY(15%);
-          transform: translateY(15%);
 }
 
 #searching #searching_submit {
-  width: 2em;
-  height: 2em;
+  width: 1.8em;
+  height: 1.8em;
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
   margin-right: 1em;
@@ -2167,6 +2152,7 @@ textarea:focus ~ .highlight {
   width: 100%;
 }
 
+/* searching CSS */
 #result_block {
   text-align: center;
   color: #878787;
@@ -2217,6 +2203,15 @@ textarea:focus ~ .highlight {
 
 #result_block .list_item .item_img {
   margin-bottom: 0.2em;
+}
+
+.back {
+  display: inline-block;
+  width: 2.5em;
+  margin-top: 0.8em;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  border: 0px;
 }
 
 /* Ven-info CSS */
