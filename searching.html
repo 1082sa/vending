@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   
   <!-- Title -->
-  <title>商品搜尋</title>
+  <title>商品搜尋結果</title>
   
   <!-- Favicon -->
   <link rel="icon" href="img/core-img/favicon.ico" />
@@ -18,20 +18,7 @@
   <!-- Vue.js --> 
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
-<body>
-  <!-- searching bar -->
-  <div class="container" id="searching_bar">
-    <div class="col-12" id="searching">
-      <form name="searched" action="#" method="POST/GET">
-          <input type="text" name="searching_keyword" id="searching_keyword" placeholder="請輸入商品關鍵字">
-          <button type="submit" class="btn btn-outline-light" id="searching_submit" onclick="searching_submit()">
-            <img src="img/searching.svg"/>
-          </button>
-      </form>
-      <!-- form表單結構說明：https://reurl.cc/X6R4ga -->
-    </div>
-  </div>
-  
+<body>  
   <div class="container">
     <div class="col-12" id="result_block">
       <div class="row" id="result_list">      
@@ -69,9 +56,10 @@
           </div>
         </div>
       </div>
+      <!--返回上一頁-->
       <button type="button" class="btn btn-outline-light back">
-        <img src="img/back2.svg">     
-    </div>
+        <img src="img/back.svg">     
+      </button>
     </div> 
   </div>
   
@@ -86,123 +74,6 @@
   <!-- Active js -->
   <script src="js/active.js"></script>
 
-  <!-- searching list js -->
-  <script>
-    var list = [
-      {
-        name: "沒有符合的商品",
-        price: 0,
-        quantity: 0,
-        img: "/img/blog-img/3.jpg",
-        url: "",
-        keyword: 
-      },
-      {
-        name: "能量補充包",
-        price: 87,
-        quantity: 4,
-        image: "/img/blog-img/4.jpg",
-        url: "販賣機位置超連結",
-        keyword: "熬夜聖品"
-      },
-      {
-        name: "熬夜補肝丸",
-        price: 941,
-        quantity: 0,
-        img: "/img/blog-img/5.jpg",
-        url: "販賣機位置超連結",
-        keyword: "熬夜聖品"
-      }
-    ];
-    
-    var index = []
-    var name = []
-    var price = []
-    var quantity = []
-    var img = []
-    var url = []
-    var keyword = []
-    
-    for(var i=0 ; i<list.length ; i++) {
-      index[i] = i
-      name[i] = list[i].name;
-      price[i] = list[i].price;
-      quantity[i] = list[i].quantity;
-      img[i] = list[i].img;
-      url[i] = list[i].url;
-      keyword[i] = list[i].keyword;
-    }
-
-    // var result = {
-    //   result_block: "<div class='col-12' id='result_block'></div>",
-    //   result_list: "<div class='row' id='result_list'></div>",
-    //   list_item: "<div class='list_item'></div>",
-    //   item_img: "<div class='item_img'></div>",
-    //   item_name: "<div class='item_name text-center'></div>",
-    //   item_info: "<div class='item_info text-center'></div>"
-    // }
-
-    // $("#searching_submit").click(function(){
-    //   const searching_keyword = $("#searching_keyword").val();
-    //   $("#searching_bar").after(result.result_block);
-    //   $("#result_block").prepend(result.result_list);
-    //   let new_list = list.filter(function(meet){
-    //     return meet==
-    //   });
-    //   if (searching_keyword == keyword){
-        
-    //     new_list[0] = {
-    //       new_name = 
-    //     }
-        
-    //     $("#result_block").prepend(result.list_item);
-    //     $(".list_item").prepend(result.item_img);
-    //     $(".list_img").after(result.item_name);
-    //     $(".item_name").after(result.item_info);
-    //     $(".item_img").prepend("<img src='"+list.img+"'")
-    //   }
-    // })
-
-    // function creat_result_block(){
-    //   $("#searchingbar").after(result.result_block);
-    //   $("#result_block").prepend(result.result_list);
-    // };
-
-    // function create_list_item(){
-    //   $("#result_block").prepend(result.list_item);
-    //   $(".list_item").prepend(result.item_img);
-    //   $(".list_img").after(result.item_name);
-    //   $(".item_name").after(result.item_info);
-    // };
-
-    // var result_block = document.createElement('div');
-    // result_block.className = 'col-12';
-    // result_block.id = 'result_block';
-    // var result_list = document.createElement('div');
-    // result_list.className = 'row';
-    // result_list.id = 'result_list';
-    // var list_item = document.createElement('div');
-    // list_item.className = 'list_item';
-    // var item_img = document.createElement('div');
-    // item_img.className = 'item_img';
-    // var item_name = document.createElement('div');
-    // item_name.className = 'item_name text-center';
-    // var item_info = document.createElement('div');
-    // item_info.className = 'item_info text-center';
-    // // var item_quantity = document.createElement('span');
-    // // var item_price = document.createElement('span');
-    // var img = document.createElement('img');
-    // var p = document.createElement('p');
-    
-
-
-    // function searching_submit(){
-      
-
-      
-    // }
-
-  </script>
 
 </body>
 </html>
