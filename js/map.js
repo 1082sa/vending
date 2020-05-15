@@ -152,9 +152,9 @@ function initMap() {
             '<h1 id="firstHeading" class="firstHeading">販賣機1</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
-            '<div><img src="img/fav.svg"><img src="img/navigation.svg">' +
+            '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
             '<img src="img/warning.svg" data-toggle="modal" data-target="#exampleModalCenter">' +
-            '<img src="img/good.png" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
+            '<img src="img/list.svg" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
             '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
             '</p>' +
             '</div>' +
@@ -164,9 +164,9 @@ function initMap() {
             '<h1 id="firstHeading" class="firstHeading">販賣機2</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
-            '<div><img src="img/fav.svg"><img src="img/navigation.svg">' +
+            '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
             '<img src="img/warning.svg" data-toggle="modal" data-target="#exampleModalCenter">' +
-            '<img src="img/good.png" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
+            '<img src="img/list.svg" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
             '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
             '</p>' +
             '</div>' +
@@ -176,9 +176,9 @@ function initMap() {
             '<h1 id="firstHeading" class="firstHeading">販賣機3</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
-            '<div><img src="img/fav.svg"><img src="img/navigation.svg">' +
+            '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
             '<img src="img/warning.svg" data-toggle="modal" data-target="#exampleModalCenter">' +
-            '<img src="img/good.png" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
+            '<img src="img/list.svg" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
             '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
             '</p>' +
             '</div>' +
@@ -188,9 +188,9 @@ function initMap() {
             '<h1 id="firstHeading" class="firstHeading">販賣機4</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
-            '<div><img src="img/fav.svg"><img src="img/navigation.svg">' +
+            '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
             '<img src="img/warning.svg" data-toggle="modal" data-target="#exampleModalCenter">' +
-            '<img src="img/good.png" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
+            '<img src="img/list.svg" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
             '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
             '</p>' +
             '</div>' +
@@ -200,9 +200,9 @@ function initMap() {
             '<h1 id="firstHeading" class="firstHeading">販賣機5</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
-            '<div><img src="img/fav.svg"><img src="img/navigation.svg">' +
+            '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
             '<img src="img/warning.svg" data-toggle="modal" data-target="#exampleModalCenter">' +
-            '<img src="img/good.png" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
+            '<img src="img/list.svg" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
             '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
             '</p>' +
             '</div>' +
@@ -212,9 +212,9 @@ function initMap() {
             '<h1 id="firstHeading" class="firstHeading">販賣機6</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
-            '<div><img src="img/fav.svg"><img src="img/navigation.svg">' +
+            '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
             '<img src="img/warning.svg" data-toggle="modal" data-target="#exampleModalCenter">' +
-            '<img src="img/good.png" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
+            '<img src="img/list.svg" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
             '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
             '</p>' +
             '</div>' +
@@ -224,9 +224,9 @@ function initMap() {
             '<h1 id="firstHeading" class="firstHeading">販賣機7</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
-            '<div><img src="img/fav.svg"><img src="img/navigation.svg">' +
+            '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
             '<img src="img/warning.svg" data-toggle="modal" data-target="#exampleModalCenter">' +
-            '<img src="img/good.png" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
+            '<img src="img/list.svg" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
             '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
             '</p>' +
             '</div>' +
@@ -236,9 +236,9 @@ function initMap() {
             '<h1 id="firstHeading" class="firstHeading">販賣機8</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
-            '<div><img src="img/fav.svg"><img src="img/navigation.svg">' +
+            '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
             '<img src="img/warning.svg" data-toggle="modal" data-target="#exampleModalCenter">' +
-            '<img src="img/good.png" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
+            '<img src="img/list.svg" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
             '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
             '</p>' +
             '</div>' +
@@ -248,9 +248,9 @@ function initMap() {
             '<h1 id="firstHeading" class="firstHeading">販賣機9</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
-            '<div><img src="img/fav.svg"><img src="img/navigation.svg">' +
+            '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
             '<img src="img/warning.svg" data-toggle="modal" data-target="#exampleModalCenter">' +
-            '<img src="img/good.png" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
+            '<img src="img/list.svg" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
             '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
             '</p>' +
             '</div>' +
@@ -260,9 +260,9 @@ function initMap() {
             '<h1 id="firstHeading" class="firstHeading">販賣機10</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
-            '<div><img src="img/fav.svg"><img src="img/navigation.svg">' +
+            '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
             '<img src="img/warning.svg" data-toggle="modal" data-target="#exampleModalCenter">' +
-            '<img src="img/good.png" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
+            '<img src="img/list.svg" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
             '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
             '</p>' +
             '</div>' +
