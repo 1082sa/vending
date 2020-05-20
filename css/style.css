@@ -204,6 +204,10 @@ img {
   margin-top: 100px;
 }
 
+.mt-200 {
+  margin-top: 200px;
+}
+
 .mb-7 {
   margin-bottom: 7px;
 }
@@ -242,6 +246,10 @@ img {
 
 .mr-30 {
   margin-right: 30px;
+}
+
+.mr-100 {
+  margin-right: 100px;
 }
 
 .mb-70 {
@@ -2089,10 +2097,10 @@ textarea:focus ~ .highlight {
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: .25rem;
-  -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
-  transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  -webkit-transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
 }
 
 /* Map CSS */
@@ -2104,72 +2112,47 @@ textarea:focus ~ .highlight {
 
 /*登入後的品牌顯示頁面*/
 .logo {
-  height: 100%;
-  margin: 0;
-  padding: 30;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -150px;
+  margin-left: -150px;
 }
 
-.D1 {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  animation: TestMove 3s infinite;
-  /*IE*/
-  -moz-animation: TestMove 3s infinite;
-  /*FireFox*/
-  -webkit-animation: TestMove 3s infinite;
-  /*Chrome, Safari*/
-}
-
-@keyframes TestMove {
-  from {
-    left: 0%;
-  }
-  to {
-    left: 26%;
-  }
-}
-
-@-webkit-keyframes TestMove {
-  from {
-    left: 0%;
-  }
-  to {
-    left: 26%;
-  }
-}
-
-/* searching CSS*/
+/* nav css */
 #searching {
   background-color: #ffffff;
-  width: 94.5%;
-  height: 4em;
-  -webkit-box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.15);
-  -webkit-transform: translate(3%, 30%);
-          transform: translate(3%, 30%);
+  width: 80.5%;
+  height: 3.6em;
   border-radius: 0.3em;
-  z-index: 999;
+  margin-left: 2.3em;
+  float: right;
 }
 
 #searching #searching_keyword {
-  width: 66%;
-  height: 3.1em;
-  margin-left: 2em;
+  width: 76%;
+  height: 3.4em;
   border: none;
-  -webkit-transform: translateY(15%);
-          transform: translateY(15%);
 }
 
 #searching #searching_submit {
-  width: 2em;
-  height: 2em;
+  width: 1.8em;
+  height: 1.8em;
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
   margin-right: 1em;
   float: right;
+  padding: 0;
+  border: 0;
 }
 
+#searching #searching_submit img {
+  width: 100%;
+}
+
+/* searching CSS */
 #result_block {
   text-align: center;
   color: #878787;
@@ -2182,13 +2165,14 @@ textarea:focus ~ .highlight {
           transform: translate(3%, 6%);
   border-radius: 0.3em;
   overflow: hidden;
+  font-size: 0.8em;
 }
 
 #result_block #result_list {
   overflow-y: scroll;
   overflow-x: hidden;
   width: 105%;
-  height: 79vh;
+  height: 75vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2219,6 +2203,15 @@ textarea:focus ~ .highlight {
 
 #result_block .list_item .item_img {
   margin-bottom: 0.2em;
+}
+
+.back {
+  display: inline-block;
+  width: 2.5em;
+  margin-top: 0.8em;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  border: 0px;
 }
 
 /* Ven-info CSS */
@@ -2271,6 +2264,29 @@ textarea:focus ~ .highlight {
 
 .ven_block .ven_item .ven_item_img {
   margin-bottom: 0.2em;
+}
+
+.infoImg {
+  width: 200px;
+  margin: 8px 0;
+}
+
+.bodyContent div {
+  width: 275px;
+  height: 40px;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.bodyContent div img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
 }
 
 /* The End */

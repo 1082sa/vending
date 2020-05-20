@@ -17,44 +17,33 @@
 
   <!-- Vue.js --> 
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  
 </head>
 <body>  
+     <?php
+    include("search.php");?>
   <div class="container">
     <div class="col-12" id="result_block">
-      <div class="row" id="result_list">      
+      <div class="row" id="result_list"> 
+         
+ 
+          
+          <?php foreach($statement as $row){ ?>
+          
         <div class="list_item">
           <div class="item_img">
-            <img src="/img/blog-img/3.jpg">
+            <img src="<?echo $row['pro_pic']?>">
           </div>
           <div class="item_name text-center">
-            <p>商品一</p>
+            <p><?echo $row['pro_name']?></p>
           </div>
+            <!----
           <div class="item_info text-center">
             <p><span class="item_price">QQ</span>元，剩餘<span class="item_quantity">XX</span>個</p>
-          </div>
+          </div>--->
         </div>
-        <div class="list_item">
-          <div class="item_img">
-            <img src="/img/blog-img/4.jpg">
-          </div>
-          <div class="item_name text-center">
-            <p>商品二</p>
-          </div>
-          <div class="item_info text-center">
-            <p><span class="item_price">QQ</span>元，剩餘<span class="item_quantity">XX</span>個</p>
-          </div>
-        </div>
-        <div class="list_item">
-          <div class="item_img">
-            <img src="/img/blog-img/5.jpg">
-          </div>
-          <div class="item_name text-center">
-            <p>商品三</p>
-          </div>
-          <div class="item_info text-center">
-            <p><span class="item_price">QQ</span>元，剩餘<span class="item_quantity">XX</span>個</p>
-          </div>
-        </div>
+      <?  }  ?>
+        
       </div>
       <!--返回上一頁-->
       <button type="button" class="btn btn-outline-light back">

@@ -33,6 +33,15 @@
         }
     </script>
 
+    <?php 
+    error_reporting(0);  
+    if(isset($_GET[situation])){?>
+    <script>     
+           alert('密碼更改完畢！');  
+    </script>
+    <?php
+    }
+ include("profile_user.php");?>
 </head>
 
 <body>
@@ -46,9 +55,7 @@
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
         <!-- Top Header Area -->
-        <div class="top-header">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
+        
                     <!-- Breaking News Area -->
                     <div class="col-12 col-sm-8">
                         <div class="breaking-news-area">
@@ -69,6 +76,7 @@
     </header>
     <!-- ##### Header Area End ##### -->
     <!-- ##### Blog Wrapper Start ##### -->
+    
     <div class="blog-wrapper section-padding-100 clearfix" style="text-align: center;">
         <div class="container">
             <div>
@@ -76,21 +84,27 @@
                 <div class="single-blog-area clearfix mb-100">
                     <!-- Blog Content -->
                     <div class="single-blog-content">
-                        <div class="line"></div>
+                        
                         <h4 style="font-weight: bold; text-align: center;">個人資訊</h4>
                         <br />
-                        <p>
-                            帳號:&emsp;&emsp;&nbsp;&emsp;&ensp;<br /><br />暱稱:&emsp;&emsp;&nbsp;&emsp;&ensp;
-                            <br /><br/>職業:&emsp;&emsp;&nbsp;&emsp;&ensp;<br><br> 性別:&emsp;&emsp;&nbsp;&emsp;&ensp;
-                            <br><br>生日:&emsp;&emsp;&nbsp;&emsp;&ensp;<br><br>
-                            <a href="edit-password.html" class="post-tag" onclick="">修改密碼
-                            </a>
-                        </p>
+                   <p>
+                       <?php foreach($rows as $user){ ?>
+                      帳號:<?=$user->account?>&emsp;&emsp;&nbsp;&emsp;&ensp;<br /><br />暱稱:<?=$user->name?>&emsp;&emsp;&nbsp;&emsp;&ensp;
+                            <br /><br/>性別:<?=$user->gender?>&emsp;&emsp;&nbsp;&emsp;&ensp;<br><br> 職業:<?=$user->job?>&emsp;&emsp;&nbsp;&emsp;&ensp;
+                            <br><br>
+                            <a href="edit-password.php" class="post-tag" onclick="">修改密碼
+                            </a>  
+                       <?php }?>
+                   </p>
+                            
+                            
+                  
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
 
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area text-center">
