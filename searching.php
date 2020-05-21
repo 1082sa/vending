@@ -20,7 +20,7 @@
   
 </head>
 <body>  
-     <?php
+     <?php 
     include("search.php");?>
   <div class="container">
     <div class="col-12" id="result_block">
