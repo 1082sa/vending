@@ -149,7 +149,7 @@ function initMap() {
         var info_config = [
             //販賣機1
             '<div>' +
-            '<h1 id="firstHeading" class="firstHeading">販賣機1</h1>' +
+            '<h1 id="first" class="firstHeading">販賣機1</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
             '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
@@ -161,7 +161,7 @@ function initMap() {
             '</div>',
             //販賣機2
             '<div>' +
-            '<h1 id="secondHeading" class="secondHeading">販賣機2</h1>' +
+            '<h1 id="second" class="secondHeading">販賣機2</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
             '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
@@ -173,7 +173,7 @@ function initMap() {
             '</div>',
             //販賣機3
             '<div>' +
-            '<h1 id="thirdHeading" class="thirdHeading">販賣機3</h1>' +
+            '<h1 id="third" class="thirdHeading">販賣機3</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
             '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
@@ -185,7 +185,7 @@ function initMap() {
             '</div>',
             //販賣機4
             '<div>' +
-            '<h1 id="fourthHeading" class="fourthHeading">販賣機4</h1>' +
+            '<h1 id="fourth" class="fourthHeading">販賣機4</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
             '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
@@ -197,7 +197,7 @@ function initMap() {
             '</div>',
             //販賣機5
             '<div>' +
-            '<h1 id="fifthHeading" class="fifthHeading">販賣機5</h1>' +
+            '<h1 id="fifth" class="fifthHeading">販賣機5</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
             '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
@@ -209,7 +209,7 @@ function initMap() {
             '</div>',
             //販賣機6
             '<div>' +
-            '<h1 id="sixthHeading" class="sixthHeading">販賣機6</h1>' +
+            '<h1 id="sixth" class="sixthHeading">販賣機6</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
             '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
@@ -221,7 +221,7 @@ function initMap() {
             '</div>',
             //販賣機7
             '<div>' +
-            '<h1 id="sevenHeading" class="sevenHeading">販賣機7</h1>' +
+            '<h1 id="seven" class="sevenHeading">販賣機7</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
             '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
@@ -233,7 +233,7 @@ function initMap() {
             '</div>',
             //販賣機8    
             '<div>' +
-            '<h1 id="eightHeading" class="eightHeading">販賣機8</h1>' +
+            '<h1 id="eight" class="eightHeading">販賣機8</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
             '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
@@ -245,7 +245,7 @@ function initMap() {
             '</div>',
             //販賣機9    
             '<div>' +
-            '<h1 id="nineHeading" class="nineHeading">販賣機9</h1>' +
+            '<h1 id="nine" class="nineHeading">販賣機9</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
             '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
@@ -257,7 +257,7 @@ function initMap() {
             '</div>',
             //販賣機10    
             '<div>' +
-            '<h1 id="tenHeading" class="tenHeading">販賣機10</h1>' +
+            '<h1 id="ten" class="tenHeading">販賣機10</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
             '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
