@@ -31,7 +31,7 @@
 </head>
 
 <body>
-    <!-- Preloader -->
+    <!-- Preloader 
     <div id="preloader">
         <div class="preload-content">
             <div id="original-load"></div>
@@ -39,13 +39,8 @@
     </div>
 
     <!-- ##### Contact Area Start ##### -->
-    <section class="contact-area section-padding-100">
-        <div class="container">
-            <div class="row justify-content-center">
-                <!-- Contact Form Area -->
-                <div class="col-12 col-md-10 col-lg-9">
-                    <div class="contact-form">
-                        <h5>販賣故障回報</h5>
+    
+                       
                         <!-- Contact Form -->
                         <form enctype="multipart/form-data" action="contact-upload.php" method="post">
                             <div class="row">
@@ -71,30 +66,19 @@
                                        
                                     </div>
                                 </div>
+                                  <center>
                                 <div class="col-12">
+                                  
                                     <input type="submit" class="btn original-btn">
-                      
+                    
                     
                                 </div>
+                                      </center>
                             </div>
                         </form>
-                    </div>
-                </div>
+                    
 
-                <div class="col-12 col-md-10 col-lg-3">
-                    <div class="post-sidebar-area">
-                        <!-- Widget Area -->
-                        <div class="sidebar-widget-area">
-                            <h5 class="title subscribe-title"></h5>
-                            <div class="widget-content">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+              
     <!-- ##### Contact Area End ##### -->
 
     <!-- ##### Footer Area Start ##### -->

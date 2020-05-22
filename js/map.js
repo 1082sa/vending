@@ -161,7 +161,7 @@ function initMap() {
             '</div>',
             //販賣機2
             '<div>' +
-            '<h1 id="firstHeading" class="firstHeading">販賣機2</h1>' +
+            '<h1 id="secondHeading" class="secondHeading">販賣機2</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
             '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
@@ -173,7 +173,7 @@ function initMap() {
             '</div>',
             //販賣機3
             '<div>' +
-            '<h1 id="firstHeading" class="firstHeading">販賣機3</h1>' +
+            '<h1 id="thirdHeading" class="thirdHeading">販賣機3</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
             '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
@@ -185,7 +185,7 @@ function initMap() {
             '</div>',
             //販賣機4
             '<div>' +
-            '<h1 id="firstHeading" class="firstHeading">販賣機4</h1>' +
+            '<h1 id="fourthHeading" class="fourthHeading">販賣機4</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
             '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
@@ -197,7 +197,7 @@ function initMap() {
             '</div>',
             //販賣機5
             '<div>' +
-            '<h1 id="firstHeading" class="firstHeading">販賣機5</h1>' +
+            '<h1 id="fifthHeading" class="fifthHeading">販賣機5</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
             '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
@@ -209,7 +209,7 @@ function initMap() {
             '</div>',
             //販賣機6
             '<div>' +
-            '<h1 id="firstHeading" class="firstHeading">販賣機6</h1>' +
+            '<h1 id="sixthHeading" class="sixthHeading">販賣機6</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
             '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
@@ -221,7 +221,7 @@ function initMap() {
             '</div>',
             //販賣機7
             '<div>' +
-            '<h1 id="firstHeading" class="firstHeading">販賣機7</h1>' +
+            '<h1 id="sevenHeading" class="sevenHeading">販賣機7</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
             '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
@@ -233,7 +233,7 @@ function initMap() {
             '</div>',
             //販賣機8    
             '<div>' +
-            '<h1 id="firstHeading" class="firstHeading">販賣機8</h1>' +
+            '<h1 id="eightHeading" class="eightHeading">販賣機8</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
             '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
@@ -245,7 +245,7 @@ function initMap() {
             '</div>',
             //販賣機9    
             '<div>' +
-            '<h1 id="firstHeading" class="firstHeading">販賣機9</h1>' +
+            '<h1 id="nineHeading" class="nineHeading">販賣機9</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
             '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
@@ -257,7 +257,7 @@ function initMap() {
             '</div>',
             //販賣機10    
             '<div>' +
-            '<h1 id="firstHeading" class="firstHeading">販賣機10</h1>' +
+            '<h1 id="tenHeading" class="tenHeading">販賣機10</h1>' +
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
             '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
@@ -271,86 +271,88 @@ function initMap() {
 
         //建立地圖 marker 的集合
         var marker_config = [{
-            position: {
-                lat: 25.038000,
-                lng: 121.431927
+                position: {
+                    lat: 25.038000,
+                    lng: 121.431927
+                },
+                map: map,
+                icon: 'img/marker.png',
+                title: '1'
+            }, {
+                position: {
+                    lat: 25.037342,
+                    lng: 121.430894
+                },
+                map: map,
+                icon: 'img/marker.png',
+                title: '2'
+            }, {
+                position: {
+                    lat: 25.036023,
+                    lng: 121.432333
+                },
+                map: map,
+                icon: 'img/marker.png',
+                title: '3'
+            }, {
+                position: {
+                    lat: 25.038759,
+                    lng: 121.431430
+                },
+                map: map,
+                icon: 'img/marker.png',
+                title: '4'
+            }, {
+                position: {
+                    lat: 25.036061,
+                    lng: 121.429154
+                },
+                map: map,
+                icon: 'img/marker.png',
+                title: '5'
+            }, {
+                position: {
+                    lat: 25.035939,
+                    lng: 121.430465
+                },
+                map: map,
+                icon: 'img/marker.png',
+                title: '6'
+            }, {
+                position: {
+                    lat: 25.034948,
+                    lng: 121.433882
+                },
+                map: map,
+                icon: 'img/marker.png',
+                title: '7'
+            }, {
+                position: {
+                    lat: 25.038934,
+                    lng: 121.431146
+                },
+                map: map,
+                icon: 'img/marker.png',
+                title: '8'
+            }, {
+                position: {
+                    lat: 25.035079,
+                    lng: 121.434370
+                },
+                map: map,
+                icon: 'img/marker.png',
+                title: '9'
             },
-            map: map,
-            icon: 'img/marker.png',
-            title: '1'
-        }, {
-            position: {
-                lat: 25.037342,
-                lng: 121.430894
-            },
-            map: map,
-            icon: 'img/marker.png',
-            title: '2'
-        }, {
-            position: {
-                lat: 25.036023,
-                lng: 121.432333
-            },
-            map: map,
-            icon: 'img/marker.png',
-            title: '3'
-        }, {
-            position: {
-                lat: 25.038759,
-                lng: 121.431430
-            },
-            map: map,
-            icon: 'img/marker.png',
-            title: '4'
-        }, {
-            position: {
-                lat: 25.036061,
-                lng: 121.429154
-            },
-            map: map,
-            icon: 'img/marker.png',
-            title: '5'
-        }, {
-            position: {
-                lat: 25.035939,
-                lng: 121.430465
-            },
-            map: map,
-            icon: 'img/marker.png',
-            title: '6'
-        }, {
-            position: {
-                lat: 25.034948,
-                lng: 121.433882
-            },
-            map: map,
-            icon: 'img/marker.png',
-            title: '7'
-        }, {
-            position: {
-                lat: 25.038934,
-                lng: 121.431146
-            },
-            map: map,
-            icon: 'img/marker.png',
-            title: '8'
-        }, {
-            position: {
-                lat: 25.035079,
-                lng: 121.434370
-            },
-            map: map,
-            icon: 'img/marker.png',
-            title: '9'
-        }, {
-            position: {
-                lat: 25.036645,
-                lng: 121.430537
-            },
-            map: map,
-            icon: 'img/marker.png',
-            title: '10'
-        }];
+            {
+                position: {
+                    lat: 25.036645,
+                    lng: 121.430537
+                },
+                map: map,
+                icon: 'img/marker.png',
+                title: '10'
+            }
+        ];
 
         //設定 Info window 內容
 
@@ -364,6 +366,8 @@ function initMap() {
                 _content(i);
             });
         });
+
+
 
 
         //標出 marker

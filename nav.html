@@ -30,6 +30,7 @@
                 });
         }
     </script>
+    
 </head>
 
 <body>
@@ -95,20 +96,23 @@
                             </div>
                             <!-- Nav End -->
                         </div>
-
-                        <!-- Search Form  -->
-                        <!-- <div id="search-wrapper" >
-                    <form action="#">
-                        <input type="text" id="search" placeholder="搜尋商品關鍵字" class="mb-15">
-                        <div id="close-icon"></div>
-                        <input class="d-none mb-50" type="submit" value="">
-                    </form>
-                </div> -->
+                        <!-- searching -->
+                        <div id="searching">
+                            <form name="searched" action="searching.php" method="POST">
+                                <input type="text" name="searching_keyword" id="searching_keyword" placeholder="請輸入商品關鍵字" required>
+                                <button type="submit" class="btn btn-outline-light" id="searching_submit" onclick="searching_submit()">
+                                <img src="img/searching.svg"/>
+                                </button>
+                            </form>
+                            <!-- form表單結構說明：https://reurl.cc/X6R4ga -->
+                        </div>
                     </nav>
                 </div>
             </div>
         </div>
     </header>
+    
+    
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
@@ -120,6 +124,11 @@
     <script src="js/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+    <!--include html-->
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script>
+        w3.includeHTML();
+  </script>
 </body>
 
 </html>

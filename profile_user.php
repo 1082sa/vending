@@ -24,8 +24,6 @@ class user {
     return $this->$variable;
   }
 
-
-
   function __construct(){
  
     $arguments = func_get_args();
