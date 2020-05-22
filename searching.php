@@ -37,10 +37,10 @@
           else{?>
               <div class="list_item">
           <div class="item_img">
-            <img src="<?echo $row['pro_pic']?>">
+            <img src="<?php echo $row['pro_pic']?>">
           </div>
           <div class="item_name text-center">
-            <p><?echo $row['pro_name']?></p>
+            <p><?php echo $row['pro_name']?></p>
           </div>
             <!----
           <div class="item_info text-center">
@@ -48,7 +48,7 @@
           </div>--->
         </div>
               
-         <? 
+         <?php 
           }}  ?>
         
       </div>
