@@ -80,13 +80,10 @@
             <span aria-hidden="true">&times;</span>
           </button>
                 </div>
-                <div class="modal-body">
-                    填放商品清單
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+
+                    <?php include("ven-info.php");?>
+                
+                
             </div>
         </div>
     </div>
