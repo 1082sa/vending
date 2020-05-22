@@ -28,9 +28,14 @@
          
  
           
-          <?php foreach($statement as $row){ ?>
+          <?php 
           
-        <div class="list_item">
+          foreach($statement as $row){
+              if (($row['pro_pic'])==null){
+          echo "test";
+          } 
+          else{?>
+              <div class="list_item">
           <div class="item_img">
             <img src="<?echo $row['pro_pic']?>">
           </div>
@@ -42,7 +47,9 @@
             <p><span class="item_price">QQ</span>元，剩餘<span class="item_quantity">XX</span>個</p>
           </div>--->
         </div>
-      <?  }  ?>
+              
+         <? 
+          }}  ?>
         
       </div>
       <!--返回上一頁-->
