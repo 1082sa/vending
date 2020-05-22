@@ -1,4 +1,4 @@
-<? 
+<?php 
 require 'db.php';
 $keyword = $_POST["searching_keyword"];
 
