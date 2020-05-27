@@ -26,7 +26,9 @@
         if ('serviceWorker' in navigator) {
             console.log("Will service worker register?");
             navigator.serviceWorker
-                .register("./service-worker.js",{ scope: '/' })
+                .register("./service-worker.js", {
+                    scope: '/'
+                })
                 .then(function(reg) {
                     console.log("yes it did.");
                 })
@@ -34,7 +36,11 @@
                     console.log("No it didn,t This happened: ", err);
                 });
         }
-        navigator.serviceWorker.getRegistrations().then(function(registrations) { for(let registration of registrations) { registration.unregister() } })
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for (let registration of registrations) {
+                registration.unregister()
+            }
+        })
     </script>
 
     <!-- margin是調整border外的邊界；padding則是調整border內到內文之間的距離-->
