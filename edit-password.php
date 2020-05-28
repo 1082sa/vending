@@ -56,7 +56,7 @@
                 <div class="single-blog-area clearfix mb-100">
                     <!-- Blog Content -->
                     <div class="single-blog-content">
-                        <h4 style="font-weight: bold; text-align: center;">修改密碼</h4>
+                        <h4 style="font-weight: bold; text-align: center;">重設密碼</h4>
                         <br />
                         <form method="post" action="edit.php">
                             原始密碼&emsp;&emsp;&nbsp;&emsp;<input type="password" name="password1" size="18" class="text" placeholder="password" required ><br /><br /> 修改密碼&emsp;&emsp;&nbsp;&emsp;
