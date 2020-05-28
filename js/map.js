@@ -112,7 +112,7 @@ function initMap() {
         }], {
             name: '黑夜模式'
         });
-
+    //抓自己位置
     navigator.geolocation.watchPosition((position) => {
         console.log(position.coords);
         var lat = position.coords.latitude;
