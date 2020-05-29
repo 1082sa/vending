@@ -15,7 +15,7 @@
 /* :: Import Fonts */
 
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
-@import url(c:\xampp\htdocs\dashboard\SA\cssbootstrap.min.css);
+@import url(bootstrap.min.css);
 @import url(classy-nav.css);
 @import url(animate.css);
 @import url(owl.carousel.css);
