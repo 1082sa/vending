@@ -2103,11 +2103,9 @@ textarea:focus ~ .highlight {
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
 }
 
-/* Map CSS */
-#map-canvas {
-  height: 100%;
-  margin: 0;
-  padding: 20;
+/* index CSS */
+.hide {
+  display: none;
 }
 
 /*登入後的品牌顯示頁面*/
@@ -2219,7 +2217,7 @@ textarea:focus ~ .highlight {
   overflow-y: scroll;
   overflow-x: hidden;
   width: 99%;
-  height: 72vh;
+  height: 80vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
