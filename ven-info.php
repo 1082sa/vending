@@ -20,37 +20,33 @@
 </head>
 
 <body>
-    
-    <div class="container">
-        <div class="col-12 ven_block">
-            <div class="row ven_item_list">
-                
-                 <?php foreach($rows as $product){ ?>
-                
-                 <div class="ven_item">
-                    <div class="ven_item_img">
-                        <img src="<?=$product->pro_pic?>">
-                    </div>
-                    <div class="ven_item_name text-center">
-                        <p><?=$product->pro_name?></p>
-                    </div>
-                    <div class="ven_item_info text-center">
-                        <p><span class="ven_item_price"><?=$product->price?></span>元，剩餘<span class="ven_item_quantity"><?=$product->amount?></span>個</p>
-                    </div>
-                </div>
-                      <br /><br />
-                
-                            <br /><br/>
-                <br><br> 
-                            <br><br>
-                            
-                         
-                       <?php }?>
-                
-                
+    <div class="row ven_item_list">
+        
+            <?php foreach($rows as $product){ ?>
+        
+            <div class="ven_item">
+            <div class="ven_item_img">
+                <img src="<?=$product->pro_pic?>">
+            </div>
+            <div class="ven_item_name text-center">
+                <p><?=$product->pro_name?></p>
+            </div>
+            <div class="ven_item_info text-center">
+                <p><span class="ven_item_price"><?=$product->price?></span>元，剩餘<span class="ven_item_quantity"><?=$product->amount?></span>個</p>
             </div>
         </div>
+                <br /><br />
+        
+                    <br /><br/>
+        <br><br> 
+                    <br><br>
+                    
+                    
+                <?php }?>
+        
+        
     </div>
+
 
 </body>
 
