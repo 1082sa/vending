@@ -48,7 +48,7 @@
         }
     </style>
     <!---The async attribute allows the browser to render the page while the API loads--->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBstjRsNEnzJo4CYLYDSMu7lJ_Bu-A9w4c&libraries=places&callback=initMap">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHgq6JF2nOoBlnrx15v4d8F81ZdulM6n8&libraries=places&callback=initMap">
     </script>
 
     <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
@@ -63,7 +63,6 @@
             <div id="original-load"></div>
         </div>
     </div>
-
 
 
     <!--Map-->
@@ -104,9 +103,9 @@
                 <div class="modal-body">
                     <?php include("ven-info.php");?>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                <div class="modal-footer hide">
+                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button> -->
                 </div>
                     
                 
