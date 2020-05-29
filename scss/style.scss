@@ -1910,7 +1910,6 @@ textarea:focus~.highlight {
 
 /* Ven-info CSS */
 
-
 .ven_item_list {
     overflow-y: scroll;
     overflow-x: hidden;
@@ -1923,6 +1922,7 @@ textarea:focus~.highlight {
     margin: auto;
     align-content: start;
 }
+
 .ven_item {
     height: fit-content;
     padding: 0.8em;
@@ -1936,7 +1936,6 @@ textarea:focus~.highlight {
         margin-bottom: 0.2em;
     }
 }
-
 
 //資訊視窗裡的顯示樣式
 .infoImg {
@@ -1962,6 +1961,18 @@ textarea:focus~.highlight {
             cursor: pointer;
         }
     }
+}
+
+#QandA .Question {
+    /*標題的CSS定義*/
+    width: 100%;
+}
+
+#QandA .Answer {
+    /*內文的CSS定義*/
+    display: none;
+    width: 100%;
+    padding: 10px 0px;
 }
 
 
