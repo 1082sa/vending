@@ -112,7 +112,7 @@ function initMap() {
         }], {
             name: '黑夜模式'
         });
-
+    //抓自己位置
     navigator.geolocation.watchPosition((position) => {
         console.log(position.coords);
         var lat = position.coords.latitude;
@@ -165,8 +165,8 @@ function initMap() {
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
             '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
-            '<img src="img/warning.svg" data-toggle="modal" data-target="#exampleModalCenter">' +
-            '<img src="img/list.svg" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
+            '<img src="img/warning.svg" data-toggle="modal" data-target="#exampleModalCenter2">' +
+            '<img src="img/list.svg" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong2"></div>' +
             '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
             '</p>' +
             '</div>' +
@@ -177,8 +177,8 @@ function initMap() {
             '<div class="bodyContent">' +
             '<p><b>&nbsp;請點選功能</b>' +
             '<div><img src="img/unfav.svg"><img src="img/route.svg">' +
-            '<img src="img/warning.svg" data-toggle="modal" data-target="#exampleModalCenter">' +
-            '<img src="img/list.svg" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong"></div>' +
+            '<img src="img/warning.svg" data-toggle="modal" data-target="#exampleModalCenter3">' +
+            '<img src="img/list.svg" class="btn-btn-primary" data-toggle="modal" data-target="#exampleModalLong3"></div>' +
             '<div><p>我的最愛</p><p>路線規劃</p><p>故障申報</p><p>商品清單</p></div>' +
             '</p>' +
             '</div>' +
