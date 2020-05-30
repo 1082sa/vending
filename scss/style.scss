@@ -230,12 +230,20 @@ img {
     margin-left: 30px;
 }
 
+.ml-40 {
+    margin-left: 40px;
+}
+
 .mr-15 {
     margin-right: 15px;
 }
 
 .mr-30 {
     margin-right: 30px;
+}
+
+.mr-40 {
+    margin-right: 40px;
 }
 
 .mr-100 {
@@ -252,6 +260,10 @@ img {
 
 .pr-5 {
     padding-right: 5px;
+}
+
+.pl-50 {
+    padding-right: 50px;
 }
 
 .bg-img {
@@ -737,9 +749,9 @@ img {
         }
         .post-tag {
             color: #a1a1a1;
-            font-size: 11px;
+            font-size: 15px;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             margin-bottom: 10px;
             display: block;
             &:hover,
@@ -1915,7 +1927,6 @@ textarea:focus~.highlight {
 
 /* Ven-info CSS */
 
-
 .ven_item_list {
     overflow-y: scroll;
     overflow-x: hidden;
@@ -1928,6 +1939,7 @@ textarea:focus~.highlight {
     margin: auto;
     align-content: start;
 }
+
 .ven_item {
     height: fit-content;
     padding: 0.8em;
@@ -1941,7 +1953,6 @@ textarea:focus~.highlight {
         margin-bottom: 0.2em;
     }
 }
-
 
 //資訊視窗裡的顯示樣式
 .infoImg {
@@ -1967,6 +1978,18 @@ textarea:focus~.highlight {
             cursor: pointer;
         }
     }
+}
+
+#QandA .Question {
+    /*標題的CSS定義*/
+    width: 100%;
+}
+
+#QandA .Answer {
+    /*內文的CSS定義*/
+    display: none;
+    width: 100%;
+    padding: 10px 0px;
 }
 
 

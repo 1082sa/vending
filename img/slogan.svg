@@ -3,8 +3,8 @@
 <svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 850.39 566.93" style="enable-background:new 0 0 850.39 566.93;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#FFFFFF;stroke:#F7C5D7;stroke-width:1.5;stroke-miterlimit:10;stroke-dasharray:5,2;}
-	.st1{fill:#FFFFFF;stroke:#ACDFFF;stroke-width:1.5;stroke-miterlimit:10;stroke-dasharray:5,2;}
+	.st0{fill:#F7C5D7;stroke:#F7C5D7;stroke-width:1.5;stroke-miterlimit:10;stroke-dasharray:5,2;}
+	.st1{fill:#ACDFFF;stroke:#ACDFFF;stroke-width:1.5;stroke-miterlimit:10;stroke-dasharray:5,2;}
 	@keyframes aniDraw{
 		to {stroke-dashoffset:0;}
 	}

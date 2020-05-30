@@ -52,29 +52,7 @@
         </div>
     </div>
 
-    <!-- ##### Header Area Start ##### -->
-    <header class="header-area">
-        <!-- Top Header Area -->
-        
-                    <!-- Breaking News Area -->
-                    <div class="col-12 col-sm-8">
-                        <div class="breaking-news-area">
-                            <div id="breakingNewsTicker" class="ticker">
-                                <ul>
-                                    <li><a href="#">提供完整商品資訊!</a></li>
-                                    <li><a href="#">幫您規劃最佳路線!</a></li>
-                                    <li><a href="#">活動優惠報你知!</a></li>
-                                    <li><a href="#">個性化頁面設計!</a></li>
-                                    <li><a href="#">讓您收藏喜愛的販賣機!</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-    </header>
-    <!-- ##### Header Area End ##### -->
+    
     <!-- ##### Blog Wrapper Start ##### -->
     
     <div class="blog-wrapper section-padding-100 clearfix" style="text-align: center;">
@@ -87,18 +65,18 @@
                         
                         <h4 style="font-weight: bold; text-align: center;">個人資訊</h4>
                         <br />
-                   <p>
-                       <?php foreach($rows as $user){ ?>
-                      帳號:<?=$user->account?>&emsp;&emsp;&nbsp;&emsp;&ensp;<br /><br />暱稱:<?=$user->name?>&emsp;&emsp;&nbsp;&emsp;&ensp;
-                            <br /><br/>性別:<?=$user->gender?>&emsp;&emsp;&nbsp;&emsp;&ensp;<br><br> 職業:<?=$user->job?>&emsp;&emsp;&nbsp;&emsp;&ensp;
-                            <br><br>
-                            <a href="edit-password.php" class="post-tag" onclick="">修改密碼
-                            </a>  
-                       <?php }?>
-                   </p>
-                            
-                            
-                  
+                        
+                            <p style="text-align:center" class="ml-30">
+                                <?php foreach($rows as $user){ ?>
+                                    &emsp;帳號:&ensp;<?=$user->account?>&emsp;&emsp;&nbsp;&emsp;&ensp;<br /><br />
+                                    &emsp;暱稱:&ensp;<?=$user->name?>&emsp;&emsp;&nbsp;&emsp;&ensp;<br /><br/>
+                                    &emsp;性別:&ensp;<?=$user->gender?>&emsp;&emsp;&nbsp;&emsp;&ensp;<br><br>
+                                    &emsp;職業:&ensp;<?=$user->job?>&emsp;&emsp;&nbsp;&emsp;&ensp;
+                                <br><br>
+                                <a href="edit-password.php" class="post-tag" onclick="">重設密碼&emsp;&emsp;&ensp;</a>  
+                                <?php }?>
+                            </p>
+                        
                     </div>
                 </div>
             </div>
