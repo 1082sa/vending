@@ -230,12 +230,20 @@ img {
     margin-left: 30px;
 }
 
+.ml-40 {
+    margin-left: 40px;
+}
+
 .mr-15 {
     margin-right: 15px;
 }
 
 .mr-30 {
     margin-right: 30px;
+}
+
+.mr-40 {
+    margin-right: 40px;
 }
 
 .mr-100 {
@@ -252,6 +260,10 @@ img {
 
 .pr-5 {
     padding-right: 5px;
+}
+
+.pl-50 {
+    padding-right: 50px;
 }
 
 .bg-img {
@@ -737,9 +749,9 @@ img {
         }
         .post-tag {
             color: #a1a1a1;
-            font-size: 11px;
+            font-size: 15px;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             margin-bottom: 10px;
             display: block;
             &:hover,
