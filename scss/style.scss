@@ -487,10 +487,10 @@ img {
             background-color: transparent;
         }
         .classy-navbar {
-            height: 100px;
+            height: 9.9vh;
             padding: 0;
             @media #{$breakpoint-xs} {
-                height: 70px;
+                height: 9.9vh;
             }
         }
     }
@@ -1854,6 +1854,13 @@ textarea:focus~.highlight {
             width: 100%;
         }
     }
+}
+
+.map {
+    width: 100vw;
+    height: 90vh;
+    margin: 0;
+    padding: 0;
 }
 
 

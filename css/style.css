@@ -539,13 +539,13 @@ img {
 }
 
 .header-area .original-nav-area .classy-navbar {
-  height: 100px;
+  height: 9.9vh;
   padding: 0;
 }
 
 @media only screen and (max-width: 767px) {
   .header-area .original-nav-area .classy-navbar {
-    height: 70px;
+    height: 9.9vh;
   }
 }
 
@@ -2148,6 +2148,13 @@ textarea:focus ~ .highlight {
 
 #searching #searching_submit img {
   width: 100%;
+}
+
+.map {
+  width: 100vw;
+  height: 90vh;
+  margin: 0;
+  padding: 0;
 }
 
 /* searching CSS */
