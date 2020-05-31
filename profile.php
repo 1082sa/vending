@@ -45,6 +45,9 @@
 </head>
 
 <body>
+    <header class="header-area">
+       <?php include("nav.php")?>
+    </header> 
     <!-- Preloader -->
     <div id="preloader">
         <div class="preload-content">
