@@ -499,10 +499,10 @@ img {
             background-color: transparent;
         }
         .classy-navbar {
-            height: 100px;
+            height: 9.9vh;
             padding: 0;
             @media #{$breakpoint-xs} {
-                height: 70px;
+                height: 9.9vh;
             }
         }
     }
@@ -1817,13 +1817,11 @@ textarea:focus~.highlight {
 }
 
 
-/* Map CSS */
-
-#map-canvas {
-    height: 100%;
-    margin: 0;
-    padding: 20;
+/* index CSS */
+.hide {
+    display: none;
 }
+
 
 
 /*登入後的品牌顯示頁面*/
@@ -1868,6 +1866,13 @@ textarea:focus~.highlight {
             width: 100%;
         }
     }
+}
+
+.map {
+    width: 100vw;
+    height: 90vh;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -1926,7 +1931,7 @@ textarea:focus~.highlight {
     overflow-y: scroll;
     overflow-x: hidden;
     width: 99%;
-    height: 72vh;
+    height: 83vh;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;

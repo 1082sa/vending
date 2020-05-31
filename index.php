@@ -48,7 +48,7 @@
         }
     </style>
     <!---The async attribute allows the browser to render the page while the API loads--->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBstjRsNEnzJo4CYLYDSMu7lJ_Bu-A9w4c&libraries=places&callback=initMap">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHgq6JF2nOoBlnrx15v4d8F81ZdulM6n8&libraries=places&callback=initMap">
     </script>
 
     <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
@@ -81,7 +81,6 @@
             <div id="original-load"></div>
         </div>
     </div>
-
 
 
     <!--Map-->
@@ -164,17 +163,17 @@
     </div>
   
 
-    <footer>
+    <!-- <footer> -->
         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        Copyright &copy;
+        <!-- Copyright &copy;
         <script>
             document.write(new Date().getFullYear());
-        </script>
-        All rights reserved | This template is made with
+        </script> -->
+        <!-- All rights reserved | This template is made with
         <i class="fa fa-heart-o" aria-hidden="true"></i> by
-        <a href="https://colorlib.com" target="_blank">Colorlib</a>
+        <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-    </footer>
+    <!-- </footer> -->
     <!-- ##### Footer Area End ##### -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->

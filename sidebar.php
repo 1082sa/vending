@@ -96,16 +96,6 @@
                             </div>
                             <!-- Nav End -->
                         </div>
-                        <!-- searching -->
-                        <div id="searching">
-                            <form name="searched" action="searching.php" method="POST">
-                                <input type="text" name="searching_keyword" id="searching_keyword" placeholder="請輸入商品關鍵字" required>
-                                <button type="submit" class="btn btn-outline-light" id="searching_submit" onclick="searching_submit()">
-                                <img src="img/searching.svg"/>
-                                </button>
-                            </form>
-                            <!-- form表單結構說明：https://reurl.cc/X6R4ga -->
-                        </div>
                     </nav>
                 </div>
             </div>
