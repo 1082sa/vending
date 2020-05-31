@@ -1,4 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nav</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico" />
+
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- PWA manifest -->
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- PWA service-Worker -->
+    <script>
+        if ("serviceWorker.js" in navigator) {
+            console.log("Will service worker register?");
+            navigator.serviceWorker
+                .register("service-worker.js")
+                .then(function(reg) {
+                    console.log("yes it did.");
+                })
+                .catch(function(err) {
+                    console.log("No it didn,t This happened: ", err);
+                });
+        }
+    </script>
+    
+</head>
+
+<body>
+    <header class="header-area">
         <!-- Nav Area -->
         <div class="original-nav-area" id="stickyNav">
             <div class="classy-nav-container breakpoint-off">
@@ -25,7 +61,7 @@
                                 <!-- Sidebar information -->
                                 <div class="sideinfo">
                                     <div class="circle ml-15 mb-7">
-                                        <a href="profile.php"><img src="img/vending-machine.png" /></a>
+                                        <a href="profile.html"><img src="img/vending-machine.png" /></a>
                                     </div>
                                     &emsp;
                                     <h4>Mavis</h4>
@@ -64,7 +100,11 @@
                 </div>
             </div>
         </div>
-    </header>    
+    </header>
+
+    <iframe src="index.php" class="map" frameborder="0" scrolling="no"></iframe>
+    
+    
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
