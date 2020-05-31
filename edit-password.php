@@ -57,10 +57,12 @@
                     <!-- Blog Content -->
                     <div class="single-blog-content">
                         <h4 style="font-weight: bold; text-align: center;">重設密碼</h4>
+                         <hr size="10px" align="center" width="100%">
                         <br />
-                        <form method="post" action="edit.php">
-                            原始密碼&emsp;&emsp;&nbsp;&emsp;<input type="password" name="password1" size="18" class="text" placeholder="password" required ><br /><br /> 修改密碼&emsp;&emsp;&nbsp;&emsp;
-                            <input type="password" name="password2" size="18" class="text" placeholder="password" required><br /><br />
+                        <form method="post" action="edit.php" style="margin-top:60px">
+                            原始密碼&emsp;&emsp;<input type="password" name="password1" size="18" class="text" placeholder="PASSWORD" required ><br /><br /> 修改密碼&emsp;&emsp;
+                          
+                            <input type="password" name="password2" size="18" class="text" placeholder="PASSWORD" required><br /><br />  <br><br>
                             <button type="submit" class="btn original-btn">完成</button>
                         </form>
                     </div>

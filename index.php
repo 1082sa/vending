@@ -54,6 +54,24 @@
     <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
 
     <script type="text/javascript" src="js/map.js"></script>
+    <?php 
+    error_reporting(0); 
+    if(isset($_GET[situation])){
+        ?>
+    <script>     
+           alert('已完成故障回報'); 
+        url="index.php";window.location.href=url;
+        
+        
+    </script>
+    <?php
+    
+    
+}
+        ?>
+    
+   
+
 </head>
 
 <body>
@@ -103,11 +121,7 @@
                 <div class="modal-body">
                     <?php include("ven-info.php");?>
                 </div>
-                <div class="modal-footer hide">
-                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button> -->
-                </div>
-                    
+                
                 
                 
             </div>

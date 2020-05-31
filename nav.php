@@ -1,40 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nav</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico" />
-
-
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="css/style.css" />
-
-    <!-- PWA manifest -->
-    <link rel="manifest" href="manifest.json" />
-
-    <!-- PWA service-Worker -->
-    <script>
-        if ("serviceWorker.js" in navigator) {
-            console.log("Will service worker register?");
-            navigator.serviceWorker
-                .register("service-worker.js")
-                .then(function(reg) {
-                    console.log("yes it did.");
-                })
-                .catch(function(err) {
-                    console.log("No it didn,t This happened: ", err);
-                });
-        }
-    </script>
-
-</head>
-
-<body>
-    <header class="header-area">
         <!-- Nav Area -->
         <div class="original-nav-area" id="stickyNav">
             <div class="classy-nav-container breakpoint-off">
@@ -72,7 +36,7 @@
                                         <a href="index.php"><span>首頁</span></a>
                                     </li>
                                     <li>
-                                        <a href="#導向4的條件三"><span>我的最愛</span></a>
+                                        <a href="#"><span>我的最愛</span></a>
                                     </li>
                                     <li>
                                         <a href="#"><span>消費紀錄</span></a>

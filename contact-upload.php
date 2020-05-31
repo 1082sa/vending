@@ -28,9 +28,10 @@ echo gettype($_FILES['my_file']['name']);
 echo "<br>";
 echo $pic;
 
-$conn->exec("INSERT INTO `error` (`error_num`, `account`, `ven_num`, `error_words`, `error_pic`, `error_date`) VALUES (NULL, '0430shinyu@gmail.com', '1', '$message', '$pic', now())");
+$conn->exec("INSERT INTO `error` (`account`, `ven_num`, `error_words`, `error_pic`, `error_date`) VALUES ('0430shinyu@gmail.com', '1', '$message', '$pic', now())");
 
-header("location:contact.php?situation=complete");
+
+header("location:index.php?situation=complete");
     
 ?>
 
