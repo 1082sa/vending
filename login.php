@@ -6,7 +6,7 @@ $account = $_POST["account"];
 $password = $_POST["password"];
 
 if( !isset($_POST['account']) || !isset($_POST['password']) || $_POST['account']=="" || $_POST['password']=="" ){
-	header("location:login.html");
+	header("location:index.php");
 	}
 else{
 $sql = "SELECT * FROM `user` WHERE( `account` = ? AND `password` = ? )";
