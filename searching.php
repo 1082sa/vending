@@ -105,8 +105,9 @@
  
           
           <?php 
-         
-          if($statement==""){
+         if(!empty($statement)){
+        
+          if($statement=="notyet"){
               echo "請搜尋欲搜尋的商品.....";
           }
           
@@ -127,7 +128,8 @@
         </div>
               
          <?php 
-          } }
+          } }}
+          
           ?>
         
       </div>
