@@ -17,17 +17,7 @@
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css" />
     
-    <?php 
-    error_reporting(0);  
-    if(isset($_GET[situation])){?>
-    <script>     
-           alert('已完成故障回報');   
-    </script>
-<?php
-  }
     
-    
-?>
 </head>
 
 <body>
