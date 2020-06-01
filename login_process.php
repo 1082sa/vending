@@ -19,10 +19,10 @@ $result = $sth->fetch(PDO::FETCH_OBJ);
 	
 if( $result ) {
 	$_SESSION['LoginSuccess'] = true;
-header("location:index.html"); 
+header("location:nav.php"); 
 }
 else {
-	header("Location: login.php?msg=密碼錯誤");
+	header("Location: login.php?msg=帳密有誤");
 }
 
 }
