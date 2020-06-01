@@ -69,6 +69,6 @@ function createUser($conn, $data = [])
     ]);
 
     // 跳轉並將結果帶回註冊頁面。
-       echo '<script language="JavaScript">;alert("註冊成功!");location.href="login.html";</script>;';
+       echo '<script language="JavaScript">;alert("註冊成功!");location.href="login.php";</script>;';
 }
 ?>
