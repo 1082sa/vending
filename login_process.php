@@ -6,7 +6,8 @@ $account = $_POST["account"];
 $password = $_POST["password"];
 
 if( !isset($_POST['account']) || !isset($_POST['password']) || $_POST['account']=="" || $_POST['password']=="" ){
-	header("location:login.php");
+	$msg = "請輸入完整";
+	header("location:login.php?msg=請輸入完整");
 	}
 else{
 $sql = "SELECT * FROM `user` WHERE( `account` = ? AND `password` = ? )";
@@ -21,7 +22,7 @@ if( $result ) {
 header("location:index.html"); 
 }
 else {
-	header("Location: login.php?msg=error");
+	header("Location: login.php?msg=密碼錯誤");
 }
 
 }
