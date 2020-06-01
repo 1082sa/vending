@@ -53,10 +53,11 @@
                         <h4 style="font-weight: bold; text-align: center;">登入</h4><br />
                         
                          <hr size="10px" align="center" width="100%">
-						 <form action="login_process.php" method="post">
+						 
                         <p style="padding-top:40px">
+							<form action="login_process.php" method="post">
                             帳號&emsp;&emsp;&nbsp;&emsp;<input type="email" name="account" size="18" class="text" placeholder="email" /><br /><br /> 密碼&emsp;&emsp;&nbsp;&emsp;
-                            <input type="password" name="password" size="18" class="text" placeholder="password" /><?php $msg = isset($_GET["msg"])? $_GET["msg"]: "";echo $msg; ?><br /><br />
+                            <input type="password" name="password" size="18" class="text" placeholder="password" /><br /><br /><?php $msg = isset($_GET["msg"])? $_GET["msg"]: "";echo $msg; ?>
                             <a href="registration.html" class="post-tag">尚未註冊?</a>
                             <br>
                             <form action="index.html">
