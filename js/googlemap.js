@@ -21,7 +21,7 @@ function loadMap() {
     codeAddress(cdata);
 
     var allData = JSON.parse(document.getElementById('allData').innerHTML);
-	showAllColleges(allData)
+	showAllMachines(allData)
 	});
 }
 
@@ -36,12 +36,12 @@ function showAllMachines(allData) {
 		content.appendChild(strong);
 
 		var img = document.createElement('img');
-		img.src = 'img/Leopard.jpg';
+		img.src = 'img/marker.png';
 		img.style.width = '100px';
-		content.appendChild(img);
-
+        content.appendChild(img);
+        
 		var marker = new google.maps.Marker({
-	      position: new google.maps.LatLng(data.lat, data.lng),
+	      position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
 		  map: map
 		  
 	    });
@@ -74,7 +74,7 @@ function codeAddress(cdata) {
 function updateMachinesWithLatLng(points) {
 	$.ajax({
 		url:"action.php",
-		method:"post",
+		method:"request",
 		data: points,
 		success: function(res) {
 			console.log(res)
