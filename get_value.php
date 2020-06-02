@@ -29,7 +29,7 @@
 		function geterror_num() { return $this->error_num; }
 
 		public function __construct() {
-			require_once('db.php');
+			require_once('dbm.php');
 			$conn = new DbConnect;
 			$this->conn = $conn->connect();
 		}
