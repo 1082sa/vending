@@ -25,7 +25,7 @@
                                 <!-- Sidebar information -->
                                 <div class="sideinfo">
                                     <div class="circle ml-15 mb-7">
-                                        <a href="profile.html"><img src="img/vending-machine.png" /></a>
+                                        <a href="profile.php"><img src="img/vending-machine.png" /></a>
                                     </div>
                                     &emsp;
                                     <h4>Mavis</h4>
