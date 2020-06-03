@@ -2,15 +2,12 @@
 
 <?
   require 'db.php';
-session_start();
+
 $password1 = $_POST['password1'];
 $password2 = $_POST['password2'];
 
-//$conn->exec('INSERT INTO user(account,password,name,gender,job) VALUES ("happyy@gmail.com","123","蔡蔡","女","學生")');
 
-//$conn->exec('UPDATE `user` SET `name` = "蔡狗狗" WHERE `user`.`account` = "happyy@gmail.com"');
-
-$statement = $conn->query('select * from user where account="happyy@gmail.com"');
+$statement = $conn->query("select * from user where account='$account'");
 
 foreach($statement as $row){
     $realpassword=$row['password'];
