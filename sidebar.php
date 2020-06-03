@@ -28,7 +28,14 @@
                                         <a href="profile.php"><img src="img/vending-machine.png" /></a>
                                     </div>
                                     &emsp;
-                                    <h4>Mavis</h4>
+                                    
+                                    <h4> <?php
+                                        require 'db.php';
+                                        $statement = $conn->query("select name from user where account='$account'");
+foreach($statement as $row){
+    echo $row['name'];
+}?>
+                                        </h4>
                                 </div>
 
                                 <ul>

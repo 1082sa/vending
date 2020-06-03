@@ -1,6 +1,4 @@
 <?php 
-require 'db.php';
-
 
 
 if(isset($_POST["searching_keyword"])){

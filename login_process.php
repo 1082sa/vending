@@ -19,7 +19,8 @@ $result = $sth->fetch(PDO::FETCH_OBJ);
 	
 if( $result ) {
 	$_SESSION['LoginSuccess'] = true;
-header("location:nav.php"); 
+    $_SESSION['account'] = $account;
+header("location:index.php"); 
 }
 else {
 	header("Location: login.php?msg=帳密有誤");

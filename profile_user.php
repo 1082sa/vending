@@ -1,9 +1,7 @@
 <?php
   require 'db.php';
-session_start();
 
-
-  $sql="select * from user where account='jan0123211@gmail.com'";
+  $sql="select * from user where account='$account'";
   $sth = $conn->prepare($sql);
   $sth->execute();
   $rows = $sth->fetchAll(PDO::FETCH_CLASS, 'user');

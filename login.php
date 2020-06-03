@@ -59,7 +59,7 @@
                             <input type="password" name="password" size="18" class="text" placeholder="password" /><br /><br /><?php $msg = isset($_GET["msg"])? $_GET["msg"]: "";echo $msg; ?>
                             <a href="registration.html" class="post-tag">尚未註冊?</a>
                             <br>
-                            <form action="nav.php">
+                            <form action="index.php">
                                 <button type="submit" class="btn original-btn">登入</button>
                             </form>
 

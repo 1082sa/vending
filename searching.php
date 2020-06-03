@@ -21,10 +21,10 @@
 </head>
 <body>  
     <header class="header-area">
-       <?php include("sidebarsearch.php")?>
+       <?php include("sidebarsearch.php");
+        include("search.php");?>
     </header>   
-     <?php 
-    include("search.php");?>
+    
   <div class="container">
     <div class="col-12" id="result_block">
       <div class="row" id="result_list"> 
