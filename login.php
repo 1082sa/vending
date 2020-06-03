@@ -42,7 +42,7 @@
         </div>
     </div>
     <!-- ##### Blog Wrapper Start ##### -->
-    <div class="blog-wrapper section-padding-100 clearfix" style="text-align: center;">
+    <div class="blog-wrapper section-padding-70 clearfix" style="text-align: center;">
         <div class="container">
             <div>
                 <!-- Single Blog Area -->
@@ -51,7 +51,7 @@
                     <div class="single-blog-content">
                         <h4 style="font-weight: bold; text-align: center;">登入</h4><br />
                         
-                         <hr size="10px" align="center" width="100%">
+                        <hr size="10px" align="center" width="100%">
 						  
                         <p style="padding-top:40px">
 							<form action="login_process.php" method="post">
@@ -70,21 +70,7 @@
         </div>
     </div>
 
-    <!-- ##### Footer Area Start ##### -->
-    <footer class="footer-area text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
 
-
-
-                </div>
-            </div>
-        </div>
-
-
-    </footer>
-    <!-- ##### Footer Area End ##### -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
