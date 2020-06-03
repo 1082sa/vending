@@ -1,6 +1,6 @@
 var map;
 var geocoder;
-//var contentString = '<h1>大家好我是資訊視窗</h1>';
+
 
 function loadMap() {
     //黑夜模式樣式
@@ -154,6 +154,8 @@ function loadMap() {
 function showAllMachines(allData) {
     //infowindow內的資料
     var infoWind = new google.maps.InfoWindow;
+    
+    
 
 	Array.prototype.forEach.call(allData, function(data){
 		var content = document.createElement('div');
@@ -191,10 +193,11 @@ function showAllMachines(allData) {
 		  
 	    });
 
-	    marker.addListener('mouseover', function(){
+	    marker.addListener('click', function(){
 	    	infoWind.setContent(content);
 	    	infoWind.open(map, marker);
-	    })
+        })
+
 	})
 }
 
