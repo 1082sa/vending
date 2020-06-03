@@ -49,7 +49,7 @@ foreach($statement as $row){
                                         <a href="#"><span>消費紀錄</span></a>
                                     </li>
                                     <li>
-                                        <a href="contact.php"><span>故障回報紀錄</span></a>
+                                        <a href="#"><span>故障回報紀錄</span></a>
                                     </li>
                                     <li>
                                         <a href="#"><span>客服聯繫</span></a>
