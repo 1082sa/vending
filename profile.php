@@ -46,7 +46,7 @@
 
 <body>
     <header class="header-area">
-       <?php include("nav.php")?>
+       <?php include("sidebar.php")?>
     </header> 
     <!-- Preloader -->
     <div id="preloader">
@@ -91,19 +91,7 @@
     
 
     <!-- ##### Footer Area Start ##### -->
-    <footer class="footer-area text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-
-
-
-                </div>
-            </div>
-        </div>
-
-
-    </footer>
+   
     <!-- ##### Footer Area End ##### -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->

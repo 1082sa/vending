@@ -21,7 +21,7 @@
 </head>
 <body>  
     <header class="header-area">
-       <?php include("nav.php")?>
+       <?php include("sidebar.php")?>
     </header>   
      <?php 
     include("search.php");?>
