@@ -139,7 +139,8 @@ function loadMap() {
 
         marker = new google.maps.Marker({
             position: pune,
-            map: map
+            map: map,
+            animation: google.maps.Animation.BOUNCE
         });
         var cdata = JSON.parse(document.getElementById('data').innerHTML);
         geocoder = new google.maps.Geocoder();
@@ -149,14 +150,13 @@ function loadMap() {
         showAllMachines(allData)
     });
 
+
+
 }
 
 function showAllMachines(allData) {
     //infowindow內的資料
     var infoWind = new google.maps.InfoWindow;
-
-
-
     Array.prototype.forEach.call(allData, function(data) {
         var content = document.createElement('div');
         var strong = document.createElement('strong');
@@ -166,30 +166,44 @@ function showAllMachines(allData) {
         content.appendChild(strong);
 
         //info window內的照片
-        var imgfav = document.createElement('img');
+
+        var a = document.createElement('a');
+        var imgfav = document.createElement("img");
         imgfav.src = 'img/unfav.svg';
         imgfav.style.width = '100px';
-        content.appendChild(imgfav);
+        a.appendChild(imgfav);
+        a.href = "http://example.com"; //要改看要彈跳/跳轉頁面
+        content.appendChild(a);
 
+        var b = document.createElement('a');
         var imgrou = document.createElement('img');
         imgrou.src = 'img/route.svg';
         imgrou.style.width = '100px';
-        content.appendChild(imgrou);
+        b.appendChild(imgrou);
+        b.href = "http://example.com";
+        content.appendChild(b);
 
+        var c = document.createElement('a');
         var imgwar = document.createElement('img');
         imgwar.src = 'img/warning.svg';
         imgwar.style.width = '100px';
-        content.appendChild(imgwar);
+        c.appendChild(imgwar);
+        c.href = "http://example.com";
+        content.appendChild(c);
 
+        var d = document.createElement('a');
         var imglis = document.createElement('img');
         imglis.src = 'img/list.svg';
         imglis.style.width = '100px';
-        content.appendChild(imglis);
+        d.appendChild(imglis);
+        d.href = "ven-info.php?=" + data.ven_num;
+        content.appendChild(d);
 
         var marker = new google.maps.Marker({
             position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
             map: map,
-            icon: 'img/marker.png'
+            icon: 'img/marker.png',
+
 
         });
 
@@ -198,7 +212,52 @@ function showAllMachines(allData) {
             infoWind.open(map, marker);
         })
 
+
     })
+
+    // var RouteCoordinates = [
+    //     <?php
+    //         $i = 0;
+    //       while ($i < count($coordinates)) {
+    //           echo $coordinates[$i];
+    //           $i++;
+    //       }
+    //     ?>
+    // ];
+
+    //     var RoutePath = new google.maps.Polyline({
+    //         path: RouteCoordinates,
+    //         geodesic: true,
+    //         strokeColor: '#1100FF',
+    //         strokeOpacity: 1.0,
+    //         strokeWeight: 10
+    //       });
+
+    //       mark = 'img/mark.png';
+    //       flag = 'img/flag.png';
+
+    //       startPoint = pune;
+    //       endPoint = data.location_Latitude, data.location_Longitude;
+
+    //       var marker = new google.maps.Marker({
+    //           position: startPoint,
+    //           map: map,
+    //           icon: mark,
+    //           title:"Start point!",
+    //           animation: google.maps.Animation.BOUNCE
+    //       });
+
+    //       var marker = new google.maps.Marker({
+    //       position: endPoint,
+    //        map: map,
+    //        icon: flag,
+    //        title:"End point!",
+    //        animation: google.maps.Animation.DROP
+    //         });
+
+    //       RoutePath.setMap(map);
+    google.maps.event.addDomListener(window, 'load', initialize);
+
 }
 
 function codeAddress(cdata) {
