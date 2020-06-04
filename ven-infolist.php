@@ -1,11 +1,11 @@
 <?php
 require 'db.php';
 
-
+$ven_num=$_GET["ven_num"];
 
   $sql="SELECT * FROM `picture` ,`information`
 WHERE picture.pro_name = information.pro_name 
-and information.ven_num ='1'";
+and information.ven_num ='$ven_num'";
   $sth = $conn->prepare($sql);
   $sth->execute();
   $rows = $sth->fetchAll(PDO::FETCH_CLASS, 'product');

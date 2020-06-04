@@ -196,7 +196,7 @@ function showAllMachines(allData) {
         imglis.src = 'img/list.svg';
         imglis.style.width = '100px';
         d.appendChild(imglis);
-        d.href = "http://example.com";
+        d.href = "ven-info.php?="+data.ven_num;
         content.appendChild(d);
         
 		var marker = new google.maps.Marker({
