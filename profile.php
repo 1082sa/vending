@@ -69,17 +69,13 @@
                         
                         <h4 style="font-weight: bold; text-align: center;">個人資訊</h4>
                         <hr size="10px" width="100%">
-                       
-                        
                             <p style="text-align:left" class="ml-30">
-                                
+                                <br>
                                 <?php foreach($rows as $user){ ?>
                                     &emsp;帳號:&ensp;<?=$user->account?><br /><br />
                                     &emsp;暱稱:&ensp;<?=$user->name?><br /><br/>
                                     &emsp;性別:&ensp;<?=$user->gender?><br><br>
-                                    &emsp;職業:&ensp;<?=$user->job?>
-                                <br>
-                                 
+                                    &emsp;職業:&ensp;<?=$user->job?> 
                                 <?php }?>
                             </p>
                          <hr size="10px" width="100%">
