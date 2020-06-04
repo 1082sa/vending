@@ -115,12 +115,12 @@ function loadMap() {
         });
 
     //抓自己現在的位置
-	navigator.geolocation.watchPosition((position) => {
+    navigator.geolocation.watchPosition((position) => {
         console.log(position.coords);
         lat = position.coords.latitude;
-		lng = position.coords.longitude;
-        var pune = {lat:lat, lng:lng};
-        
+        lng = position.coords.longitude;
+        var pune = { lat: lat, lng: lng };
+
         // 初始化地圖
         map = new google.maps.Map(document.getElementById('map'), {
             zoom: 18,
@@ -128,9 +128,9 @@ function loadMap() {
             //黑夜模式設定
             gestureHandling: 'cooperative',
             mapTypeControlOptions: {
-                mapTypeIds: ['roadmap', 'satellite','黑夜模式']
+                mapTypeIds: ['roadmap', 'satellite', '黑夜模式']
             }
-            
+
         });
 
         //Associate the styled map with the MapTypeId and set it to display.
@@ -141,34 +141,34 @@ function loadMap() {
             position: pune,
             map: map
         });
-    var cdata = JSON.parse(document.getElementById('data').innerHTML);
-    geocoder = new google.maps.Geocoder();  
-    codeAddress(cdata);
+        var cdata = JSON.parse(document.getElementById('data').innerHTML);
+        geocoder = new google.maps.Geocoder();
+        codeAddress(cdata);
 
-    var allData = JSON.parse(document.getElementById('allData').innerHTML);
-	showAllMachines(allData)
+        var allData = JSON.parse(document.getElementById('allData').innerHTML);
+        showAllMachines(allData)
     });
-    
+
 }
 
 function showAllMachines(allData) {
     //infowindow內的資料
     var infoWind = new google.maps.InfoWindow;
-    
-    
 
-	Array.prototype.forEach.call(allData, function(data){
-		var content = document.createElement('div');
-		var strong = document.createElement('strong');
-		
+
+
+    Array.prototype.forEach.call(allData, function(data) {
+        var content = document.createElement('div');
+        var strong = document.createElement('strong');
+
         strong.textContent = data.ven_num;
         //strong.textContent = contentString;
-		content.appendChild(strong);
+        content.appendChild(strong);
 
         //info window內的照片
-		var imgfav = document.createElement('img');
-		imgfav.src = 'img/unfav.svg';
-		imgfav.style.width = '100px';
+        var imgfav = document.createElement('img');
+        imgfav.src = 'img/unfav.svg';
+        imgfav.style.width = '100px';
         content.appendChild(imgfav);
 
         var imgrou = document.createElement('img');
@@ -185,50 +185,50 @@ function showAllMachines(allData) {
         imglis.src = 'img/list.svg';
         imglis.style.width = '100px';
         content.appendChild(imglis);
-        
-		var marker = new google.maps.Marker({
-	      position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
-          map: map,
-          icon: 'img/marker.png'
-		  
-	    });
 
-	    marker.addListener('click', function(){
-	    	infoWind.setContent(content);
-	    	infoWind.open(map, marker);
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
+            map: map,
+            icon: 'img/marker.png'
+
+        });
+
+        marker.addListener('click', function() {
+            infoWind.setContent(content);
+            infoWind.open(map, marker);
         })
 
-	})
+    })
 }
 
 function codeAddress(cdata) {
-   Array.prototype.forEach.call(cdata, function(data){
-    	var address = data.name + ' ' + data.address;
-	    geocoder.geocode( { 'address': address}, function(results, status) {
-	      if (status == 'OK') {
-	        map.setCenter(results[0].geometry.location);
-	        var points = {};
-	        points.ven_num = data.ven_num;
-	        points.location_Latitude = map.getCenter().location_Latitude();
-	        points.location_Longitude = map.getCenter().location_Longitude();
-	        updateCollegeWithLatLng(points);
-	      } else {
-	        alert('Geocode was not successful for the following reason: ' + status);
-	      }
-	    });
-	});
+    Array.prototype.forEach.call(cdata, function(data) {
+        var address = data.name + ' ' + data.address;
+        geocoder.geocode({ 'address': address }, function(results, status) {
+            if (status == 'OK') {
+                map.setCenter(results[0].geometry.location);
+                var points = {};
+                points.ven_num = data.ven_num;
+                points.location_Latitude = map.getCenter().location_Latitude();
+                points.location_Longitude = map.getCenter().location_Longitude();
+                updateCollegeWithLatLng(points);
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    });
 }
 //更新map位置
 function updateMachinesWithLatLng(points) {
-	$.ajax({
-		url:"action.php",
-		method:"request",
-		data: points,
-		success: function(res) {
-			console.log(res)
-		}
-	})
-	
+    $.ajax({
+        url: "action.php",
+        method: "request",
+        data: points,
+        success: function(res) {
+            console.log(res)
+        }
+    })
+
 }
 //路線規劃
 ClickEventHandler.prototype.calculateAndDisplayRoute = function(placeId) {
