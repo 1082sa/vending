@@ -42,6 +42,7 @@
       
     </script>
 <?php
+        
   }
     
     
@@ -49,6 +50,15 @@
 </head>
 
 <body>
+    <header class="header-area">
+       <?php include("sidebar.php")?>
+    </header>
+      <div id="preloader">
+        <div class="preload-content">
+            <div id="original-load"></div>
+        </div>
+    </div>
+
     <div class="blog-wrapper section-padding-100 clearfix" style="text-align: center;">
         <div class="container">
             <div>
@@ -63,7 +73,11 @@
                             原始密碼&emsp;&emsp;<input type="password" name="password1" size="18" class="text" placeholder="PASSWORD" required ><br /><br /> 修改密碼&emsp;&emsp;
                           
                             <input type="password" name="password2" size="18" class="text" placeholder="PASSWORD" required><br /><br />  <br><br>
-                            <button type="submit" class="btn original-btn">完成</button>
+                            <a href="profile.php"  class="btn btn-outline-dark">取消</a>
+                            <button type="submit" class="btn btn-outline-dark">完成</button>
+                            
+                            <br>
+                            
                         </form>
                     </div>
                 </div>
