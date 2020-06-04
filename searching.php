@@ -46,7 +46,7 @@
         ?>
               <div class="list_item">
           <div class="item_img">
-            <a href="searchmap.php"><img src="<?php echo $row['pro_pic']?>"></a>
+            <a href="searchmap.php?pro_name=<?php echo $row['pro_name']?>"><img src="<?php echo $row['pro_pic']?>"></a>
           </div>
           <div class="item_name text-center">
             <p><?php echo $row['pro_name']?></p>
