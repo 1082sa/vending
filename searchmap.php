@@ -60,6 +60,10 @@
 </head>
 
 <body>
+    <header class="header-area">
+       <?php include("sidebarsearch.php");
+        include("search.php");?>
+    </header>   
     <!-- Preloader -->
     <div id="preloader">
         <div class="preload-content">
@@ -68,8 +72,10 @@
     </div>
     <div class="container">
         <?php 
+           $pro_name= $_GET["pro_name"];
             require 'get_searchvalue.php';
             $val = new get_value;
+            $val -> setpro_name($pro_name);
             $coll = $val->getMachinesLatLng();
             $coll = json_encode($coll, true);
             echo '<div id="data">' . $coll . '</div>';
