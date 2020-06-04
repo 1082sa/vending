@@ -19,6 +19,8 @@
 
     <link rel="manifest" href="manifest.json" />
 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
+
     <script>
         if ("serviceWorker.js" in navigator) {
             console.log("Will service worker register?");
@@ -55,9 +57,9 @@
 						  
                         <p style="padding-top:40px">
 							<form action="login_process.php" method="post">
-                            帳號&emsp;&emsp;&nbsp;&emsp;<input type="email" name="account" size="18" class="text" placeholder="email" /><br /><br /> 密碼&emsp;&emsp;&nbsp;&emsp;
-                            <input type="password" name="password" size="18" class="text" placeholder="password" /><br /><br /><br><?php $msg = isset($_GET["msg"])? $_GET["msg"]: "";echo $msg; ?>
-                            <a href="registration.html" class="post-tag">尚未註冊?</a>
+                            帳號&emsp;&emsp;&nbsp;&emsp;<input type="email" name="account" size="18" class="text animated lightSpeedIn" placeholder="email" style="animation-duration: 2s"/><br /><br /> 密碼&emsp;&emsp;&nbsp;&emsp;
+                            <input type="password" name="password" size="18" class="text animated lightSpeedIn" placeholder="password" style="animation-duration: 2.5s"/><br /><br /><br><?php $msg = isset($_GET["msg"])? $_GET["msg"]: "";echo $msg; ?>
+                            <a href="registration.html" class="post-tag animated bounceInDown">尚未註冊?</a>
                             <a href="forget.html" class="post-tag">忘記密碼?</a>
                             <br>
                             <form action="index.php">
