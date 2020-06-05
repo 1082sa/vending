@@ -191,7 +191,6 @@ function showAllMachines(allData) {
         //     });
         // };
 
-
         var b = document.createElement('a');
         var imgrou = document.createElement('img');
         imgrou.src = 'img/route.svg';
@@ -222,7 +221,7 @@ function showAllMachines(allData) {
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
                 map: map,
-                icon: 'img/marker.png',
+                icon: 'img/marker.png' //顯示正常運作
 
 
             });
@@ -230,7 +229,7 @@ function showAllMachines(allData) {
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
                 map: map,
-                icon: 'img/marker1.png',
+                icon: 'img/marker1.png' //顯示非正常運作
 
 
             });
