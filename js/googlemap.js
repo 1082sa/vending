@@ -217,19 +217,20 @@ function showAllMachines(allData) {
         d.setAttribute("data-toggle", "modal");
         content.appendChild(d);
 
-        if (data.error < 3) {
+        if (data.error >= 3) {
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
+                map: map,
+                icon: 'img/marker1.png' //顯示非正常運作
+
+
+            });
+        } else {
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
                 map: map,
                 icon: 'img/marker.png' //顯示正常運作
 
-
-            });
-        } else if (data.error >= 3) {
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
-                map: map,
-                icon: 'img/marker1.png' //顯示非正常運作
 
 
             });
