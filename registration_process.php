@@ -13,10 +13,10 @@ if ($password==$password2){
   header('<script language="JavaScript">;alert("註冊成功!");location.href="login.php";</script>;');
     
 }
-else{
+if ($password!=$password2){
     $success="false";
     echo $success;
-    header("location:registration.html");
+    header("location:registration.html?error=true");
    
 
 }
