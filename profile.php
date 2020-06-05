@@ -68,7 +68,7 @@
                     <div class="single-blog-content">
                         <h4 style="font-weight: bold; text-align: center;">個人資訊</h4>
                         <hr size="10px" width="100%">
-                            <p style="text-align:left" class="ml-30">
+                            <p style="text-align:left" class="ml-70">
                                 <br>
                                 <?php foreach($rows as $user){ ?>
                                     &emsp;帳號:&ensp;<?=$user->account?><br /><br />
