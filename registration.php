@@ -4,22 +4,12 @@ require 'db.php';
 
 $password  = $_POST['password'];
 $password2 = $_POST['password2'];
-echo $password;
-echo $password2;
 
 if ($password==$password2){
-    $success="true";
-    echo $success;
-  header('<script language="JavaScript">;alert("註冊成功!");location.href="login.php";</script>;');
-    
+    header('<script language="JavaScript">;alert("註冊成功!");location.href="login.php";</script>;');
 }
 else{
-    $success="false";
-    echo $success;
-    header('<script language="JavaScript">;alert("註冊失敗功!");location.href="login.php";</script>;');
-    header("location:registration.html");
-   
-
+header('<script language="JavaScript">;alert("兩次密碼不相同!");location.href="registration.html";</script>;');
 }
 
 
@@ -33,7 +23,6 @@ if (!empty($_POST)) {
    
 function createUser($conn, $data = [])
 {
-    
 	$sql="insert into user (account,password,name,gender,job) values (:account, :password, :name, :gender,:job)";
     $stmt = $conn->prepare($sql);
     
@@ -46,7 +35,6 @@ function createUser($conn, $data = [])
     ];
     
     return $stmt->execute($addUserData);
-    
 }
 
     
@@ -67,11 +55,9 @@ function createUser($conn, $data = [])
     if ($user) {           
        echo '<script language="JavaScript">;alert("使用者已存在!");location.href="registration.html";</script>;';
     }
-    
 
 //新增使用者
-if ($success=="true"){
-    
+
     $addResult = createUser($conn, [
         'account' => $uAccount,
         'password'=> $uPassword,
@@ -81,7 +67,6 @@ if ($success=="true"){
     ]);
 
     // 跳轉並將結果帶回註冊頁面。
-}
-    
+      
 }
 ?>
