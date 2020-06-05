@@ -115,12 +115,12 @@ function loadMap() {
         });
 
     //抓自己現在的位置
-	navigator.geolocation.watchPosition((position) => {
+    navigator.geolocation.watchPosition((position) => {
         console.log(position.coords);
         lat = position.coords.latitude;
-		lng = position.coords.longitude;
-        var pune = {lat:lat, lng:lng};
-        
+        lng = position.coords.longitude;
+        var pune = { lat: lat, lng: lng };
+
         // 初始化地圖
         map = new google.maps.Map(document.getElementById('map'), {
             zoom: 18,
@@ -128,9 +128,9 @@ function loadMap() {
             //黑夜模式設定
             gestureHandling: 'cooperative',
             mapTypeControlOptions: {
-                mapTypeIds: ['roadmap', 'satellite','黑夜模式']
+                mapTypeIds: ['roadmap', 'satellite', '黑夜模式']
             }
-            
+
         });
 
         //Associate the styled map with the MapTypeId and set it to display.
@@ -142,28 +142,28 @@ function loadMap() {
             map: map,
             animation: google.maps.Animation.BOUNCE
         });
-    var cdata = JSON.parse(document.getElementById('data').innerHTML);
-    geocoder = new google.maps.Geocoder();  
-    codeAddress(cdata);
+        var cdata = JSON.parse(document.getElementById('data').innerHTML);
+        geocoder = new google.maps.Geocoder();
+        codeAddress(cdata);
 
-    var allData = JSON.parse(document.getElementById('allData').innerHTML);
-	showAllMachines(allData)
+        var allData = JSON.parse(document.getElementById('allData').innerHTML);
+        showAllMachines(allData)
     });
-    
 
-    
+
+
 }
 
 function showAllMachines(allData) {
     //infowindow內的資料
     var infoWind = new google.maps.InfoWindow;
-	Array.prototype.forEach.call(allData, function(data){
+    Array.prototype.forEach.call(allData, function(data) {
         var content = document.createElement('div');
-		var strong = document.createElement('strong');
-		
+        var strong = document.createElement('strong');
+
         strong.textContent = data.ven_num;
         //strong.textContent = contentString;
-		content.appendChild(strong);
+        content.appendChild(strong);
 
         //info window內的照片
 
@@ -172,8 +172,20 @@ function showAllMachines(allData) {
         imgfav.src = 'img/unfav.svg';
         imgfav.style.width = '100px';
         a.appendChild(imgfav);
-        a.href = "http://example.com";//要改看要彈跳/跳轉頁面
+        a.href = "http://example.com"; //要改看要彈跳/跳轉頁面
         content.appendChild(a);
+
+        // a.onclick = function fav() { 
+        //     $.ajax({  
+        //         type: "post",
+        //           url: "\index.php",
+        //           success: function() {  
+        //             sid2.style.display = "inline";  
+        //             sid1.style.display = "none";  
+        //         }  
+        //     });
+        // };
+
 
         var b = document.createElement('a');
         var imgrou = document.createElement('img');
@@ -196,22 +208,32 @@ function showAllMachines(allData) {
         imglis.src = 'img/list.svg';
         imglis.style.width = '100px';
         d.appendChild(imglis);
-        d.href = "ven-info.php?="+data.ven_num;
+        d.href = "http://example.com";
         content.appendChild(d);
-        
-		var marker = new google.maps.Marker({
-	      position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
-          map: map,
-          icon: 'img/marker.png',
-          
-		  
-	    });
+        if (data.error >= 3) {
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
+                map: map,
+                icon: 'img/marker.png',
 
-	    marker.addListener('click', function(){
-	    	infoWind.setContent(content);
-	    	infoWind.open(map, marker);
+
+            });
+        } else {
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
+                map: map,
+                icon: 'img/marker1.png',
+
+
+            });
+        }
+
+
+        marker.addListener('click', function() {
+            infoWind.setContent(content);
+            infoWind.open(map, marker);
         })
-        
+
 
     })
 
@@ -225,69 +247,69 @@ function showAllMachines(allData) {
     //     ?>
     // ];
 
-//     var RoutePath = new google.maps.Polyline({
-//         path: RouteCoordinates,
-//         geodesic: true,
-//         strokeColor: '#1100FF',
-//         strokeOpacity: 1.0,
-//         strokeWeight: 10
-//       });
-  
-//       mark = 'img/mark.png';
-//       flag = 'img/flag.png';
-  
-//       startPoint = pune;
-//       endPoint = data.location_Latitude, data.location_Longitude;
-  
-//       var marker = new google.maps.Marker({
-//           position: startPoint,
-//           map: map,
-//           icon: mark,
-//           title:"Start point!",
-//           animation: google.maps.Animation.BOUNCE
-//       });
-  
-//       var marker = new google.maps.Marker({
-//       position: endPoint,
-//        map: map,
-//        icon: flag,
-//        title:"End point!",
-//        animation: google.maps.Animation.DROP
-//         });
-  
-//       RoutePath.setMap(map);
-     google.maps.event.addDomListener(window, 'load', initialize);
-    
- }
+    //     var RoutePath = new google.maps.Polyline({
+    //         path: RouteCoordinates,
+    //         geodesic: true,
+    //         strokeColor: '#1100FF',
+    //         strokeOpacity: 1.0,
+    //         strokeWeight: 10
+    //       });
+
+    //       mark = 'img/mark.png';
+    //       flag = 'img/flag.png';
+
+    //       startPoint = pune;
+    //       endPoint = data.location_Latitude, data.location_Longitude;
+
+    //       var marker = new google.maps.Marker({
+    //           position: startPoint,
+    //           map: map,
+    //           icon: mark,
+    //           title:"Start point!",
+    //           animation: google.maps.Animation.BOUNCE
+    //       });
+
+    //       var marker = new google.maps.Marker({
+    //       position: endPoint,
+    //        map: map,
+    //        icon: flag,
+    //        title:"End point!",
+    //        animation: google.maps.Animation.DROP
+    //         });
+
+    //       RoutePath.setMap(map);
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+}
 
 function codeAddress(cdata) {
-   Array.prototype.forEach.call(cdata, function(data){
-    	var address = data.name + ' ' + data.address;
-	    geocoder.geocode( { 'address': address}, function(results, status) {
-	      if (status == 'OK') {
-	        map.setCenter(results[0].geometry.location);
-	        var points = {};
-	        points.ven_num = data.ven_num;
-	        points.location_Latitude = map.getCenter().location_Latitude();
-	        points.location_Longitude = map.getCenter().location_Longitude();
-	        updateCollegeWithLatLng(points);
-	      } else {
-	        alert('Geocode was not successful for the following reason: ' + status);
-	      }
-	    });
-	});
+    Array.prototype.forEach.call(cdata, function(data) {
+        var address = data.name + ' ' + data.address;
+        geocoder.geocode({ 'address': address }, function(results, status) {
+            if (status == 'OK') {
+                map.setCenter(results[0].geometry.location);
+                var points = {};
+                points.ven_num = data.ven_num;
+                points.location_Latitude = map.getCenter().location_Latitude();
+                points.location_Longitude = map.getCenter().location_Longitude();
+                updateCollegeWithLatLng(points);
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    });
 }
 //更新map位置
 function updateMachinesWithLatLng(points) {
-	$.ajax({
-		url:"action.php",
-		method:"request",
-		data: points,
-		success: function(res) {
-			console.log(res)
-		}
-	})
-	
+    $.ajax({
+        url: "action.php",
+        method: "request",
+        data: points,
+        success: function(res) {
+            console.log(res)
+        }
+    })
+
 }
 //路線規劃
 ClickEventHandler.prototype.calculateAndDisplayRoute = function(placeId) {

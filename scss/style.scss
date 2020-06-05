@@ -1826,10 +1826,10 @@ textarea:focus~.highlight {
 
 
 /* index CSS */
+
 .hide {
     display: none;
 }
-
 
 
 /*登入後的品牌顯示頁面*/
@@ -1988,6 +1988,7 @@ textarea:focus~.highlight {
     }
 }
 
+
 /* QA CSS */
 
 #QandA .Question {
@@ -2002,12 +2003,19 @@ textarea:focus~.highlight {
     padding: 10px 0px;
 }
 
+
 /* forget CSS */
+
 .info {
     font-style: italic;
     font-size: small;
     color: #cbcbcb;
     text-align: center;
 }
+
+.size {
+    font-size: x-large;
+}
+
 
 /* The End */
