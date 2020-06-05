@@ -175,6 +175,18 @@ function showAllMachines(allData) {
         a.href = "http://example.com"; //要改看要彈跳/跳轉頁面
         content.appendChild(a);
 
+        // a.onclick = function fav() { 
+        //     $.ajax({  
+        //         type: "post",
+        //           url: "\index.php",
+        //           success: function() {  
+        //             sid2.style.display = "inline";  
+        //             sid1.style.display = "none";  
+        //         }  
+        //     });
+        // };
+
+
         var b = document.createElement('a');
         var imgrou = document.createElement('img');
         imgrou.src = 'img/route.svg';
@@ -196,16 +208,27 @@ function showAllMachines(allData) {
         imglis.src = 'img/list.svg';
         imglis.style.width = '100px';
         d.appendChild(imglis);
-        d.href = "ven-info.php?=" + data.ven_num;
+        d.setAttribute("data-target", "#exampleModalCenter");
         content.appendChild(d);
 
-        var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
-            map: map,
-            icon: 'img/marker.png',
+        if (data.error < 3) {
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
+                map: map,
+                icon: 'img/marker.png',
 
 
-        });
+            });
+        } else {
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
+                map: map,
+                icon: 'img/marker1.png',
+
+
+            });
+        }
+
 
         marker.addListener('click', function() {
             infoWind.setContent(content);

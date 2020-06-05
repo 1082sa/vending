@@ -70,9 +70,9 @@
                          <hr size="10px" align="center" width="100%">
                         <br />
                         <form method="post" action="edit.php" style="margin-top:60px">
-                            原始密碼&emsp;&emsp;<input type="password" name="password1" size="18" class="text" placeholder="PASSWORD" required ><br /><br /> 修改密碼&emsp;&emsp;
+                            原始密碼&emsp;&emsp;<input type="password" name="password1" size="18" class="text" placeholder="PASSWORD" autocomplete="off" required ><br /><br /> 修改密碼&emsp;&emsp;
                           
-                            <input type="password" name="password2" size="18" class="text" placeholder="PASSWORD" required><br /><br />  <br><br>
+                            <input type="password" name="password2" size="18" class="text" placeholder="PASSWORD" autocomplete="off" required><br /><br />  <br><br>
                             <a href="profile.php"  class="btn btn-outline-dark">取消</a>
                             <button type="submit" class="btn btn-outline-dark">完成</button>
                             

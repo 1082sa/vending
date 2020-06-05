@@ -13,11 +13,10 @@ if ($password==$password2){
   header('<script language="JavaScript">;alert("註冊成功!");location.href="login.php";</script>;');
     
 }
-else{
+if ($password!=$password2){
     $success="false";
     echo $success;
-    header('<script language="JavaScript">;alert("註冊失敗功!");location.href="login.php";</script>;');
-    header("location:registration.html");
+    header("location:registration.html?error=true");
    
 
 }
@@ -67,7 +66,6 @@ function createUser($conn, $data = [])
     if ($user) {           
        echo '<script language="JavaScript">;alert("使用者已存在!");location.href="registration.html";</script>;';
     }
-    
 
 //新增使用者
 if ($success=="true"){
@@ -82,6 +80,5 @@ if ($success=="true"){
 
     // 跳轉並將結果帶回註冊頁面。
 }
-    
 }
 ?>

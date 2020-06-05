@@ -35,15 +35,19 @@
    
     <?php 
     error_reporting(0);  
-    if(isset($_GET[situation])){?>
-    <script>     
+   
+        if($_GET['situation']=="complete"){
+    ?> <script>   
+           alert('密碼更改成功！');  
+       </script>
+    <?php
+        }
+       if($_GET['situation']=="wrongpassword"){?>
+    <script>  
            alert('密碼輸入錯誤，請重新確認！');  
-      
     </script>
-<?php
-        
-  }
-    
+    <?php
+        }
     
 ?>
 </head>
@@ -62,20 +66,20 @@
         <div class="container">
             <div>
                 <!-- Single Blog Area -->
-                <div class="single-blog-area clearfix">
+                <div class="single-blog-area clearfix mb-100">
                     <!-- Blog Content -->
-                    <form method="post" action="#">
+                    <form method="post" action="forget_process.php">
                         <div class="single-blog-content">
                             <h4 style="font-weight: bold; text-align: center;">忘記密碼</h4>
                             <br>
                             <hr size="10px" width="100%">
                             <br>
                             <p>
-                                帳&emsp;&emsp;號&emsp;&nbsp;&emsp;<input type="email" name="" size="18" class="text" placeholder="email" autocomplete="off" required >
+                                帳&emsp;&emsp;號&emsp;&nbsp;&emsp;<input type="email" name="account" size="18" class="text" placeholder="email" required >
                                 <br><br>
-                                新的密碼&emsp;&emsp;<input type="password" name="" size="18" class="text" placeholder="password" autocomplete="off" required >
+                                新的密碼&emsp;&emsp;<input type="password" name="password1" size="18" class="text" placeholder="password" required >
                                 <br><br> 
-                                確認密碼&emsp;&emsp;<input type="password" name="" size="18" class="text" placeholder="password" autocomplete="off" required>
+                                確認密碼&emsp;&emsp;<input type="password" name="password2" size="18" class="text" placeholder="password" required>
                                 <br><br>
                             </p>            
                             <a href="login.php" class="post-tag">沒有忘記密碼?請回到登入畫面</a>
