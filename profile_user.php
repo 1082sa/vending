@@ -6,6 +6,7 @@
   $sth->execute();
   $rows = $sth->fetchAll(PDO::FETCH_CLASS, 'user');
 
+
 class user {
 
    
