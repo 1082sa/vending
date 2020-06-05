@@ -61,9 +61,9 @@
         
       </div>
       <!--返回上一頁-->
-      <button type="button" class="btn btn-outline-light back">
+      <a href="index.php" class="btn btn-outline-light back">
         <img src="img/back.svg">     
-      </button>
+      </a>
     </div> 
   </div>
   
