@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>My Now Amazing Webpage</title>
+    <link rel="stylesheet" href="slick-1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="slick-1.8.1/slick/slick-theme.css" />
+
+
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: white;
+        }
+        
+        .container {
+            width: 100%;
+            height: 99%;
+            padding-top: 35em;
+        }
+        
+        img {
+            margin: 0 auto;
+        }
+    </style>
+    <div class="container">
+        <div><img src="img/fav.svg"></div>
+        <div><img src="img/fav.svg"></div>
+        <div><img src="img/fav.svg"></div>
+    </div>
+    <script src="slick-1.8.1/slick/jquery-2.2.4.min.js"></script>
+    <script src="slick-1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        $(".container").slick({
+            dots: true
+        });
+    </script>
+
+</body>
+
+</html>
