@@ -66,7 +66,7 @@
         <div class="container">
             <div>
                 <!-- Single Blog Area -->
-                <div class="single-blog-area clearfix mb-100">
+                <div class="single-blog-area clearfix">
                     <!-- Blog Content -->
                     <form method="post" action="forget_process.php">
                         <div class="single-blog-content">
@@ -75,11 +75,11 @@
                             <hr size="10px" width="100%">
                             <br>
                             <p>
-                                帳&emsp;&emsp;號&emsp;&nbsp;&emsp;<input type="email" name="account" size="18" class="text" placeholder="email" required >
+                                帳&emsp;&emsp;號&emsp;&nbsp;&emsp;<input type="email" name="account" size="18" class="text" placeholder="email" autocomplete="off" required >
                                 <br><br>
-                                新的密碼&emsp;&emsp;<input type="password" name="password1" size="18" class="text" placeholder="password" required >
+                                新的密碼&emsp;&emsp;<input type="password" name="password1" size="18" class="text" placeholder="password" autocomplete="off" required >
                                 <br><br> 
-                                確認密碼&emsp;&emsp;<input type="password" name="password2" size="18" class="text" placeholder="password" required>
+                                確認密碼&emsp;&emsp;<input type="password" name="password2" size="18" class="text" placeholder="password" autocomplete="off" required>
                                 <br><br>
                             </p>            
                             <a href="login.php" class="post-tag">沒有忘記密碼?請回到登入畫面</a>
