@@ -19,6 +19,9 @@
 
     <link rel="manifest" href="manifest.json" />
 
+    <!--animation.css-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
+
     <script>
         if ("serviceWorker.js" in navigator) {
             console.log("Will service worker register?");
@@ -75,11 +78,11 @@
                             <hr size="10px" width="100%">
                             <br>
                             <p>
-                                帳&emsp;&emsp;號&emsp;&nbsp;&emsp;<input type="email" name="account" size="18" class="text" placeholder="email" required >
+                                帳&emsp;&emsp;號&emsp;&nbsp;&emsp;<input type="email" name="account" size="18" class="text lightSpeedIn" placeholder="email" required style="animation-duration: 1.5s">
                                 <br><br>
-                                新的密碼&emsp;&emsp;<input type="password" name="password1" size="18" class="text" placeholder="password" required >
+                                新的密碼&emsp;&emsp;<input type="password" name="password1" size="18" class="text lightSpeedIn" placeholder="password" required style="animation-duration: 2s">
                                 <br><br> 
-                                確認密碼&emsp;&emsp;<input type="password" name="password2" size="18" class="text" placeholder="password" required>
+                                確認密碼&emsp;&emsp;<input type="password" name="password2" size="18" class="text lightSpeedIn" placeholder="password" required style="animation-duration: 2.5s">
                                 <br><br>
                             </p>            
                             <a href="login.php" class="post-tag">沒有忘記密碼?請回到登入畫面</a>

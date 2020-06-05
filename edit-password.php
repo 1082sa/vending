@@ -20,7 +20,9 @@
     <!--manifest.json-->
     <link rel="manifest" href="manifest.json" />
 
-    <!--animation-->
+    <!--animation.css-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+
     <script>
         if ("serviceWorker.js" in navigator) {
             console.log("Will service worker register?");
@@ -67,12 +69,12 @@
                     <!-- Blog Content -->
                     <div class="single-blog-content">
                         <h4 style="font-weight: bold; text-align: center;">重設密碼</h4>
-                         <hr size="10px" align="center" width="100%">
+                         <hr size="10px" width="100%">
                         <br />
                         <form method="post" action="edit.php" style="margin-top:60px">
-                            原始密碼&emsp;&emsp;<input type="password" name="password1" size="18" class="text" placeholder="PASSWORD" autocomplete="off" required ><br /><br /> 修改密碼&emsp;&emsp;
+                            原始密碼&emsp;&emsp;<input type="password" name="password1" size="18" class="text lightSpeedIn" placeholder="PASSWORD" autocomplete="off" required style="animation-duration: 1.5s"><br /><br /> 修改密碼&emsp;&emsp;
                           
-                            <input type="password" name="password2" size="18" class="text" placeholder="PASSWORD" autocomplete="off" required><br /><br />  <br><br>
+                            <input type="password" name="password2" size="18" class="text lightSpeedIn" placeholder="PASSWORD" autocomplete="off" required style="animation-duration: 1.5s"><br /><br />  <br><br>
                             <a href="profile.php"  class="btn btn-outline-dark">取消</a>
                             <button type="submit" class="btn btn-outline-dark">完成</button>
                             

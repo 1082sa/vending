@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <link rel="manifest" href="manifest.json" />
+
+    <!--animation.css-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
     <!--service worker-->
     <script>
         if ("serviceWorker.js" in navigator) {
@@ -68,7 +71,7 @@
                     <div class="single-blog-content">
                         <h4 style="font-weight: bold; text-align: center;">個人資訊</h4>
                         <hr size="10px" width="100%">
-                            <p style="text-align:left" class="ml-70">
+                            <p style="text-align:left; animation-duration:1.5s" class="ml-70 lightSpeedIn">
                                 <br>
                                 <?php foreach($rows as $user){ ?>
                                     &emsp;帳號:&ensp;<?=$user->account?><br /><br />
