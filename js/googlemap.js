@@ -208,9 +208,10 @@ function showAllMachines(allData) {
         imglis.src = 'img/list.svg';
         imglis.style.width = '100px';
         d.appendChild(imglis);
-        d.href = "http://example.com";
+        d.setAttribute("data-target", "#exampleModalCenter");
         content.appendChild(d);
-        if (data.error >= 3) {
+
+        if (data.error < 3) {
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
                 map: map,
