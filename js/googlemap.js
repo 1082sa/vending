@@ -225,7 +225,7 @@ function showAllMachines(allData) {
 
 
             });
-        } else {
+        } else if (data.error >= 3) {
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
                 map: map,
