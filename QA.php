@@ -36,7 +36,9 @@
 </head>
 
 <body>
-
+    <header class="header-area">
+        <?php include("sidebar.php")?>
+     </header>
     <!-- Preloader -->
     <div id="preloader">
         <div class="preload-content">
@@ -51,7 +53,7 @@
                 <!-- Single Blog Area -->
                 <div class="single-blog-area clearfix mb-100">
                     <!-- Blog Content -->
-                    <div class="single-blog-content">
+                    <div class="single-blog-content" width="100%" style="text-align:center">
                         <h4 style="font-weight: bold; text-align: center;">系統Q&A</h4><br />
                         <div id="QandA">
                             <p class="Question">Q1: 地圖顯示不出來怎麼辦</p>

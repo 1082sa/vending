@@ -35,6 +35,9 @@
 </head>
 
 <body>
+    <header class="header-area">
+        <?php include("sidebar.php")?>
+     </header>
     <!-- Preloader -->
     <div id="preloader">
         <div class="preload-content">
@@ -50,13 +53,15 @@
                 <div class="single-blog-area clearfix mb-100">
                     <!-- Blog Content -->
                     <div class="single-blog-content">
-                        <h4 style="font-weight: bold; text-align: center;">客服聯繫</h4><br />
+                    <h4 style="font-weight: bold; text-align: center;">客服聯繫</h4>
+                         <hr size="10px" width="100%">
+                        <br />
                         <p>
                             信箱&emsp;&emsp;&nbsp;&emsp;tty09183@gmail.com <br /><br /> 電話&emsp;&emsp;&nbsp;&emsp;&nbsp;&emsp;&nbsp;02-89302156&nbsp;&emsp;&emsp;
                             <br /><br /> &emsp;&emsp;住址&emsp;&emsp;&nbsp;&emsp;新北市中正路514巷96號&nbsp;&emsp;
-
+                            <br>
                             </br>
-
+                            <a href="QA.php"  class="btn btn-outline-dark">常見問題</a>
 
                             <p>
                     </div>
