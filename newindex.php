@@ -96,6 +96,10 @@
           </button>
                 </div>
                 <div class="modal-body">
+                    <?php include("contact.php");?>
+                </div>
+                
+                <div class="modal-body">
                     填放商品清單
                 </div>
                 <div class="modal-footer">
@@ -117,12 +121,12 @@
           </button>
                 </div>
                 <div class="modal-body">
-                    填放故障申報網頁
+                    <?php
+ include("contact.php");?>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
+                
+                
             </div>
         </div>
     </div>
