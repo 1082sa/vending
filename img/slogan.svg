@@ -46,12 +46,12 @@
 	.u{
 		stroke-dasharray:300;
 		stroke-dashoffset:300;
-		animation:aniDraw 7s linear forwards;
+		animation:aniDraw 6.5s linear forwards;
 	}
 	.r{
 		stroke-dasharray:300;
 		stroke-dashoffset:300;
-		animation:aniDraw 7.5s linear forwards;
+		animation:aniDraw 7s linear forwards;
 	}
 	.v{
 		stroke-dasharray:300;
@@ -101,7 +101,7 @@
 	.f{
 		stroke-dasharray:300;
 		stroke-dashoffset:300;
-		animation:aniDraw 6s linear forwards;
+		animation:aniDraw 7.5s linear forwards;
 	}
 	.e2{
 		stroke-dasharray:300;
