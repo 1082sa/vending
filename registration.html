@@ -32,6 +32,24 @@
                 });
         }
     </script>
+	
+	<script>
+    function check() {
+     
+        var password = document.getElementById("password");
+        var password2 = document.getElementById("password2"); 
+        
+        if (password.value != password2.value) {
+            alert("兩次密碼輸入不同，請重新輸入!");
+            return false;
+        }
+        /*用form就不用else location
+        else{           
+            location.href="registration.php";
+        }*/
+        }
+    
+</script>
 </head>
 
 <body>
@@ -53,7 +71,7 @@
                 <div class="single-blog-area clearfix">
                     <!-- Blog Content -->
                     
-                    <form method="post" action="registration.php">
+                  <form method="post" action="registration.php" onSubmit="return check()">
                         <div class="single-blog-content">
                             <h4 style="font-weight: bold; text-align: center;">註冊</h4><br />
 
@@ -113,7 +131,7 @@
                  <button
                 type="submit"
                 class="btn original-btn"
-                style="background-color: ghostwhite;" onclick="check()"/>提交</button>
+                style="background-color: ghostwhite;" />提交</button>
                     </form>
             </div>
           </div>

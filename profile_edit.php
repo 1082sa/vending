@@ -68,7 +68,7 @@
                     <div class="single-blog-content">
                         <h4 style="font-weight: bold; text-align: center;">個人資訊</h4>
                         <hr size="10px" width="100%">
-                            <form action="#" method="POST">
+                            <form action="profile_edit_process.php" method="POST">
                                 <br>
                                 <div style="text-align:left" class="ml-50">
                                 <?php foreach($rows as $user){ ?>
@@ -83,10 +83,13 @@
                                         <tr>
                                             <td width="100px"> &emsp;職業:&ensp;</td>
                                             <td width="500px"><select name="job" class="down">
-                    <option class="dropdown-item" value="<?=$user->job?>">請選擇</option>
+                    <option class="dropdown-item" value="" disabled selected hidden>請選擇</option>
+                    <option value="<?=$user->job?>" selected><?=$user->job?></option>
+                                                
+                    <option value="學生">學生</option>
                     <option value="學生">學生</option>
                     <option value="農牧業">農牧業</option>
-                    <option value="漁業" selected>漁業</option>
+                    <option value="漁業" >漁業</option>
                     <option value="木材森林業">木材森林業</option>
                     <option value="礦業採石業">礦業採石業</option>
                     <option value="交通運輸業">交通運輸業</option>
