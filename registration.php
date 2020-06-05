@@ -2,25 +2,44 @@
 
 require 'db.php';
 
-//register new User 
-if (!empty($_POST)) {
+$password  = $_POST['password'];
+$password2 = $_POST['password2'];
 
-    // =============================================================================
-    // = 處理送來的表單資料
-    // =============================================================================
-	
+if ($password==$password2){
+    header('<script language="JavaScript">;alert("註冊成功!");location.href="login.php";</script>;');
+}
+else{
+header('<script language="JavaScript">;alert("兩次密碼不相同!");location.href="registration.html";</script>;');
+}
+
+
+//register new User 
+if (!empty($_POST)) {	
     $uAccount = $_POST["account"] ?? "";
     $uPassword = $_POST["password"] ?? "";
     $uName = $_POST["name"] ?? "";
     $uGender = $_POST["gender"] ?? "";
     $uJob = $_POST["job"] ?? "";
+   
+function createUser($conn, $data = [])
+{
+	$sql="insert into user (account,password,name,gender,job) values (:account, :password, :name, :gender,:job)";
+    $stmt = $conn->prepare($sql);
     
+    $addUserData = [
+        'account' => $data['account'],
+        'password'=> $data['password'],
+        'name'    => $data['name'],
+        'gender'  => $data['gender'],
+        'job'     => $data['job'],
+    ];
+    
+    return $stmt->execute($addUserData);
+}
 
-    /* =============================================================================
-     * = 確認帳號是否存在
-     * =============================================================================
-    **/
-	function findUserByAccount($conn, $account)
+    
+//確認使用者是否存在
+    	function findUserByAccount($conn, $account)
 {
 	$sql="select * from user where account = :account";
 	$stmt = $conn->prepare($sql);
@@ -30,35 +49,14 @@ if (!empty($_POST)) {
     return $result;
 }
 
-function createUser($conn, $data = [])
-{
-	$sql="insert into user (account,password,name,gender,job) values (:account, :password, :name, :gender,:job)";
-    $stmt = $conn->prepare($sql);
     
-    //新建的使用者資料陣列 
-    $addUserData = [
-        'account' => $data['account'],
-        'password'=> $data['password'],
-        'name'    => $data['name'],
-        'gender'  => $data['gender'],
-        'job'     => $data['job'],
-    ];
-    //綁定新建欄位變數
-    
-    return $stmt->execute($addUserData);//回傳 新建資料的結果(true or false)
-}
-
     $user = findUserByAccount($conn, $uAccount);
 
-    if ($user) {   
-        
+    if ($user) {           
        echo '<script language="JavaScript">;alert("使用者已存在!");location.href="registration.html";</script>;';
     }
 
-    /* =============================================================================
-     * = 新增使用者
-     * =============================================================================
-    **/
+//新增使用者
 
     $addResult = createUser($conn, [
         'account' => $uAccount,
@@ -69,6 +67,6 @@ function createUser($conn, $data = [])
     ]);
 
     // 跳轉並將結果帶回註冊頁面。
-       echo '<script language="JavaScript">;alert("註冊成功!");location.href="login.php";</script>;';
+      
 }
 ?>

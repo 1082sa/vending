@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>WEVEN - your vending machine</title>
+    <title>WEVEN - 忘記密碼</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico" />
@@ -18,8 +18,6 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <link rel="manifest" href="manifest.json" />
-
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
 
     <script>
         if ("serviceWorker.js" in navigator) {
@@ -34,15 +32,23 @@
                 });
         }
     </script>
-   <?php 
+   
+    <?php 
     error_reporting(0);  
+   
         if($_GET['situation']=="complete"){
-    ?> 
-        <script>   
-           alert('密碼更改成功，請重新登入！');  
+    ?> <script>   
+           alert('密碼更改成功！');  
        </script>
-   <?php 
-    }
+    <?php
+        }
+       if($_GET['situation']=="wrongpassword"){?>
+    <script>  
+           alert('密碼輸入錯誤，請重新確認！');  
+    </script>
+    <?php
+        }
+    
 ?>
 </head>
 
@@ -53,6 +59,8 @@
             <div id="original-load"></div>
         </div>
     </div>
+
+
     <!-- ##### Blog Wrapper Start ##### -->
     <div class="blog-wrapper section-padding-70 clearfix" style="text-align: center;">
         <div class="container">
@@ -60,34 +68,33 @@
                 <!-- Single Blog Area -->
                 <div class="single-blog-area clearfix mb-100">
                     <!-- Blog Content -->
-                    <div class="single-blog-content">
-                        <h4 style="font-weight: bold; text-align: center;">登入</h4><br />
-                        
-                        <hr size="10px" style="align:center" width="100%">
-						  
-                        <p style="padding-top:40px">
-							<form action="login_process.php" method="post">
-                            帳號&emsp;&emsp;&nbsp;&emsp;<input type="email" name="account" size="18" class="text animated lightSpeedIn" placeholder="email" style="animation-duration: 2s" autocomplete="off"/>
-                            <br><br> 
-                            密碼&emsp;&emsp;&nbsp;&emsp;
-                            <input type="password" name="password" size="18" class="text animated lightSpeedIn" placeholder="password" style="animation-duration: 2.5s" autocomplete="off"/>
-                            <br><br><br>
-                            <?php $msg = isset($_GET["msg"])? $_GET["msg"]: "";echo $msg; ?>
-                            <a href="registration.html" class="post-tag animated bounceInDown">尚未註冊?</a>
-                            <a href="forget.php" class="post-tag">忘記密碼?</a>
+                    <form method="post" action="forget_process.php">
+                        <div class="single-blog-content">
+                            <h4 style="font-weight: bold; text-align: center;">忘記密碼</h4>
                             <br>
-                            <form action="index.php">
-                                <button type="submit" class="btn original-btn">登入</button>
-                            </form>
-
-                        </p>
-                    </div>
+                            <hr size="10px" width="100%">
+                            <br>
+                            <p>
+                                帳&emsp;&emsp;號&emsp;&nbsp;&emsp;<input type="email" name="account" size="18" class="text" placeholder="email" required >
+                                <br><br>
+                                新的密碼&emsp;&emsp;<input type="password" name="password1" size="18" class="text" placeholder="password" required >
+                                <br><br> 
+                                確認密碼&emsp;&emsp;<input type="password" name="password2" size="18" class="text" placeholder="password" required>
+                                <br><br>
+                            </p>            
+                            <a href="login.php" class="post-tag">沒有忘記密碼?請回到登入畫面</a>
+                            <button type="submit" class="btn original-btn" style="background-color: ghostwhite;">提交</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
 
+    <!-- ##### Footer Area Start ##### -->
+
+    <!-- ##### Footer Area End ##### -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
