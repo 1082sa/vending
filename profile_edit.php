@@ -70,13 +70,12 @@
                         <hr size="10px" width="100%">
                             <form action="#" method="POST">
                                 <br>
-                                <div style="text-align:left" class="ml-30">
+                                <div style="text-align:left" class="ml-50">
                                 <?php foreach($rows as $user){ ?>
                                     
                                     &emsp;帳號:&ensp;<?=$user->account?><br ><br>
-                                    &emsp;暱稱:&ensp;<input type="text" value="<?=$user->name?>"><br><br>
+                                    &emsp;暱稱:&ensp;<input type="text" name="name" size="18" class="text" placeholder="name" required value="<?=$user->name?>"/><br><br>
                                     &emsp;性別:&ensp;
-                                   <?=$user->gender?>
                                 <input type="radio" name="gender" value="男" checked="true" />男&emsp;&emsp;
                                 <input type="radio" name="gender" value="女" />女&emsp;&emsp;&emsp;&emsp;&ensp;
                                    <br> <br>
@@ -116,16 +115,13 @@
                   
                   &emsp;&ensp;&emsp;
                 
-                <br /><br />
+                <br />
               </div><br> 
                                 <?php }?>
                                 </div>
                                 <br>
-                                <button  type="button" class="btn"><a href="profile.php">取消</a></button>
-                                <button  type="submit" class="btn">
-                                    <a>
-                               提交</a>
-                                    </button>
+                                <a href="profile.php" class="btn btn-outline-dark">取消</a>
+                                <button  type="submit" class="btn btn-outline-dark">提交</button>
                         </form>
                        
                         

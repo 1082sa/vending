@@ -63,7 +63,7 @@
         <div class="container">
             <div>
                 <!-- Single Blog Area -->
-                <div class="single-blog-area clearfix mb-100">
+                <div class="single-blog-area clearfix">
                     <!-- Blog Content -->
                     <div class="single-blog-content">
                         <h4 style="font-weight: bold; text-align: center;">個人資訊</h4>
@@ -78,13 +78,16 @@
                                 <?php }?>
                             </p>
                         
-                        <img src="img/pencil1.png" width="50px"onclick="javascript:location.href='profile_edit.php'">
+                        
                             
                          <hr size="10px" width="100%">
                         <a href="edit-password.php" style="text-decoration:underline;"class="post-tag" onclick="">重設密碼</a> 
                     <hr size="10px" width="100%"> </div>
+                    <img style="position: absolute;
+                    top:70%;
+  bottom: 1em;
+  right: 1em;" src="img/pencil1.png" width="50px"onclick="javascript:location.href='profile_edit.php'">
                 </div>
-                
             </div>
         </div>
     </div>
