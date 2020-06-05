@@ -70,9 +70,9 @@
         <?php 
             require 'get_value.php';
             $val = new get_value;
-            $coll = $val->getMachinesLatLng();
-            $coll = json_encode($coll, true);
-            echo '<div id="data">' . $coll . '</div>';
+            // $coll = $val->getMachinesLatLng();
+            // $coll = json_encode($coll, true);
+            // echo '<div id="data">' . $coll . '</div>';
 
             $allData = $val->getAllMachines();
             $allData = json_encode($allData, true);
@@ -86,11 +86,11 @@
 
     <!-- Modal -->
     <!-- Modal -->
-    <!-- <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">商品清單</h5>
+                    <h5 class="modal-title" target="exampleModalLongTitle">商品清單</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -104,10 +104,10 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- Modal -->
-    <!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -125,7 +125,7 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <footer>
         <!-- 到時候要註解掉 -->
