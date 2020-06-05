@@ -142,9 +142,9 @@ function loadMap() {
             map: map,
             animation: google.maps.Animation.BOUNCE
         });
-        var cdata = JSON.parse(document.getElementById('data').innerHTML);
         geocoder = new google.maps.Geocoder();
-        codeAddress(cdata);
+        //var cdata = JSON.parse(document.getElementById('data').innerHTML);
+        //codeAddress(cdata);
 
         var allData = JSON.parse(document.getElementById('allData').innerHTML);
         showAllMachines(allData)
@@ -175,6 +175,11 @@ function showAllMachines(allData) {
         a.href = "http://example.com"; //要改看要彈跳/跳轉頁面
         content.appendChild(a);
 
+        function imgWindow() {
+            window.open("a");
+        }
+
+
         // a.onclick = function fav() { 
         //     $.ajax({  
         //         type: "post",
@@ -200,7 +205,8 @@ function showAllMachines(allData) {
         imgwar.src = 'img/warning.svg';
         imgwar.style.width = '100px';
         c.appendChild(imgwar);
-        c.href = "http://example.com";
+        c.setAttribute("data-target", "#exampleModalCenter");
+        c.setAttribute("data-toggle", "modal");
         content.appendChild(c);
 
         var d = document.createElement('a');
@@ -208,7 +214,8 @@ function showAllMachines(allData) {
         imglis.src = 'img/list.svg';
         imglis.style.width = '100px';
         d.appendChild(imglis);
-        d.setAttribute("data-target", "#exampleModalCenter");
+        d.setAttribute("data-target", "#exampleModalLong");
+        d.setAttribute("data-toggle", "modal");
         content.appendChild(d);
 
         if (data.error < 3) {
@@ -300,6 +307,7 @@ function codeAddress(cdata) {
         });
     });
 }
+
 //更新map位置
 function updateMachinesWithLatLng(points) {
     $.ajax({
