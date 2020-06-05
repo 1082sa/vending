@@ -39,6 +39,7 @@
                 registration.unregister()
             }
         })
+       
     </script>
 
     <!-- margin是調整border外的邊界；padding則是調整border內到內文之間的距離-->
