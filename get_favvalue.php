@@ -3,7 +3,7 @@
     
 	class get_value	{
         
-        private $pro_name;
+        private $account;
 		private $ven_num;
 		private $ven_note;
 		private $location_Latitude;
@@ -12,6 +12,7 @@
 		private $error_num;
 		private $conn;
 		private $tableName = "machine";
+        
         
 
 		function setven_num($ven_num) { $this->ven_num = $ven_num; }
@@ -32,7 +33,7 @@
 		function seterror_num($error_num) { $this->error_num = $error_num; }
 		function geterror_num() { return $this->error_num; }
         
-        function setaccount($account) { $this->pro_name = $account; }
+        function setaccount($account) { $this->account = $account; }
         function getaccount() { return $this->pro_name; }
 
 		public function __construct() {
@@ -50,7 +51,7 @@
 
 		public function getAllMachines() {
 			//$sql = "SELECT * FROM $this->tableName"; 
-  $sql = "SELECT distinct m.ven_num , m.location_Latitude , m.location_Longitude FROM machine m,favorite f where f.account='0430shinyu@gmail.com' and m.ven_num=f.ven_num";
+  $sql = "SELECT distinct m.ven_num , m.location_Latitude , m.location_Longitude FROM machine m,favorite f where f.account='$this->account' and m.ven_num=f.ven_num";
             
             $stmt = $this->conn->prepare($sql);
 			$stmt->execute();
