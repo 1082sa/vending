@@ -78,7 +78,7 @@
                             <hr size="10px" width="100%">
                             <br>
                             <p>
-                                帳&emsp;&emsp;號&emsp;&nbsp;&emsp;<input type="email" name="account" size="18" class="text lightSpeedIn" placeholder="email" required style="animation-duration: 1.5s">
+                                帳&emsp;&emsp;號&emsp;&nbsp;&emsp;<input type="email" name="account" value="sasoggood@gmail.com"size="18" class="text lightSpeedIn" readonly disabled style="animation-duration: 1.5s">
                                 <br><br>
                                 新的密碼&emsp;&emsp;<input type="password" name="password1" size="18" class="text lightSpeedIn" placeholder="password" required style="animation-duration: 2s">
                                 <br><br> 
