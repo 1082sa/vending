@@ -69,7 +69,7 @@
         <div class="container">
             <div>
                 <!-- Single Blog Area -->
-                <div class="single-blog-area clearfix mb-100">
+                <div class="single-blog-area clearfix">
                     <!-- Blog Content -->
                     <form method="post" action="forget_process.php">
                         <div class="single-blog-content">

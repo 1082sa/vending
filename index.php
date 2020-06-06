@@ -113,7 +113,7 @@
         </div>
     </header>
 
-    <iframe src="map.php" class="map" frameborder="0" scrolling="no"></iframe>
+    <iframe src="newindex.php" class="map" frameborder="0" scrolling="no"></iframe>
     
     
 

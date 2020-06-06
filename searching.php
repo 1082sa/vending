@@ -23,7 +23,7 @@
     <header class="header-area">
        <?php include("sidebarsearch.php");
         include("search.php");?>
-    </header>   
+    </header>
     
   <div class="container">
     <div class="col-12" id="result_block">
@@ -46,7 +46,7 @@
         ?>
               <div class="list_item">
           <div class="item_img">
-            <a href="searchmap.php?pro_name=<?php echo $row['pro_name']?>"><img src="<?php echo $row['pro_pic']?>"></a>
+            <a href="index.php?pro_name=<?php echo $row['pro_name']?>"><img src="<?php echo $row['pro_pic']?>"></a>
           </div>
           <div class="item_name text-center">
             <p><?php echo $row['pro_name']?></p>
