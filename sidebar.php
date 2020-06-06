@@ -43,7 +43,7 @@ foreach($statement as $row){
                                         <a href="index.php"><span>首頁</span></a>
                                     </li>
                                     <li>
-                                        <a href="#"><span>我的最愛</span></a>
+                                        <a href="beforefavmap.php"><span>我的最愛</span></a>
                                     </li>
                                     <li>
                                         <a href="#"><span>消費紀錄</span></a>

@@ -10,7 +10,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>WEVEN - your vending machine</title>
+    <title>WEVEN - 個人資訊</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico" />
@@ -45,7 +45,7 @@
     </script>
     <?php
     }
- include("profile_user.php");?>
+ include("profile_user_process.php");?>
 </head>
 
 <body>
@@ -81,7 +81,7 @@
                                 <?php }?>
                             </p>
                         
-                        
+                        <br>
                             
                          <hr size="10px" width="100%">
                         <a href="edit-password.php" style="text-decoration:underline;"class="post-tag" onclick="">重設密碼</a> 
@@ -90,6 +90,10 @@
                     top:70%;
   bottom: 1em;
   right: 1em;" src="img/pencil1.png" width="50px"onclick="javascript:location.href='profile_edit.php'">
+                    <p style="position: absolute;
+                    top:79%;
+  bottom: 1em;
+                              right: 2em;" width="50px"onclick="javascript:location.href='profile_edit.php'">編輯</p>
                 </div>
             </div>
         </div>

@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>WEVEN - your vending machine</title>
+    <title>WEVEN - 修改密碼</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico" />
@@ -71,13 +71,14 @@
                         <h4 style="font-weight: bold; text-align: center;">重設密碼</h4>
                          <hr size="10px" width="100%">
                         <br />
-                        <form method="post" action="edit.php" style="margin-top:60px">
-                            原始密碼&emsp;&emsp;<input type="password" name="password1" size="18" class="text lightSpeedIn" placeholder="PASSWORD" autocomplete="off" required style="animation-duration: 1.5s"><br /><br /> 修改密碼&emsp;&emsp;
+                        <form method="post" action="edit.php" style="margin-top:60px ">
+                            <p sytle="font-color:#727272;display:inline-block">原始密碼&emsp;&emsp;
+                            <input  type="password" name="password1" size="18" class="text lightSpeedIn" placeholder="PASSWORD" autocomplete="off" required style="animation-duration: 1.5s"><br /><br /> 修改密碼&emsp;&emsp;
                           
                             <input type="password" name="password2" size="18" class="text lightSpeedIn" placeholder="PASSWORD" autocomplete="off" required style="animation-duration: 1.5s"><br /><br />  <br><br>
                             <a href="profile.php"  class="btn btn-outline-dark">取消</a>
                             <button type="submit" class="btn btn-outline-dark">完成</button>
-                            
+                            </p>
                             <br>
                             
                         </form>
