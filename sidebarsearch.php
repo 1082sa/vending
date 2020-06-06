@@ -33,7 +33,9 @@
                                         require 'db.php';
                                         $statement = $conn->query("select name from user where account='$account'");
 foreach($statement as $row){
-    echo $row['name'];
+     echo "<a href='profile.php'><h4>";
+                                            echo $row['name'];
+                                            echo"</h4></a>";
 }?>
                                         
                                     </h4>
