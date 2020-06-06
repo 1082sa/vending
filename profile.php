@@ -93,7 +93,7 @@
                     <p style="position: absolute;
                     top:79%;
   bottom: 1em;
-                              right: 2em;" width="50px"onclick="javascript:location.href='profile_edit.php'">編輯</p>
+                              right: 2em;" width="50px"onclick="javascript:location.href='profile_edit.php'"><br>編輯</p>
                 </div>
             </div>
         </div>

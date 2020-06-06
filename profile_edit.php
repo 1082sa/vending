@@ -75,8 +75,8 @@
                             <p style="text-align:left;" class="ml-70 lightSpeedIn">
                                 <br>
                                 <?php foreach($rows as $user){ ?>
-                                    &emsp;帳號:&ensp;<input type="text" name="account" size="18" class="text" placeholder="name" required readonly disabled value="<?=$user->account?>"/><br /><br />
-                                    &emsp;暱稱:&ensp;<input type="text" name="name" size="18" class="text" placeholder="name" required value="<?=$user->name?>"/><br /><br/>
+                                    &emsp;帳號:&ensp;<input type="text" name="account" size="18" class="text lightSpeedIn" placeholder="name" style="animation-duration:1.5s" required readonly disabled value="<?=$user->account?>"/><br /><br />
+                                    &emsp;暱稱:&ensp;<input type="text" name="name" size="18" class="text lightSpeedIn" placeholder="name" style="animation-duration:1.5s" required value="<?=$user->name?>"/><br /><br/>
                                     &emsp;性別:&ensp;<?php
                                     if($user->gender=="男"){
                                     ?>
@@ -126,8 +126,8 @@
                      
                             
                          <hr size="10px" width="100%">
-                       <a href="profile.php" class="btn btn-outline-dark btn-sm">取消</a>
-                                <button  type="submit" class="btn btn-outline-dark btn-sm">送出</button>
+                       <a href="profile.php" class="btn btn-outline-dark ">取消</a>
+                                <button  type="submit" class="btn btn-outline-dark ">送出</button>
                     <hr size="10px" width="100%"> </div></form>
                     
                 </div>
