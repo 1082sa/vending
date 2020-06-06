@@ -48,6 +48,12 @@
 			$stmt->execute();
 			return $stmt->fetchAll(PDO::FETCH_ASSOC);
 		}
+        public function fav() {
+			$sql = "SELECT f.ven_num FROM machine m,favorite f where f.account='0430shinyu@gmail.com' and m.ven_num=f.ven_num";
+            $stmt = $this->conn->prepare($sql);
+			$stmt->execute();
+			return $stmt->fetchAll(PDO::FETCH_ASSOC);
+		}
 
 		public function updateMachineWithLatLng() {
 			$sql = "UPDATE $this->tableName SET location_Latitude = :location_Latitude, location_Longitude = :location_Longitude WHERE ven_num = :ven_num";

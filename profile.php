@@ -45,7 +45,7 @@
     </script>
     <?php
     }
- include("profile_user.php");?>
+ include("profile_user_process.php");?>
 </head>
 
 <body>
@@ -89,11 +89,11 @@
                     <img style="position: absolute;
                     top:70%;
   bottom: 1em;
-  right: 1em;" src="img/pencil1.png" width="50px"onclick="javascript:location.href='profile-edit2.php'">
+  right: 1em;" src="img/pencil1.png" width="50px"onclick="javascript:location.href='profile_edit.php'">
                     <p style="position: absolute;
                     top:79%;
   bottom: 1em;
-                              right: 2em;" width="50px"onclick="javascript:location.href='profile-edit2.php'">編輯</p>
+                              right: 2em;" width="50px"onclick="javascript:location.href='profile_edit.php'"><br>編輯</p>
                 </div>
             </div>
         </div>
