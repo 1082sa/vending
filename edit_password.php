@@ -36,19 +36,7 @@
                 });
         }
     </script>
-    <?php 
-    error_reporting(0);  
-    if(isset($_GET[situation])){?>
-    <script>     
-           alert('密碼輸入錯誤，請重新確認！');  
-      
-    </script>
-<?php
-        
-  }
     
-    
-?>
 </head>
 
 <body>
@@ -71,7 +59,7 @@
                         <h4 style="font-weight: bold; text-align: center;">重設密碼</h4>
                          <hr size="10px" width="100%">
                         <br />
-                        <form method="post" action="edit.php" style="margin-top:60px ">
+                        <form method="post" action="edit_password_process.php" style="margin-top:60px ">
                             <p sytle="font-color:#727272;display:inline-block">原始密碼&emsp;&emsp;
                             <input  type="password" name="password1" size="18" class="text lightSpeedIn" placeholder="PASSWORD" autocomplete="off" required style="animation-duration: 1.5s"><br /><br /> 修改密碼&emsp;&emsp;
                           

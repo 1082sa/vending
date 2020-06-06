@@ -10,6 +10,7 @@ and information.ven_num ='$ven_num'";
   $sth->execute();
   $rows = $sth->fetchAll(PDO::FETCH_CLASS, 'product');
 
+?>
 class product {
 
   private $pro_pic; 

@@ -29,29 +29,14 @@
     <div class="col-12" id="result_block">
       <div class="row" id="result_list"> 
          
- 
-          
-          <?php 
-         
+ <img src="img/worry.png" width="100px" style="position: absolute;top:30%;
+  left:35%;">
+          <p style="position: absolute;top:50%;
+  left:24%;font-size:15px">
+     偶找不到...
+              換個關鍵字吧！</p>
               
-          
-          foreach($statement as $row){
-              
-        ?>
-              <div class="list_item">
-          <div class="item_img">
-            <a href="index.php?pro_name=<?php echo $row['pro_name']?>"><img src="<?php echo $row['pro_pic']?>"></a>
-          </div>
-          <div class="item_name text-center">
-            <p><?php echo $row['pro_name']?></p>
-          </div>
-            
-        </div>
-              
-         <?php 
-          } 
-          
-          ?>
+        
         
       </div>
       <!--返回上一頁-->
