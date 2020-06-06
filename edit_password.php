@@ -36,14 +36,7 @@
                 });
         }
     </script>
-    <?php 
-   
-<?php
-        
-  }
     
-    
-?>
 </head>
 
 <body>

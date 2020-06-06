@@ -84,7 +84,7 @@
                         <br>
                             
                          <hr size="10px" width="100%">
-                        <a href="edit-password.php" style="text-decoration:underline;"class="post-tag" onclick="">重設密碼</a> 
+                        <a href="edit_password.php" style="text-decoration:underline;"class="post-tag" onclick="">重設密碼</a> 
                     <hr size="10px" width="100%"> </div>
                     <img style="position: absolute;
                     top:70%;
