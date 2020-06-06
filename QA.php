@@ -56,7 +56,7 @@
                     <div class="single-blog-content" width="100%" style="text-align:center">
                         <h4 style="font-weight: bold; text-align: center;">系統Q&A</h4><br />
                         <div id="QandA">
-                            <p class="Question">Q1: 地圖顯示不出來怎麼辦</p>
+                            <p class="Question">Q1: 地圖無法顯示出來</p>
                             <div class="Answer">
                                 <p>Ans: 請先重新整理頁面，若無法，請洽客服</p>
                             </div>
