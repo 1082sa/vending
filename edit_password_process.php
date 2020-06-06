@@ -22,7 +22,7 @@ if ($password1==$realpassword){
     
 }
 else{
-    echo "<script>alert('原始密碼輸入錯誤！'); location.href = 'edit-password.php';</script>";
+    echo "<script>alert('原始密碼輸入錯誤！'); location.href = 'edit_password.php';</script>";
 
 }
 
