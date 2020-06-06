@@ -27,8 +27,9 @@
             <div id="original-load"></div>
         </div>
     </div>
+-->
 
-    <!-- ##### Contact Area Start ##### -->
+    <!-- Contact Area Start -->
     
                        
                         <!-- Contact Form -->
