@@ -5,9 +5,7 @@ $name= $_POST['name'];
 $gender = $_POST['gender'];
 $job = $_POST['job'];
 
-echo $name;
-echo $gender;
-echo $job;
+
 
 
 
