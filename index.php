@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nav</title>
+    <title>WEVEN - 首頁</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico" />
