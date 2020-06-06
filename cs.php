@@ -19,6 +19,9 @@
 
     <link rel="manifest" href="manifest.json" />
 
+    <!--animation.css-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+
     <script>
         if ("serviceWorker.js" in navigator) {
             console.log("Will service worker register?");
@@ -56,7 +59,7 @@
                     <h4 style="font-weight: bold; text-align: center;">客服聯繫</h4>
                          <hr size="10px" width="100%">
                         <br />
-                        <p>
+                        <p class="lightSpeedIn" style="animation-duration:1.3s">
                             信箱&emsp;&emsp;&nbsp;&emsp;tty09183@gmail.com <br /><br /> 電話&emsp;&emsp;&nbsp;&emsp;&nbsp;&emsp;&nbsp;02-89302156&nbsp;&emsp;&emsp;
                             <br /><br /> &emsp;&emsp;住址&emsp;&emsp;&nbsp;&emsp;新北市中正路514巷96號&nbsp;&emsp;
                             <br>

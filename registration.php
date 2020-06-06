@@ -2,17 +2,6 @@
 
 require 'db.php';
 
-$password  = $_POST['password'];
-$password2 = $_POST['password2'];
-
-if ($password==$password2){
-    header('<script language="JavaScript">;alert("註冊成功!");location.href="login.php";</script>;');
-}
-else{
-header('<script language="JavaScript">;alert("兩次密碼不相同!");location.href="registration.html";</script>;');
-}
-
-
 //register new User 
 if (!empty($_POST)) {	
     $uAccount = $_POST["account"] ?? "";
@@ -67,6 +56,6 @@ function createUser($conn, $data = [])
     ]);
 
     // 跳轉並將結果帶回註冊頁面。
-      
+       echo '<script language="JavaScript">;alert("註冊成功!");location.href="login.php";</script>;';
 }
 ?>
