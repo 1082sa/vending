@@ -31,7 +31,7 @@ echo $pic;
 $conn->exec("INSERT INTO `error` (`account`, `ven_num`, `error_words`, `error_pic`, `error_date`) VALUES ('0430shinyu@gmail.com', '1', '$message', '$pic', now())");
 
 
-header("location:index.php?situation=complete");
+header("location:newindex.php?situation=complete");
     
 ?>
 
