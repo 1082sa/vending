@@ -10,7 +10,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>WEVEN - your vending machine</title>
+    <title>WEVEN - 修改資料</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico" />
@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <link rel="manifest" href="manifest.json" />
+
+    <!--animation.css-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
     <!--service worker-->
     <script>
         if ("serviceWorker.js" in navigator) {
@@ -42,7 +45,7 @@
     </script>
     <?php
     }
- include("profile_user.php");?>
+ include("profile_user_process.php");?>
 </head>
 
 <body>
@@ -63,31 +66,39 @@
         <div class="container">
             <div>
                 <!-- Single Blog Area -->
-                <div class="single-blog-area clearfix mb-100">
+                <div class="single-blog-area clearfix">
                     <!-- Blog Content -->
+                    <form action="profile_edit_process.php" METHOD="POST">
                     <div class="single-blog-content">
                         <h4 style="font-weight: bold; text-align: center;">個人資訊</h4>
                         <hr size="10px" width="100%">
-                            <form action="profile_edit_process.php" method="POST">
+                            <p style="text-align:left;" class="ml-70 lightSpeedIn">
                                 <br>
-                                <div style="text-align:left" class="ml-50">
                                 <?php foreach($rows as $user){ ?>
+                                    &emsp;帳號:&ensp;<input type="text" name="account" size="18" class="text lightSpeedIn" placeholder="name" style="animation-duration:1.5s" required readonly disabled value="<?=$user->account?>"/><br /><br />
+                                    &emsp;暱稱:&ensp;<input type="text" name="name" size="18" class="text lightSpeedIn" placeholder="name" style="animation-duration:1.5s" required value="<?=$user->name?>"/><br /><br/>
+                                    &emsp;性別:&ensp;<?php
+                                    if($user->gender=="男"){
+                                    ?>
                                     
-                                    &emsp;帳號:&ensp;<?=$user->account?><br ><br>
-                                    &emsp;暱稱:&ensp;<input type="text" name="name" size="18" class="text" placeholder="name" required value="<?=$user->name?>"/><br><br>
-                                    &emsp;性別:&ensp;
-                                <input type="radio" name="gender" value="男" checked="true" />男&emsp;&emsp;
+                                     <input type="radio" name="gender" value="男" checked="true" />男&emsp;&emsp;
                                 <input type="radio" name="gender" value="女" />女&emsp;&emsp;&emsp;&emsp;&ensp;
-                                   <br> <br>
-                                    <table >
-                                        <tr>
-                                            <td width="100px"> &emsp;職業:&ensp;</td>
-                                            <td width="500px"><select name="job" class="down">
+                                    <?php
+                                    }
+                                       ?>
+                                    
+                                    <?php
+                                     if($user->gender=="女"){
+                                    ?>
+                                     <input type="radio" name="gender" value="男"  />男&emsp;&emsp;
+                                <input type="radio" name="gender" value="女" checked="true"/>女&emsp;&emsp;&emsp;&emsp;&ensp;
+                                    <?php
+                                    }
+                                       ?><br><br>
+                                    &emsp;職業:&ensp;<select name="job" class="down">
                     <option class="dropdown-item" value="" disabled selected hidden>請選擇</option>
                     <option value="<?=$user->job?>" selected><?=$user->job?></option>
-                                                
-                    <option value="學生">學生</option>
-                    <option value="學生">學生</option>
+                    
                     <option value="農牧業">農牧業</option>
                     <option value="漁業" >漁業</option>
                     <option value="木材森林業">木材森林業</option>
@@ -108,27 +119,17 @@
                     <option value="軍人">軍人</option>
                     <option value="資訊業">資訊業</option>
                     <option value="運動人員">運動人員</option>
-                  </select></td>
-                                        </tr>
-                                    </table>
-                                   
-                                    <div class="form-group dropdown" >
-
-                                
-                  
-                  &emsp;&ensp;&emsp;
-                
-                <br />
-              </div><br> 
+                  </select> 
                                 <?php }?>
-                                </div>
-                                <br>
-                                <a href="profile.php" class="btn btn-outline-dark">取消</a>
-                                <button  type="submit" class="btn btn-outline-dark">提交</button>
-                        </form>
-                       
+                            </p>
                         
-            
+                     
+                            
+                         <hr size="10px" width="100%">
+                       <a href="profile.php" class="btn btn-outline-dark ">取消</a>
+                                <button  type="submit" class="btn btn-outline-dark ">送出</button>
+                    <hr size="10px" width="100%"> </div></form>
+                    
                 </div>
             </div>
         </div>
@@ -150,7 +151,7 @@
     <!-- Active js -->
     <script src="js/active.js"></script>
     <!-- Optional JavaScript -->
-    </div>
+
 </body>
 
 </html>

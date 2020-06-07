@@ -11,14 +11,21 @@ foreach($statement as $row){
     $realpassword=$row['password'];
 }
 
+$sql = "select * from user where account='$account'";
+$result = $conn->query($sql);
+$row = $result->fetch();
 
+if (!$row) {
+     echo "<script>alert('沒有這個帳號喔，請重新確認');location.href = 'forget.php'</script>";
+    exit();
+}
 if ($password1==$password2){
     $conn->exec("UPDATE `user` SET `password` = '.$password2.' WHERE `user`.`account` = '$account'");
-    
-    header("location:login.php?situation=complete");
+    echo "<script>alert('密碼更改成功，請重新登入！'); location.href = 'login.php';</script>";
+   
 }
 else{
-header("location:forget.php?situation=wrongpassword");
+ echo "<script>alert('密碼更改失敗，請重新輸入！'); location.href = 'forget.php';</script>";
 }
 
 

@@ -33,7 +33,9 @@
                                         require 'db.php';
                                         $statement = $conn->query("select name from user where account='$account'");
 foreach($statement as $row){
-    echo $row['name'];
+     echo "<a href='profile.php'><h4>";
+                                            echo $row['name'];
+                                            echo"</h4></a>";
 }?>
                                         
                                     </h4>
@@ -44,16 +46,16 @@ foreach($statement as $row){
                                         <a href="index.php"><span>首頁</span></a>
                                     </li>
                                     <li>
-                                        <a href="#"><span>我的最愛</span></a>
+                                        <a href="beforefavmap.php"><span>我的最愛</span></a>
                                     </li>
                                     <li>
                                         <a href="#"><span>消費紀錄</span></a>
                                     </li>
                                     <li>
-                                        <a href="contact.php"><span>故障回報紀錄</span></a>
+                                        <a href="#"><span>故障回報紀錄</span></a>
                                     </li>
                                     <li>
-                                        <a href="#"><span>客服聯繫</span></a>
+                                        <a href="QA.php"><span>客服聯繫</span></a>
                                     </li>
                                     <li>
                                         <a href="#"><span>活動優惠</span></a>

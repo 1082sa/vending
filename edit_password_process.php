@@ -14,12 +14,16 @@ foreach($statement as $row){
 }
 
 
+
+
 if ($password1==$realpassword){
-    $conn->exec('UPDATE `user` SET `password` = '.$password2.' WHERE `user`.`account` = "happyy@gmail.com"');
-    header("location:profile.php?situation=complete");
+    $conn->exec("UPDATE `user` SET `password` = '$password2' WHERE `user`.`account` = '$account'");
+    echo "<script>alert('密碼修改完畢！'); location.href = 'profile.php';</script>";
+    
 }
 else{
-header("location:edit-password.php?situation=wrongpassword");
+    echo "<script>alert('原始密碼輸入錯誤！'); location.href = 'edit_password.php';</script>";
+
 }
 
 

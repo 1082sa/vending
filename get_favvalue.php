@@ -1,6 +1,9 @@
 <?php 
 	
+    
 	class get_value	{
+        
+        private $account;
 		private $ven_num;
 		private $ven_note;
 		private $location_Latitude;
@@ -9,6 +12,8 @@
 		private $error_num;
 		private $conn;
 		private $tableName = "machine";
+        
+        
 
 		function setven_num($ven_num) { $this->ven_num = $ven_num; }
         function getven_num() { return $this->ven_num; }
@@ -27,6 +32,9 @@
         
 		function seterror_num($error_num) { $this->error_num = $error_num; }
 		function geterror_num() { return $this->error_num; }
+        
+        function setaccount($account) { $this->account = $account; }
+        function getaccount() { return $this->pro_name; }
 
 		public function __construct() {
 			require_once('dbm.php');
@@ -36,38 +44,21 @@
 
 		public function getMachinesLatLng() {
             $sql = "SELECT * FROM $this->tableName WHERE location_Latitude IS NULL AND location_Longitude IS NULL";
-            //$sql = "SELECT location_Latitude,location_Longitude FROM $this->tableName"
 			$stmt = $this->conn->prepare($sql);
 			$stmt->execute();
 			return $stmt->fetchAll(PDO::FETCH_ASSOC);
 		}
 
 		public function getAllMachines() {
-			$sql = "SELECT * FROM $this->tableName";
-            $stmt = $this->conn->prepare($sql);
-			$stmt->execute();
-			return $stmt->fetchAll(PDO::FETCH_ASSOC);
-		}
-        public function fav() {
-			$sql = "SELECT f.ven_num FROM machine m,favorite f where f.account='0430shinyu@gmail.com' and m.ven_num=f.ven_num";
+			//$sql = "SELECT * FROM $this->tableName"; 
+  $sql = "SELECT distinct m.ven_num , m.location_Latitude , m.location_Longitude FROM machine m,favorite f where f.account='$this->account' and m.ven_num=f.ven_num";
+            
             $stmt = $this->conn->prepare($sql);
 			$stmt->execute();
 			return $stmt->fetchAll(PDO::FETCH_ASSOC);
 		}
 
-		public function updateMachineWithLatLng() {
-			$sql = "UPDATE $this->tableName SET location_Latitude = :location_Latitude, location_Longitude = :location_Longitude WHERE ven_num = :ven_num";
-			$stmt = $this->conn->prepare($sql);
-			$stmt->bindParam(':location_Latitude', $this->location_Latitude);
-			$stmt->bindParam(':location_Longitude', $this->location_Longitude);
-			$stmt->bindParam(':ven_num', $this->ven_num);
-
-			if($stmt->execute()) {
-				return true;
-			} else {
-				return false;
-			}
-		}
+		
 	}
 
 ?>

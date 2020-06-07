@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Original - Lifestyle Blog Template</title>
+    <title>WEVEN - 故障申報</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico" />
@@ -27,17 +27,24 @@
             <div id="original-load"></div>
         </div>
     </div>
+-->
 
-    <!-- ##### Contact Area Start ##### -->
+    <!-- Contact Area Start -->
     
                        
                         <!-- Contact Form -->
-                        <form enctype="multipart/form-data" action="contact-upload.php" method="post">
+   
+    <input type="button" class="btn btn-sm" value="吃錢" id="btn">
+    <input type="button" class="btn btn-sm" value="商品錯誤" id="btn2">
+    <input type="button" class="btn btn-sm" value="存貨不足" id="btn3">
+     <input type="button" class="btn btn-sm" value="沒看到販賣機" id="btn4">
+              <br><br>
+              <form enctype="multipart/form-data" action="contact-upload.php" method="post">
                             <div class="row">
                             
                                 <div class="col-12">
                                     <div class="group">
-                                        <textarea name="message"  required></textarea>
+                                        <input id="txt" style="textarea  width:300px height:100px" name="message"  value="請敘述故障狀況" required>
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label>請敘述故障狀況</label>
@@ -56,15 +63,18 @@
                                        
                                     </div>
                                 </div>
-                                  <center>
-                                <div class="col-12">
+                                 
+                                <div class="col-12"  >
                                   
-                                    <input type="submit" class="btn original-btn">
+                                   
                     
                     
                                 </div>
-                                      </center>
+                                   
                             </div>
+                  <center>
+                   <input type="submit" class="btn original-btn">
+                      </center>
                         </form>
                     
 
@@ -89,6 +99,9 @@
     <!-- Google Map js -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwuyLRa1uKNtbgx6xAJVmWy-zADgegA2s"></script>
     <script src="js/map-active.js"></script>
+   <script src="js/contact.js"></script>
+    
+               
 </body>
 
 </html>
