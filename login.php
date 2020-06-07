@@ -54,12 +54,16 @@
             <div id="original-load"></div>
         </div>
     </div>
+
+    <!-- Header -->
+    <header class="header-area"></header>
+    
     <!-- ##### Blog Wrapper Start ##### -->
-    <div class="blog-wrapper section-padding-70 clearfix" style="text-align: center;">
+    <div class="blog-wrapper section-padding-50 clearfix" style="width: 100%; text-align: center;">
         <div class="container">
             <div>
                 <!-- Single Blog Area -->
-                <div class="single-blog-area clearfix mb-100">
+                <div class="single-blog-area clearfix">
                     <!-- Blog Content -->
                     <div class="single-blog-content">
                         <h4 style="font-weight: bold; text-align: center;">登入</h4><br>
