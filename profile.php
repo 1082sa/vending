@@ -69,7 +69,7 @@
                 <div class="single-blog-area clearfix">
                     <!-- Blog Content -->
                     <div class="single-blog-content">
-                        <h4 style="font-weight: bold; text-align: center;">個人資訊</h4>
+                        <h4 class=""style="font-weight: bold; text-align: center;">個人資訊</h4>
                         <hr size="10px" width="100%">
                             <p style="text-align:left; animation-duration:1.5s" class="ml-70 lightSpeedIn">
                                 <br>
@@ -89,7 +89,7 @@
                     <img style="position: absolute;
                     top:70%;
   bottom: 1em;
-  right: 1em;" src="img/pencil1.png" width="50px"onclick="javascript:location.href='profile_edit.php'">
+  right: 1em;" src="img/edit.svg" width="50px"onclick="javascript:location.href='profile_edit.php'">
                 </div>
             </div>
         </div>
