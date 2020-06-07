@@ -62,7 +62,9 @@
             <div id="original-load"></div>
         </div>
     </div>
-
+    
+    <!-- Header -->
+    <header class="header-area"></header>
 
     <!-- ##### Blog Wrapper Start ##### -->
     <div class="blog-wrapper section-padding-70 clearfix" style="text-align: center;">
