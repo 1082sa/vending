@@ -57,7 +57,8 @@
                 <div class="single-blog-area clearfix mb-100">
                     <!-- Blog Content -->
                     <div class="single-blog-content" width="100%" style="text-align:center">
-                        <h4 style="font-weight: bold; text-align: center;">系統Q&A</h4><br />
+                        <h4 style="font-weight: bold; text-align: center;">常見問題</h4><br />
+                        <hr size="10px" style="align:center" width="100%">
                         <div id="QandA">
                             <p class="Question">Q1: 地圖無法顯示出來</p>
                             <div class="Answer">
