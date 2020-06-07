@@ -49,9 +49,6 @@
 </head>
 
 <body>
-    <header class="header-area">
-       <?php include("sidebar.php")?>
-    </header> 
     <!-- Preloader -->
     <div id="preloader">
         <div class="preload-content">
@@ -59,6 +56,10 @@
         </div>
     </div>
 
+    <!-- Header -->
+    <header class="header-area">
+        <?php include("sidebar.php")?>
+    </header>
     
     <!-- ##### Blog Wrapper Start ##### -->
     

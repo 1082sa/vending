@@ -38,15 +38,16 @@
 </head>
 
 <body>
-    <header class="header-area">
-        <?php include("sidebar.php")?>
-     </header>
     <!-- Preloader -->
     <div id="preloader">
         <div class="preload-content">
             <div id="original-load"></div>
         </div>
     </div>
+    <header class="header-area">
+        <?php include("sidebar.php")?>
+    </header>
+
 
     <!-- ##### Blog Wrapper Start ##### -->
     <div class="blog-wrapper section-padding-100 clearfix" style="text-align: center;">

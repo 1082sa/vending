@@ -40,14 +40,17 @@
 </head>
 
 <body>
-    <header class="header-area">
-       <?php include("sidebar.php")?>
-    </header>
-      <div id="preloader">
+    <!-- Preloader -->
+    <div id="preloader">
         <div class="preload-content">
             <div id="original-load"></div>
         </div>
     </div>
+
+    <!-- Header -->
+    <header class="header-area">
+       <?php include("sidebar.php")?>
+    </header>
 
     <div class="blog-wrapper section-padding-100 clearfix" style="text-align: center;">
         <div class="container">
