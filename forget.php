@@ -80,15 +80,15 @@
                             <hr size="10px" width="100%">
                             <br>
                             <p>
-                                帳&emsp;&emsp;號&emsp;&nbsp;&emsp;<input type="email" name="account" value="sasoggood@gmail.com"size="18" class="text lightSpeedIn" readonly disabled style="animation-duration: 1.5s">
+                                帳&emsp;&emsp;號&emsp;&emsp;<input type="email" name="account" value="sasoggood@gmail.com"size="20" class="text lightSpeedIn" readonly disabled style="animation-duration: 1.5s">
                                 <br><br>
-                                新的密碼&emsp;&emsp;<input type="password" name="password1" size="18" class="text lightSpeedIn" placeholder="password" required style="animation-duration: 2s">
+                                新的密碼&emsp;&emsp;<input type="password" name="password1" size="20" class="text lightSpeedIn" placeholder="password" required style="animation-duration: 2s">
                                 <br><br> 
-                                確認密碼&emsp;&emsp;<input type="password" name="password2" size="18" class="text lightSpeedIn" placeholder="password" required style="animation-duration: 2.5s">
+                                確認密碼&emsp;&emsp;<input type="password" name="password2" size="20" class="text lightSpeedIn" placeholder="password" required style="animation-duration: 2.5s">
                                 <br><br>
                             </p>            
                             <a href="login.php" class="post-tag">沒有忘記密碼?請回到登入畫面</a>
-                            <button type="submit" class="btn original-btn" style="background-color: ghostwhite;">提交</button>
+                            <button type="submit" class="btn btn-outline-dark" style="background-color: ghostwhite;">提交</button>
                         </div>
                     </form>
                 </div>
