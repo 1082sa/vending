@@ -68,10 +68,8 @@
                     <form action="login_process.php" method="post">
                     <div class="single-blog-content">
                         <h4 style="font-weight: bold; text-align: center;">登入</h4><br>
-                        
-                        <hr size="10px" style="align:center" width="100%">
-                       
-                        <p style="padding-top:40px">
+
+                        <p style="padding-top:70px">
 							
                             帳號&emsp;&emsp;&nbsp;&ensp;<input type="email" name="account" size="18" class="text animated lightSpeedIn" placeholder="email" style="animation-duration: 1.2s" required><br /><br /> 密碼&emsp;&emsp;&ensp;
                             <input type="password" name="password" size="18" class="text animated lightSpeedIn" placeholder="password" required style="animation-duration: 1.5s"><br><br><br><?php $msg = isset($_GET["msg"])? $_GET["msg"]: "";echo $msg; ?>
@@ -90,7 +88,8 @@
         </div>
     </div>
 
-
+    <div class="title-bg">
+    </div>
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>

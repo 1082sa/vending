@@ -2397,6 +2397,15 @@ textarea:focus~.highlight {
     margin: 10px 80px;
 }
 
+.title-bg {
+    position: absolute;
+    z-index: -1000;
+    background-color: #BBE4E7;
+    height: 16.5%;
+    width: 100%;
+    top: 0;
+}
+
 
 /* The End */
 
