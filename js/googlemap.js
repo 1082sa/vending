@@ -1,8 +1,8 @@
 var map;
 var geocoder;
 
-
 function loadMap() {
+
     //黑夜模式樣式
     var styledMapType = new google.maps.StyledMapType(
         [{
@@ -149,9 +149,6 @@ function loadMap() {
         var allData = JSON.parse(document.getElementById('allData').innerHTML);
         showAllMachines(allData)
     });
-
-
-
 }
 
 function showAllMachines(allData) {
@@ -167,19 +164,18 @@ function showAllMachines(allData) {
 
         //info window內的照片
 
+        //收藏圖示
         var a = document.createElement('a');
         var imgfav = document.createElement("img");
         imgfav.src = 'img/unfav.svg';
-        imgfav.style.width = '100px';
+        imgfav.style.width = '50px';
         a.appendChild(imgfav);
         a.href = "http://example.com"; //要改看要彈跳/跳轉頁面
         content.appendChild(a);
 
-        function imgWindow() {
-            window.open("a");
-        }
-
-
+        // function imgWindow() {
+        //     window.open("a");
+        // }
         // a.onclick = function fav() { 
         //     $.ajax({  
         //         type: "post",
@@ -191,30 +187,112 @@ function showAllMachines(allData) {
         //     });
         // };
 
+        //路徑規劃圖示
         var b = document.createElement('a');
         var imgrou = document.createElement('img');
         imgrou.src = 'img/route.svg';
-        imgrou.style.width = '100px';
+        imgrou.style.width = '50px';
         b.appendChild(imgrou);
         b.href = "http://example.com";
         content.appendChild(b);
 
+        //故障回報圖示
         var c = document.createElement('a');
         var imgwar = document.createElement('img');
         imgwar.src = 'img/warning.svg';
-        imgwar.style.width = '100px';
+        imgwar.style.width = '50px';
         c.appendChild(imgwar);
         c.setAttribute("data-target", "#exampleModalCenter");
         c.setAttribute("data-toggle", "modal");
+
+        c.addEventListener("click", function() {
+            var points = data.ven_num;
+            console.log(points);
+            location.href = "contact.php?ven_num=" + points;
+            //AddError(points);
+
+            //         //var points = document.getElementById("ven_num").nodeValue;
+            //         // console.log(points);
+            //         //$.post('contact-upload.php', { ven_num: points });
+            //     })
+            // $(c).ready(function() {
+            //     createCookie("height", $(window).height(), "10");
+            // });
+
+            // $("#post-btn").click(function() {
+            //     var points = data.ven_num;
+            //     $.ajax({
+            //         url: "contact.php",
+            //         method: "POST",
+            //         data: { ven_num: points },
+
+            //         error: function() {
+            //             alert("失敗");
+            //         },
+            //         success: function() {
+
+            //             alert("成功");
+            //             console.log(data);
+            //         }
+            //     })
+            // })
+
+            // $("#post-btn").click(function() {
+            //     var points = data.ven_num;
+            //     location.href = "contact.php?ven_num=" + points;
+            // })
+        });
+
+
+        // function passVal() {
+        //     var datar = {
+        //         points: data.ven_num
+        //     };
+        //     console.log(datar);
+
+        //     $.post("contact.php", datar);
+        // }
+
+
+        // $('#ajaxBtn').click(function(){
+
+        // 	$.ajax('/jquery/submitData', {
+        // 		type: 'POST',  // http method
+        // 		data: { ven_num: data.ven_num },  // data to submit
+        // 		success: function (data, status, xhr) {
+        // 			$('p').append('status: ' + status + ', data: ' + data);
+        // 		},
+        // 		error: function (jqXhr, textStatus, errorMessage) {
+        // 				$('p').append('Error: ' + errorMessage);
+        // 			}
+        // 	});
+        // });
+
+
+
+        // if (status == 'OK') {
+        //     points = data.ven_num;
+        //     AddError(points);
+        // } else {
+        //     alert('Was not successful add error information: ' + status);
+        // }
+        //});
+
+
         content.appendChild(c);
 
+
+        //商品清單圖示
         var d = document.createElement('a');
         var imglis = document.createElement('img');
         imglis.src = 'img/list.svg';
-        imglis.style.width = '100px';
+        imglis.style.width = '50px';
         d.appendChild(imglis);
         d.setAttribute("data-target", "#exampleModalLong");
         d.setAttribute("data-toggle", "modal");
+        //d.onclick = function() { OnClickR() };
+
+
         content.appendChild(d);
 
         if (data.error >= 3) {
@@ -222,17 +300,12 @@ function showAllMachines(allData) {
                 position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
                 map: map,
                 icon: 'img/marker1.png' //顯示非正常運作
-
-
             });
         } else {
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
                 map: map,
                 icon: 'img/marker.png' //顯示正常運作
-
-
-
             });
         }
 
@@ -306,6 +379,50 @@ function codeAddress(cdata) {
             }
         });
     });
+}
+
+
+// function returnven_num(data) {
+//     if (status == 'OK') {
+//         points = data.ven_num;
+//         AddError(points);
+//     } else {
+//         alert('Was not successful add error information: ' + status);
+//     }
+// }
+
+function callPHP(params) {
+    var httpc = new XMLHttpRequest(); // simplified for clarity
+    var url = "contact.php";
+    httpc.open("POST", url, true); // sending as POST
+
+    httpc.onreadystatechange = function() { //Call a function when the state changes.
+        if (httpc.readyState == 4 && httpc.status == 200) { // complete and no errors
+            alert(httpc.responseText); // some processing here, or whatever you want to do with the response
+        }
+    };
+    httpc.send(params);
+}
+
+
+
+function AddError(points) {
+    $.ajax({
+        url: "contact.php",
+        method: "POST",
+        data: { ven_num: points },
+
+        error: function() {
+            alert("失敗");
+        },
+        success: function() {
+
+            alert("成功");
+            console.log(data);
+        }
+    })
+
+
 }
 
 //更新map位置
