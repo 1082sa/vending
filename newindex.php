@@ -21,7 +21,9 @@
     <link rel="manifest" href="manifest.json" />
 
     <!--animation-->
+    <!---The async attribute allows the browser to render the page while the API loads--->
 
+    
     <script>
         if ('serviceWorker' in navigator) {
             console.log("Will service worker register?");
@@ -90,7 +92,28 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" target="exampleModalLongTitle">商品清單</h5>
+                    <h5 class="modal-title" id="ver">商品清單</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                </div>
+                <div class="modal-body">
+                    填放商品清單
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" >Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ver">販賣機故障回報</h5>
+                    
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -98,35 +121,6 @@
                 <div class="modal-body">
                     <?php include("contact.php");?>
                 </div>
-                
-                <div class="modal-body">
-                    填放商品清單
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">販賣機故障回報</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-                </div>
-                <div class="modal-body">
-                    <?php
- include("contact.php");?>
-                </div>
-                </div>
-                
-                
             </div>
         </div>
     </div>
@@ -160,10 +154,7 @@
     <script>
         w3.includeHTML();
     </script>
-</body>
-<!---The async attribute allows the browser to render the page while the API loads--->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBstjRsNEnzJo4CYLYDSMu7lJ_Bu-A9w4c&libraries=places&callback=loadMap">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBstjRsNEnzJo4CYLYDSMu7lJ_Bu-A9w4c&libraries=places&callback=loadMap">
     </script>
-    
-
+</body>
 </html>
