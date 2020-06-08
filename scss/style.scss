@@ -764,8 +764,9 @@ img {
             margin-bottom: 20px;
         }
         .post-tag {
-            color: #a1a1a1;
+            color: #6E999C;
             font-size: 15px;
+            font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 4px;
             margin-bottom: 10px;
@@ -2024,7 +2025,7 @@ textarea:focus~.highlight {
     display: flex;
     justify-content: space-between;
     text-align: center;
-    margin: 10px 80px;
+    margin: 10px 90px;
 }
 
 .title-bg {
@@ -2034,6 +2035,11 @@ textarea:focus~.highlight {
     height: 16.5%;
     width: 100%;
     top: 0
+}
+
+.y-bt {
+    background-color: #FFDD92;
+    padding: 8px 15px;
 }
 
 

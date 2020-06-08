@@ -63,7 +63,7 @@ h6 {
 }
 
 p {
-    color: #878787;
+    color: #304D4F;
     font-size: 14px;
     line-height: 1.4;
     font-family: "Microsoft JhengHei", "helveticaneuemedium";
@@ -376,9 +376,9 @@ img {
     right: 60px;
     font-size: 13px;
     text-align: center;
-    color: #878787;
+    color: #304D4F;
     letter-spacing: 2px;
-    border-bottom: 2px solid #878787;
+    border-bottom: 2px solid #304D4F;
     -webkit-transition-duration: 500ms;
     transition-duration: 500ms;
     text-transform: uppercase;
@@ -875,8 +875,9 @@ img {
 }
 
 .single-blog-area .single-blog-content .post-tag {
-    color: #a1a1a1;
+    color: #6E999C;
     font-size: 15px;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 4px;
     margin-bottom: 10px;
@@ -1488,7 +1489,7 @@ img {
 }
 
 .group label {
-    color: #878787;
+    color: #304D4F;
     font-style: italic;
     font-size: 12px;
     font-weight: normal;
@@ -1759,7 +1760,7 @@ textarea:focus~.highlight {
     position: absolute;
     width: 20px;
     height: 2px;
-    background-color: #878787;
+    background-color: #304D4F;
     -webkit-transform-origin: 100% 50%;
     transform-origin: 100% 50%;
 }
@@ -2233,7 +2234,7 @@ textarea:focus~.highlight {
 
 #result_block {
     text-align: center;
-    color: #878787;
+    color: #304D4F;
     background-color: #e6e6e6;
     width: 94.5%;
     height: 80vh;
@@ -2394,7 +2395,7 @@ textarea:focus~.highlight {
     -ms-flex-pack: justify;
     justify-content: space-between;
     text-align: center;
-    margin: 10px 80px;
+    margin: 10px 90px;
 }
 
 .title-bg {
@@ -2404,6 +2405,11 @@ textarea:focus~.highlight {
     height: 16.5%;
     width: 100%;
     top: 0;
+}
+
+.y-bt {
+    background-color: #FFDD92;
+    padding: 8px 15px;
 }
 
 

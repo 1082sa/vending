@@ -79,7 +79,7 @@
                             </div>
                             <br>
                             
-                                <button type="submit" class="btn btn-outline-dark ">登入</button>
+                                <button type="submit" class="btn y-bt">確認</button>
                             </form>
                     
                     </div>
