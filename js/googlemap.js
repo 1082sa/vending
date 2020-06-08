@@ -204,45 +204,15 @@ function showAllMachines(allData) {
         c.appendChild(imgwar);
         c.setAttribute("data-target", "#exampleModalCenter");
         c.setAttribute("data-toggle", "modal");
-
         c.addEventListener("click", function() {
             var points = data.ven_num;
-            console.log(points);
-            location.href = "contact.php?ven_num=" + points;
-            //AddError(points);
-
-            //         //var points = document.getElementById("ven_num").nodeValue;
-            //         // console.log(points);
-            //         //$.post('contact-upload.php', { ven_num: points });
-            //     })
-            // $(c).ready(function() {
-            //     createCookie("height", $(window).height(), "10");
-            // });
-
-            // $("#post-btn").click(function() {
-            //     var points = data.ven_num;
-            //     $.ajax({
-            //         url: "contact.php",
-            //         method: "POST",
-            //         data: { ven_num: points },
-
-            //         error: function() {
-            //             alert("失敗");
-            //         },
-            //         success: function() {
-
-            //             alert("成功");
-            //             console.log(data);
-            //         }
-            //     })
-            // })
-
-            // $("#post-btn").click(function() {
-            //     var points = data.ven_num;
-            //     location.href = "contact.php?ven_num=" + points;
-            // })
+            alert(points);
+            v = document.getElementById("ven_id");
+            v.value = points;
+            //console.log(points);
+            //location.href = "newindex.php?ven_num=" + points;
         });
-
+        content.appendChild(c);
 
         // function passVal() {
         //     var datar = {
@@ -279,7 +249,7 @@ function showAllMachines(allData) {
         //});
 
 
-        content.appendChild(c);
+
 
 
         //商品清單圖示
@@ -290,7 +260,11 @@ function showAllMachines(allData) {
         d.appendChild(imglis);
         d.setAttribute("data-target", "#exampleModalLong");
         d.setAttribute("data-toggle", "modal");
-        //d.onclick = function() { OnClickR() };
+        d.addEventListener("click", function() {
+            var points = data.ven_num;
+            v = document.getElementById("ven_id");
+            v.value = points;
+        })
 
 
         content.appendChild(d);
