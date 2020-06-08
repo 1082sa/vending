@@ -792,7 +792,6 @@ img {
         }
         >p {
             line-height: 2;
-            margin-bottom: 70px;
             @media #{$breakpoint-lg} {
                 margin-bottom: 30px;
             }
@@ -2019,6 +2018,13 @@ textarea:focus~.highlight {
 
 .size {
     font-size: x-large;
+}
+
+.otherselection {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 10px 80px;
 }
 
 
