@@ -1,38 +1,57 @@
+
 <?php
+class get_contact	{
+  private $error_num;
+  private $account;
+  private $ven_num;
+  private $error_words;
+  private $error_pic;
+  private $error_date;
+  
+  private $conn;
+  private $tableName = "errror";
+  
+      
 
+  function seterror_num($error_num) { $this->error_num = $error_num; }
+  function geterror_num() { return $this->error_num; }
+      
+  function setaccount($account) { $this->account = $account; }
+  function getaccount() { return $this->account; }
+      
+  function setven_num($ven_num) { $this->ven_num = $ven_num; }
+  function getven_num() { return $this->ven_num; }
+      
+  function seterror_words($error_words) { $this->error_words = $error_words; }
+  function geterror_words() { return $this->error_words; }
+      
+  function seterror_pic($error_pic) { $this->error_pic = $error_pic; }
+  function geterror_pic() { return $this->error_pic; }
 
-# 檢查檔案是否上傳成功
-if ($_FILES['my_file']['error'] === UPLOAD_ERR_OK){
-  echo '檔案名稱: ' . $_FILES['my_file']['name'] . '<br/>';
-  echo '檔案類型: ' . $_FILES['my_file']['type'] . '<br/>';
-  echo '檔案大小: ' . ($_FILES['my_file']['size'] / 1024) . ' KB<br/>';
-  echo '暫存名稱: ' . $_FILES['my_file']['tmp_name'] . '<br/>';
+  function seterror_date($error_date) { $this->error_date = $error_date; }
+  function geterror_date() { return $this->error_date; }
 
-  # 檢查檔案是否已經存在
-  if (file_exists('upload/'.$_FILES['my_file']['name'])){
-    echo '檔案已存在。<br/>';
-  } else {
-    $file = $_FILES['my_file']['tmp_name'];
-    $dest = 'upload/' .$_FILES['my_file']['name'];
-
-    # 將檔案移至指定位置
-    move_uploaded_file($file, $dest);
+  public function __construct() {
+    require_once('dbm.php');
+    $conn = new DbConnect;
+    $this->conn = $conn->connect();
   }
-} 
-require 'db.php';
-session_start();
-$message = $_POST["message"];
-$pic=$_FILES['my_file']['name'];
 
-echo gettype($_FILES['my_file']['name']);
-echo "<br>";
-echo $pic;
+  
+  public function AddError() {
+    $sql = "INSERT INTO `error` (`account`, `ven_num`, `error_words`, `error_pic`, `error_date`) values ('0430shinyu@gmail.com', :ven_num, :error_words, :error_pic, now())";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->bindParam(':ven_num', $this->ven_num);
+    $stmt->bindParam(':error_words', $this->error_words);
+    $stmt->bindParam(':error_pic', $this->error_pic);
 
-$conn->exec("INSERT INTO `error` (`account`, `ven_num`, `error_words`, `error_pic`, `error_date`) VALUES ('0430shinyu@gmail.com', '1', '$message', '$pic', now())");
-
-
-header("location:newindex.php?situation=complete");
-    
+    if($stmt->execute()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
 ?>
 
 
