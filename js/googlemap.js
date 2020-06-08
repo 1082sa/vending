@@ -262,6 +262,7 @@ function showAllMachines(allData) {
         d.setAttribute("data-toggle", "modal");
         d.addEventListener("click", function() {
             var points = data.ven_num;
+
             v = document.getElementById("ven_id");
             v.value = points;
         })
