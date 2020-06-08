@@ -40,16 +40,18 @@
     <br><br>
 
     <form enctype="multipart/form-data" action="action.php" method="post">
-        <input type="hidden" name="ven_num" id="ven_id">
+        <input type="hidden" name="ven_num" id="ven_num_id" >
         <div class="row">
 
             <div class="col-12">
                 <div class="group">
+                    
                     <input id="txt" style="textarea  width:300px height:100px" name="error_words" value="請敘述故障狀況" required>
+                    
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>請敘述故障狀況</label>
-                    <div id="ven_id"></div>
+                    
                 </div>
             </div>
 

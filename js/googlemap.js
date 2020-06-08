@@ -207,49 +207,14 @@ function showAllMachines(allData) {
         c.addEventListener("click", function() {
             var points = data.ven_num;
             alert(points);
-            v = document.getElementById("ven_id");
+            v = document.getElementById("ven_num_id");
             v.value = points;
+            //v.placeholder = points;
+            console.log(v);
             //console.log(points);
             //location.href = "newindex.php?ven_num=" + points;
         });
         content.appendChild(c);
-
-        // function passVal() {
-        //     var datar = {
-        //         points: data.ven_num
-        //     };
-        //     console.log(datar);
-
-        //     $.post("contact.php", datar);
-        // }
-
-
-        // $('#ajaxBtn').click(function(){
-
-        // 	$.ajax('/jquery/submitData', {
-        // 		type: 'POST',  // http method
-        // 		data: { ven_num: data.ven_num },  // data to submit
-        // 		success: function (data, status, xhr) {
-        // 			$('p').append('status: ' + status + ', data: ' + data);
-        // 		},
-        // 		error: function (jqXhr, textStatus, errorMessage) {
-        // 				$('p').append('Error: ' + errorMessage);
-        // 			}
-        // 	});
-        // });
-
-
-
-        // if (status == 'OK') {
-        //     points = data.ven_num;
-        //     AddError(points);
-        // } else {
-        //     alert('Was not successful add error information: ' + status);
-        // }
-        //});
-
-
-
 
 
         //商品清單圖示
@@ -262,12 +227,10 @@ function showAllMachines(allData) {
         d.setAttribute("data-toggle", "modal");
         d.addEventListener("click", function() {
             var points = data.ven_num;
-
-            v = document.getElementById("ven_id");
-            v.value = points;
-        })
-
-
+            alert(points);
+            va = document.getElementById("ven_id_n");
+            va.value = points;
+        });
         content.appendChild(d);
 
         if (data.error >= 3) {
