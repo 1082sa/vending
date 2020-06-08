@@ -40,7 +40,7 @@
               <br><br>
               
               <form enctype="multipart/form-data" action="action.php" method="post">
-              <input type="hidden" name="ven_num" value="<?php echo $ven_num?>">
+              <input type="hidden" name="ven_num" id ="ven_id">
                             <div class="row">
                             
                                 <div class="col-12">
@@ -49,6 +49,7 @@
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label>請敘述故障狀況</label>
+                                        <div id="ven_id"></div>
                                     </div>
                                 </div>
                                 

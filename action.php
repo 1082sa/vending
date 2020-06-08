@@ -26,6 +26,7 @@
 	$error_pic = $_FILES['my_file']['name'];
 
 	echo $ven_num;
+	
 	$cond->setaccount("michellechen58@gmail.com");
 	$cond->setven_num($ven_num);
 	$cond->seterror_words($error_words);
