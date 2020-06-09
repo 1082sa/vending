@@ -59,27 +59,26 @@
     <header class="header-area"></header>
     
     <!-- ##### Blog Wrapper Start ##### -->
-    <div class="blog-wrapper section-padding-40 clearfix" style="text-align: center;">
+    <div class="blog-wrapper section-padding-50 clearfix" style="width: 100%; text-align: center;">
         <div class="container">
             <div>
                 <!-- Single Blog Area -->
                 <div class="single-blog-area clearfix">
                     <!-- Blog Content -->
-                    <form action="login_process.php" method="post">
                     <div class="single-blog-content">
                         <h4 style="font-weight: bold; text-align: center;">登入</h4><br>
-
-                        <p style="padding-top:70px">
-							
-                            帳號&emsp;&emsp;&nbsp;&ensp;<input type="email" name="account" size="18" class="text animated lightSpeedIn" placeholder="email" style="animation-duration: 1.2s" required><br /><br /> 密碼&emsp;&emsp;&ensp;
+                        
+                        <hr size="10px" style="align:center" width="100%">
+                       
+                        <p style="padding-top:40px">
+							<form action="login_process.php" method="post">
+                            帳號&emsp;&emsp;&nbsp;&emsp;<input type="email" name="account" size="18" class="text animated lightSpeedIn" placeholder="email" style="animation-duration: 1.2s" required><br /><br /> 密碼&emsp;&emsp;&nbsp;&emsp;
                             <input type="password" name="password" size="18" class="text animated lightSpeedIn" placeholder="password" required style="animation-duration: 1.5s"><br><br><br><?php $msg = isset($_GET["msg"])? $_GET["msg"]: "";echo $msg; ?>
-                            <div class="otherselection">
                             <a href="registration.html" class="post-tag animated fadeInRight">尚未註冊?</a>
                             <a href="forget.php" class="post-tag animated fadeInLeft">忘記密碼?</a>
-                            </div>
                             <br>
                             
-                                <button type="submit" class="btn y-bt">確認</button>
+                                <button type="submit" class="btn btn-outline-dark ">登入</button>
                             </form>
                     
                     </div>
@@ -88,8 +87,7 @@
         </div>
     </div>
 
-    <div class="title-bg">
-    </div>
+
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>

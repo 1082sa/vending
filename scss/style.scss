@@ -764,9 +764,8 @@ img {
             margin-bottom: 20px;
         }
         .post-tag {
-            color: #6E999C;
+            color: #a1a1a1;
             font-size: 15px;
-            font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 4px;
             margin-bottom: 10px;
@@ -793,6 +792,7 @@ img {
         }
         >p {
             line-height: 2;
+            margin-bottom: 70px;
             @media #{$breakpoint-lg} {
                 margin-bottom: 30px;
             }
@@ -2019,27 +2019,6 @@ textarea:focus~.highlight {
 
 .size {
     font-size: x-large;
-}
-
-.otherselection {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    margin: 10px 90px;
-}
-
-.title-bg {
-    position: absolute;
-    z-index: -1000;
-    background-color: #BBE4E7;
-    height: 16.5%;
-    width: 100%;
-    top: 0
-}
-
-.y-bt {
-    background-color: #FFDD92;
-    padding: 8px 15px;
 }
 
 
