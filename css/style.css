@@ -55,10 +55,17 @@ h6 {
 }
 
 p {
+<<<<<<< HEAD
   color: #878787;
   font-size: 14px;
   line-height: 1.4;
   font-family: "Microsoft JhengHei", "helveticaneuemedium";
+=======
+    color: #878787;
+    font-size: 14px;
+    line-height: 1.4;
+    font-family: "Microsoft JhengHei", "helveticaneuemedium";
+>>>>>>> parent of d20657e... 標題主題設計
 }
 
 a {
@@ -363,6 +370,7 @@ img {
 }
 
 #scrollUp {
+<<<<<<< HEAD
   bottom: 60px;
   right: 60px;
   font-size: 13px;
@@ -375,6 +383,20 @@ img {
   text-transform: uppercase;
   padding: 5px 10px;
   line-height: 1;
+=======
+    bottom: 60px;
+    right: 60px;
+    font-size: 13px;
+    text-align: center;
+    color: #878787;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #878787;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    line-height: 1;
+>>>>>>> parent of d20657e... 標題主題設計
 }
 
 #scrollUp:hover {
@@ -855,12 +877,21 @@ img {
 }
 
 .single-blog-area .single-blog-content .post-tag {
+<<<<<<< HEAD
   color: #a1a1a1;
   font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 4px;
   margin-bottom: 10px;
   display: block;
+=======
+    color: #a1a1a1;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    display: block;
+>>>>>>> parent of d20657e... 標題主題設計
 }
 
 .single-blog-area .single-blog-content .post-tag:hover, .single-blog-area .single-blog-content .post-tag:focus {
@@ -1460,6 +1491,7 @@ img {
 }
 
 .group label {
+<<<<<<< HEAD
   color: #878787;
   font-style: italic;
   font-size: 12px;
@@ -1470,6 +1502,18 @@ img {
   top: 5px;
   -webkit-transition: 0.5s ease all;
   transition: 0.5s ease all;
+=======
+    color: #878787;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    top: 5px;
+    -webkit-transition: 0.5s ease all;
+    transition: 0.5s ease all;
+>>>>>>> parent of d20657e... 標題主題設計
 }
 
 .group .bar {
@@ -1717,6 +1761,7 @@ textarea:focus ~ .highlight {
   transform: rotate(-45deg) scaleX(1) translateY(-10px);
 }
 
+<<<<<<< HEAD
 #search-wrapper #close-icon:before, #search-wrapper #close-icon:after {
   display: block;
   content: "";
@@ -1726,6 +1771,18 @@ textarea:focus ~ .highlight {
   background-color: #878787;
   -webkit-transform-origin: 100% 50%;
           transform-origin: 100% 50%;
+=======
+#search-wrapper #close-icon:before,
+#search-wrapper #close-icon:after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: #878787;
+    -webkit-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
+>>>>>>> parent of d20657e... 標題主題設計
 }
 
 #search-wrapper #close-icon:before {
@@ -2183,6 +2240,7 @@ textarea:focus ~ .highlight {
 
 /* searching CSS */
 #result_block {
+<<<<<<< HEAD
   text-align: center;
   color: #878787;
   background-color: #e6e6e6;
@@ -2195,6 +2253,20 @@ textarea:focus ~ .highlight {
   border-radius: 0.3em;
   overflow: hidden;
   font-size: 0.8em;
+=======
+    text-align: center;
+    color: #878787;
+    background-color: #e6e6e6;
+    width: 94.5%;
+    height: 80vh;
+    -webkit-box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.15);
+    -webkit-transform: translate(3%, 6%);
+    transform: translate(3%, 6%);
+    border-radius: 0.3em;
+    overflow: hidden;
+    font-size: 0.8em;
+>>>>>>> parent of d20657e... 標題主題設計
 }
 
 #result_block #result_list {
@@ -2331,5 +2403,29 @@ textarea:focus ~ .highlight {
   font-size: x-large;
 }
 
+<<<<<<< HEAD
+=======
+.otherselection {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    text-align: center;
+    margin: 10px 80px;
+}
+
+.title-bg {
+    position: absolute;
+    z-index: -1000;
+    background-color: #BBE4E7;
+    height: 16.5%;
+    width: 100%;
+    top: 0;
+}
+
+
+>>>>>>> parent of d20657e... 標題主題設計
 /* The End */
 /*# sourceMappingURL=style.css.map */

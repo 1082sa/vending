@@ -2021,5 +2021,24 @@ textarea:focus~.highlight {
     font-size: x-large;
 }
 
+<<<<<<< HEAD
+=======
+.otherselection {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 10px 80px;
+}
+
+.title-bg {
+    position: absolute;
+    z-index: -1000;
+    background-color: #BBE4E7;
+    height: 16.5%;
+    width: 100%;
+    top: 0
+}
+
+>>>>>>> parent of d20657e... 標題主題設計
 
 /* The End */
