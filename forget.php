@@ -95,7 +95,8 @@
             </div>
         </div>
     </div>
-
+    <div class="title-bg">
+    </div>
 
     <!-- ##### Footer Area Start ##### -->
 
