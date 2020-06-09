@@ -9,15 +9,15 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>WEVEN - 故障申報</title>
+    <title>Original - Lifestyle Blog Template</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico" />
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css" />
-    
-    
+
+
 </head>
 
 <body>
@@ -27,58 +27,63 @@
             <div id="original-load"></div>
         </div>
     </div>
--->
 
-    <!-- Contact Area Start -->
-    
-                       
-                        <!-- Contact Form -->
-   
+    <!-- ##### Contact Area Start ##### -->
+
+
+    <!-- Contact Form -->
+
     <input type="button" class="btn btn-sm" value="吃錢" id="btn">
     <input type="button" class="btn btn-sm" value="商品錯誤" id="btn2">
     <input type="button" class="btn btn-sm" value="存貨不足" id="btn3">
-     <input type="button" class="btn btn-sm" value="沒看到販賣機" id="btn4">
-              <br><br>
-              <form enctype="multipart/form-data" action="contact-upload.php" method="post">
-                            <div class="row">
-                            
-                                <div class="col-12">
-                                    <div class="group">
-                                        <input id="txt" style="textarea  width:300px height:100px" name="message"  value="請敘述故障狀況" required>
-                                        <span class="highlight"></span>
-                                        <span class="bar"></span>
-                                        <label>請敘述故障狀況</label>
-                                    </div>
-                                </div>
-                                
-                                <br> <br> <br>
-                                <div class="col-12">
-                                    <div class="group">
-                                    <input type="file" class="btn btn-outline-dark" name="my_file">
-                             <label>圖片上傳(可忽略)</label>
-                            <br>
-                            <br>
-                                       
-                                        <span class="bar"></span>
-                                       
-                                    </div>
-                                </div>
-                                 
-                                <div class="col-12"  >
-                                  
-                                   
-                    
-                    
-                                </div>
-                                   
-                            </div>
-                  <center>
-                   <input type="submit" class="btn original-btn">
-                      </center>
-                        </form>
-                    
+    <input type="button" class="btn btn-sm" value="沒看到販賣機" id="btn4">
+    <br><br>
 
-              
+    <form enctype="multipart/form-data" action="action.php" method="post">
+        <input type="hidden" name="ven_num" id="ven_num_id" >
+        <div class="row">
+
+            <div class="col-12">
+                <div class="group">
+                    
+                    <input id="txt" style="textarea  width:300px height:100px" name="error_words" value="請敘述故障狀況" required>
+                    
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>請敘述故障狀況</label>
+                    
+                </div>
+            </div>
+
+            <br> <br> <br>
+            <div class="col-12">
+                <div class="group">
+                    <input type="file" class="btn btn-outline-dark" name="my_file">
+                    <label>圖片上傳(可忽略)</label>
+                    <br>
+                    <br>
+
+                    <span class="bar"></span>
+
+                </div>
+            </div>
+
+            <div class="col-12">
+
+
+
+
+            </div>
+
+        </div>
+        <center>
+            <button type="submit" class="btn original-btn" id="post-btn">提交 </button>
+            <!-- <input type="submit" class="btn original-btn"> -->
+        </center>
+    </form>
+
+
+
     <!-- ##### Contact Area End ##### -->
 
     <!-- ##### Footer Area Start ##### -->
@@ -99,10 +104,9 @@
     <!-- Google Map js -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwuyLRa1uKNtbgx6xAJVmWy-zADgegA2s"></script>
     <script src="js/map-active.js"></script>
-   <script src="js/contact.js"></script>
-    
-               
-</body>
+    <script src="js/contact.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+</body>
 
 </html>
