@@ -1,5 +1,5 @@
 /* [ -- Master Stylesheet -- ]
-
+ 
 ------------------------------------------------------
 :: Template Name: Original - Lifestyle Blog Template
 :: Author: Colorlib
@@ -8,50 +8,50 @@
 :: Created: April 3, 2018
 :: Last Updated: April 3, 2018
 -------------------------------------------------- */
-
+ 
 @import 'theme_color';
 @import 'fonts';
 @import 'mixin';
 @import 'responsive';
-
+ 
 /* :: Import Fonts */
-
+ 
 @font-face {
     font-family: 'helveticaneuebold';
     src: url('fonts/helvetica_neu_bold-webfont.woff2') format('woff2'), url('fonts/helvetica_neu_bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
-
+ 
 @font-face {
     font-family: 'helveticaneuemedium';
     src: url('fonts/helveticaneue_medium-webfont.woff2') format('woff2'), url('fonts/helveticaneue_medium-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
-
+ 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
-
+ 
 /* :: Import All CSS */
-
+ 
 @import '../css/bootstrap.min.css';
 @import '../css/classy-nav.css';
 @import '../css/animate.css';
 @import '../css/owl.carousel.css';
 @import '../css/font-awesome.min.css';
-
+ 
 /* :: Base CSS */
-
+ 
 * {
     margin: 0;
     padding: 0;
 }
-
+ 
 body {
     font-family: "Microsoft JhengHei", $helvetica-medium;
     background-color: $color-white;
 }
-
+ 
 h1,
 h2,
 h3,
@@ -63,14 +63,14 @@ h6 {
     line-height: 1.3;
     font-family: "Microsoft JhengHei", $helvetica-medium;
 }
-
+ 
 p {
     color: $text-color;
     font-size: 14px;
     line-height: 1.4;
     font-family: "Microsoft JhengHei", $helvetica-medium;
 }
-
+ 
 a {
     @include trans-duration(500ms);
     text-decoration: none;
@@ -87,7 +87,7 @@ a {
         font-size: 20px;
     }
 }
-
+ 
 #preloader {
     @include display-flex(flex);
     @include align-items(center);
@@ -98,7 +98,7 @@ a {
     height: 100vh;
     z-index: 1000000;
 }
-
+ 
 #original-load {
     width: 70px;
     height: 70px;
@@ -138,7 +138,7 @@ a {
         @include animation(original 1800ms linear infinite);
     }
 }
-
+ 
 @-webkit-keyframes original {
     0% {
         @include transform(rotate(0deg));
@@ -147,7 +147,7 @@ a {
         @include transform(rotate(360deg));
     }
 }
-
+ 
 @keyframes original {
     0% {
         @include transform(rotate(0deg));
@@ -156,7 +156,7 @@ a {
         @include transform(rotate(360deg));
     }
 }
-
+ 
 ul,
 ol {
     margin: 0;
@@ -164,194 +164,194 @@ ol {
         list-style: none;
     }
 }
-
+ 
 img {
     height: auto;
     max-width: 100%;
 }
-
+ 
 .mt-6 {
     margin-top: 6px;
 }
-
+ 
 .mt-15 {
     margin-top: 15px;
 }
-
+ 
 .mt-30 {
     margin-top: 30px;
 }
-
+ 
 .mt-50 {
     margin-top: 50px;
 }
-
+ 
 .mt-70 {
     margin-top: 70px;
 }
-
+ 
 .mt-100 {
     margin-top: 100px;
 }
-
+ 
 .mt-200 {
     margin-top: 200px;
 }
-
+ 
 .mb-7 {
     margin-bottom: 7px;
 }
-
+ 
 .mb-15 {
     margin-bottom: 15px;
 }
-
+ 
 .mb-30 {
     margin-bottom: 30px;
 }
-
+ 
 .mb-50 {
     margin-bottom: 50px;
 }
-
+ 
 .ml-6 {
     margin-left: 6px;
 }
-
+ 
 .ml-10 {
     margin-left: 10px;
 }
-
+ 
 .ml-15 {
     margin-left: 15px;
 }
-
+ 
 .ml-30 {
     margin-left: 30px;
 }
-
+ 
 .ml-40 {
     margin-left: 40px;
 }
-
+ 
 .ml-68 {
     margin-left: 68px;
 }
-
+ 
 .ml-70 {
     margin-left: 70px;
 }
-
+ 
 .mr-15 {
     margin-right: 15px;
 }
-
+ 
 .mr-30 {
     margin-right: 30px;
 }
-
+ 
 .mr-40 {
     margin-right: 40px;
 }
-
+ 
 .mr-100 {
     margin-right: 100px;
 }
-
+ 
 .mb-70 {
     margin-bottom: 70px;
 }
-
+ 
 .mb-100 {
     margin-bottom: 100px;
 }
-
+ 
 .pr-5 {
     padding-right: 5px;
 }
-
+ 
 .pl-50 {
     padding-right: 50px;
 }
-
+ 
 .bg-img {
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
 }
-
+ 
 .bg-transparent {
     background-color: transparent;
 }
-
+ 
 .font-bold {
     font-weight: 700;
 }
-
+ 
 .font-light {
     font-weight: 300;
 }
-
+ 
 .height-400 {
     height: 400px !important;
 }
-
+ 
 .height-500 {
     height: 500px !important;
 }
-
+ 
 .height-600 {
     height: 600px !important;
 }
-
+ 
 .height-700 {
     height: 700px !important;
 }
-
+ 
 .height-800 {
     height: 800px !important;
 }
-
+ 
 .section-padding-100 {
     padding: 100px 0;
 }
-
+ 
 .section-padding-70 {
     padding: 70px 0;
 }
-
+ 
 .section-padding-50 {
     padding: 50px 0;
 }
-
+ 
 .section-padding-40 {
     padding: 40px 0;
 }
-
+ 
 .section-padding-50-0 {
     padding: 50px 0 0 0;
 }
-
+ 
 .section-padding-100-70 {
     padding: 100px 0 70px;
 }
-
+ 
 .section-padding-100-50 {
     padding: 100px 0 50px;
 }
-
+ 
 .section-padding-100-0 {
     padding: 100px 0 0;
 }
-
+ 
 .section-padding-0-100 {
     padding: 0 0 100px;
 }
-
+ 
 .section-padding-100-20 {
     padding: 100px 0 20px 0;
 }
-
+ 
 #scrollUp {
     bottom: 60px;
     right: 60px;
@@ -377,7 +377,7 @@ img {
         right: 30px;
     }
 }
-
+ 
 .text {
     border: 1px;
     border-bottom-style: solid;
@@ -385,11 +385,11 @@ img {
     border-left-style: none;
     border-right-style: none;
 }
-
+ 
 .bg-gray {
     background-color: $bg-gray;
 }
-
+ 
 .background-overlay {
     position: relative;
     z-index: 2;
@@ -404,7 +404,7 @@ img {
         background-color: rgba(0, 0, 0, 0.6);
     }
 }
-
+ 
 .original-btn {
     position: relative;
     z-index: 1;
@@ -429,10 +429,10 @@ img {
         background-color: $hover-color;
     }
 }
-
-
+ 
+ 
 /* :: Header Area CSS */
-
+ 
 .header-area {
     position: relative;
     width: 100%;
@@ -540,7 +540,7 @@ img {
         }
     }
 }
-
+ 
 #breakingNewsTicker {
     &.ticker {
         width: 100%;
@@ -565,11 +565,11 @@ img {
         }
     }
 }
-
+ 
 .modal-backdrop.show {
     opacity: .8 !important;
 }
-
+ 
 .subscribe-newsletter-area {
     .modal-content {
         border-radius: 0;
@@ -623,10 +623,10 @@ img {
         }
     }
 }
-
-
+ 
+ 
 /* :: Hero Slides Area CSS */
-
+ 
 .hero-slides {
     position: relative;
     z-index: 1;
@@ -719,10 +719,10 @@ img {
         }
     }
 }
-
-
+ 
+ 
 /* Blog Content Area CSS */
-
+ 
 .single-blog-area {
     position: relative;
     z-index: 1;
@@ -824,7 +824,7 @@ img {
         }
     }
 }
-
+ 
 .single-catagory-area {
     position: relative;
     z-index: 1;
@@ -854,7 +854,7 @@ img {
         }
     }
 }
-
+ 
 .post-tag-content {
     position: absolute;
     width: 1140px;
@@ -871,7 +871,7 @@ img {
         width: 100%;
     }
 }
-
+ 
 .post-sidebar-area {
     @media #{$breakpoint-md} {
         margin-top: 100px;
@@ -880,7 +880,7 @@ img {
         margin-top: 100px;
     }
 }
-
+ 
 .sidebar-widget-area {
     position: relative;
     z-index: 1;
@@ -1011,7 +1011,7 @@ img {
         }
     }
 }
-
+ 
 .instagram-feed-area {
     position: relative;
     z-index: 1;
@@ -1051,7 +1051,7 @@ img {
         }
     }
 }
-
+ 
 .breadcumb-area {
     position: relative;
     z-index: 1;
@@ -1072,7 +1072,7 @@ img {
         }
     }
 }
-
+ 
 .blog-post-author {
     position: relative;
     z-index: 1;
@@ -1125,13 +1125,13 @@ img {
         }
     }
 }
-
+ 
 .single-blog-wrapper .single-blog-area .single-blog-content {
     p {
         font-family: "Microsoft JhengHei", $opensans-fonts;
     }
 }
-
+ 
 .comment_area {
     border-bottom: 1px solid #c5c5c5;
     padding-bottom: 40px;
@@ -1200,11 +1200,11 @@ img {
         }
     }
 }
-
+ 
 .single_comment_area .children .single_comment_area .comment-meta {
     margin-bottom: 0;
 }
-
+ 
 .cool-facts-area {
     position: relative;
     z-index: 1;
@@ -1237,10 +1237,10 @@ img {
         }
     }
 }
-
-
+ 
+ 
 /* Contact Area CSS */
-
+ 
 .contact-form,
 .post-a-comment-area {
     h5 {
@@ -1252,10 +1252,10 @@ img {
         background-color: $color-white;
     }
 }
-
-
+ 
+ 
 /* Form CSS */
-
+ 
 .group {
     position: relative;
     z-index: 1;
@@ -1321,10 +1321,10 @@ img {
         min-height: 90px;
     }
 }
-
-
+ 
+ 
 /* Form Active State */
-
+ 
 input:focus~label,
 textarea:focus~label,
 input:valid~label,
@@ -1333,22 +1333,22 @@ textarea:valid~label {
     font-size: 12px;
     color: $hover-color;
 }
-
+ 
 input:focus~.bar:before,
 textarea:focus~.bar:before,
 input:focus~.bar:after,
 textarea:focus~.bar:after {
     width: 50%;
 }
-
+ 
 input:focus~.highlight,
 textarea:focus~.highlight {
     @include animation(inputHighlighter 0.3s ease);
 }
-
-
+ 
+ 
 /* Animations */
-
+ 
 @-webkit-keyframes inputHighlighter {
     from {
         background-color: $hover-color;
@@ -1358,7 +1358,7 @@ textarea:focus~.highlight {
         background-color: transparent;
     }
 }
-
+ 
 @-moz-keyframes inputHighlighter {
     from {
         background-color: $hover-color;
@@ -1368,7 +1368,7 @@ textarea:focus~.highlight {
         background-color: transparent;
     }
 }
-
+ 
 @keyframes inputHighlighter {
     from {
         background-color: $hover-color;
@@ -1378,7 +1378,7 @@ textarea:focus~.highlight {
         background-color: transparent;
     }
 }
-
+ 
 .map-area {
     position: relative;
     z-index: 1;
@@ -1396,10 +1396,10 @@ textarea:focus~.highlight {
         }
     }
 }
-
-
+ 
+ 
 /* Search bar */
-
+ 
 #search-wrapper {
     display: inline-block;
     position: relative;
@@ -1517,7 +1517,7 @@ textarea:focus~.highlight {
         }
     }
 }
-
+ 
 // Animations
 @-webkit-keyframes lens-out {
     0% {
@@ -1530,7 +1530,7 @@ textarea:focus~.highlight {
         @include transform(rotate(45deg) scaleX(0));
     }
 }
-
+ 
 @keyframes lens-out {
     0% {
         @include transform(rotate(45deg) scaleX(1));
@@ -1542,7 +1542,7 @@ textarea:focus~.highlight {
         @include transform(rotate(45deg) scaleX(0));
     }
 }
-
+ 
 @-webkit-keyframes lens-in {
     0% {
         @include transform(rotate(45deg) scaleX(0));
@@ -1554,7 +1554,7 @@ textarea:focus~.highlight {
         @include transform(rotate(45deg) scaleX(1));
     }
 }
-
+ 
 @keyframes lens-in {
     0% {
         @include transform(rotate(45deg) scaleX(0));
@@ -1566,7 +1566,7 @@ textarea:focus~.highlight {
         @include transform(rotate(45deg) scaleX(1));
     }
 }
-
+ 
 @-webkit-keyframes cross-1-in {
     0% {
         @include transform(rotate(45deg) scaleX(0) translateY(10px));
@@ -1578,7 +1578,7 @@ textarea:focus~.highlight {
         @include transform(rotate(45deg) scaleX(1) translateY(10px));
     }
 }
-
+ 
 @keyframes cross-1-in {
     0% {
         @include transform(rotate(45deg) scaleX(0) translateY(10px));
@@ -1590,7 +1590,7 @@ textarea:focus~.highlight {
         @include transform(rotate(45deg) scaleX(1) translateY(10px));
     }
 }
-
+ 
 @-webkit-keyframes cross-2-in {
     0% {
         @include transform(rotate(-45deg) scaleX(0) translateY(-10px));
@@ -1602,7 +1602,7 @@ textarea:focus~.highlight {
         @include transform(rotate(-45deg) scaleX(1) translateY(-10px));
     }
 }
-
+ 
 @keyframes cross-2-in {
     0% {
         @include transform(rotate(-45deg) scaleX(0) translateY(-10px));
@@ -1614,7 +1614,7 @@ textarea:focus~.highlight {
         @include transform(rotate(-45deg) scaleX(1) translateY(-10px));
     }
 }
-
+ 
 @-webkit-keyframes cross-1-out {
     0% {
         @include transform(rotate(45deg) scaleX(1) translateY(10px));
@@ -1623,7 +1623,7 @@ textarea:focus~.highlight {
         @include transform(rotate(45deg) scaleX(0) translateY(10px));
     }
 }
-
+ 
 @keyframes cross-1-out {
     0% {
         @include transform(rotate(45deg) scaleX(1) translateY(10px));
@@ -1632,7 +1632,7 @@ textarea:focus~.highlight {
         @include transform(rotate(45deg) scaleX(0) translateY(10px));
     }
 }
-
+ 
 @-webkit-keyframes cross-2-out {
     0% {
         @include transform(rotate(-45deg) scaleX(1) translateY(-10px));
@@ -1641,7 +1641,7 @@ textarea:focus~.highlight {
         @include transform(rotate(-45deg) scaleX(0) translateY(-10px));
     }
 }
-
+ 
 @keyframes cross-2-out {
     0% {
         @include transform(rotate(-45deg) scaleX(1) translateY(-10px));
@@ -1650,10 +1650,10 @@ textarea:focus~.highlight {
         @include transform(rotate(-45deg) scaleX(0) translateY(-10px));
     }
 }
-
-
+ 
+ 
 /* Footer Area CSS */
-
+ 
 .footer-area {
     padding: 60px 0;
     position: relative;
@@ -1675,7 +1675,7 @@ textarea:focus~.highlight {
         }
     }
 }
-
+ 
 .coming-soon-area {
     position: relative;
     z-index: 1;
@@ -1758,7 +1758,7 @@ textarea:focus~.highlight {
         color: $color-white;
     }
 }
-
+ 
 .sonar-wrapper {
     position: relative;
     z-index: 0;
@@ -1787,7 +1787,7 @@ textarea:focus~.highlight {
         }
     }
 }
-
+ 
 @keyframes sonarWave {
     0% {
         opacity: 0.3;
@@ -1797,15 +1797,15 @@ textarea:focus~.highlight {
         opacity: 0;
     }
 }
-
-
+ 
+ 
 /* Sidebar CSS */
-
+ 
 .sideinfo {
     height: 64px;
     margin-bottom: 40px;
 }
-
+ 
 .circle {
     border: 2px solid rgb(214, 214, 214);
     width: 75px;
@@ -1818,7 +1818,7 @@ textarea:focus~.highlight {
         max-height: 100%;
     }
 }
-
+ 
 .down {
     width: 30%;
     padding: .375rem .75rem;
@@ -1831,13 +1831,13 @@ textarea:focus~.highlight {
     border-radius: .25rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
-
-
+ 
+ 
 /* index CSS */
-
-
+ 
+ 
 /*登入後的品牌顯示頁面*/
-
+ 
 .logo {
     width: 300px;
     height: 300px;
@@ -1847,10 +1847,10 @@ textarea:focus~.highlight {
     margin-top: -150px;
     margin-left: -150px;
 }
-
-
+ 
+ 
 /* nav css */
-
+ 
 #searching {
     background-color: $color-white;
     width: 80.5%;
@@ -1879,17 +1879,17 @@ textarea:focus~.highlight {
         }
     }
 }
-
+ 
 .map {
     width: 100vw;
     height: 88.7vh;
     margin: 0;
     padding: 0;
 }
-
-
+ 
+ 
 /* searching CSS */
-
+ 
 #result_block {
     text-align: center;
     color: $text-color;
@@ -1927,7 +1927,7 @@ textarea:focus~.highlight {
         }
     }
 }
-
+ 
 .back {
     display: inline-block;
     width: 2.5em;
@@ -1935,10 +1935,10 @@ textarea:focus~.highlight {
     transform: translateY(-100%);
     border: 0px;
 }
-
-
+ 
+ 
 /* Ven-info CSS */
-
+ 
 .ven_item_list {
     overflow-y: scroll;
     overflow-x: hidden;
@@ -1951,7 +1951,7 @@ textarea:focus~.highlight {
     margin: auto;
     align-content: start;
 }
-
+ 
 .ven_item {
     height: fit-content;
     padding: 0.8em;
@@ -1965,13 +1965,13 @@ textarea:focus~.highlight {
         margin-bottom: 0.2em;
     }
 }
-
+ 
 //資訊視窗裡的顯示樣式
 .infoImg {
     width: 200px;
     margin: 8px 0;
 }
-
+ 
 .bodyContent {
     div {
         width: 275px;
@@ -1981,7 +1981,7 @@ textarea:focus~.highlight {
         justify-content: space-between;
     }
 }
-
+ 
 .bodyContent {
     div {
         img {
@@ -1991,43 +1991,43 @@ textarea:focus~.highlight {
         }
     }
 }
-
-
+ 
+ 
 /* QA CSS */
-
+ 
 #QandA .Question {
     /*標題的CSS定義*/
     width: 100%;
 }
-
+ 
 #QandA .Answer {
     /*內文的CSS定義*/
     display: none;
     width: 100%;
     padding: 10px 0px;
 }
-
-
+ 
+ 
 /* forget CSS */
-
+ 
 .info {
     font-style: italic;
     font-size: small;
     color: #cbcbcb;
     text-align: center;
 }
-
+ 
 .size {
     font-size: x-large;
 }
-
+ 
 .otherselection {
     display: flex;
     justify-content: space-between;
     text-align: center;
     margin: 10px 90px;
 }
-
+ 
 .title-bg {
     position: absolute;
     z-index: -1000;
@@ -2036,11 +2036,12 @@ textarea:focus~.highlight {
     width: 100%;
     top: 0
 }
-
+ 
 .y-bt {
     background-color: #FFDD92;
     padding: 8px 15px;
 }
-
-
+ 
+ 
 /* The End */
+
