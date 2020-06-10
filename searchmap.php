@@ -51,7 +51,7 @@
             margin: 0;
             padding: 20;
         }
-        #data, #allData{
+         #allData,#fav{
             display: none;
         }
     </style>
@@ -75,15 +75,19 @@
         <?php 
            $pro_name= $_GET["pro_name"];
             require 'get_searchvalue.php';
+           
+            $val2 = new get_value;
+            $favorite=$val2->fav();
+            $favorite=json_encode($favorite, true);
+        
             $val = new get_value;
             $val -> setpro_name($pro_name);
-            $coll = $val->getMachinesLatLng();
-            $coll = json_encode($coll, true);
-            echo '<div id="data">' . $coll . '</div>';
-
+        
             $allData = $val->getAllMachines();
             $allData = json_encode($allData, true);
-            echo '<div id="allData">' . $allData . '</div>';			
+        
+            echo '<div id="allData">' . $allData . '</div>';	
+          echo '<div id="fav">' . $favorite . '</div>';	
         ?>
     </div>
     
