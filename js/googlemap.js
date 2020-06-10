@@ -151,9 +151,12 @@ function loadMap() {
     });
 }
 
-function showAllMachines(allData) {
+function showAllMachines(allData,$favorite) {
     //infowindow內的資料
     var infoWind = new google.maps.InfoWindow;
+//     Array.prototype.forEach.call(allData, function(data) {
+//         
+//     };
     Array.prototype.forEach.call(allData, function(data) {
         var content = document.createElement('div');
         var strong = document.createElement('strong');
@@ -170,7 +173,7 @@ function showAllMachines(allData) {
         imgfav.src = 'img/unfav.svg';
         imgfav.style.width = '50px';
         a.appendChild(imgfav);
-        a.href = "http://example.com"; //要改看要彈跳/跳轉頁面
+        a.href = "fav.php?ven_num="+data.ven_num; //要改看要彈跳/跳轉頁面
         content.appendChild(a);
 
         // function imgWindow() {
