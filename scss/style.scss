@@ -91,9 +91,11 @@ a {
 ::-webkit-input-placeholder {
     color: $c2;
 }
+
 :-moz-placeholder {
     color: $c2;
 }
+
 ::-moz-placeholder {
     color: $c2;
 }
@@ -1812,7 +1814,7 @@ textarea:focus~.highlight {
 /* Sidebar CSS */
 
 .info-top {
-    width:100%;
+    width: 100%;
     height: 70px;
     background-color: $c1;
     border: solid 1px;
@@ -1892,7 +1894,6 @@ textarea:focus~.highlight {
 }
 
 
-
 /* index CSS */
 
 
@@ -1907,6 +1908,7 @@ textarea:focus~.highlight {
     margin-top: -150px;
     margin-left: -150px;
 }
+
 
 /* searching CSS */
 
@@ -2041,8 +2043,6 @@ textarea:focus~.highlight {
     font-size: x-large;
 }
 
-<<<<<<< HEAD
-=======
 .otherselection {
     display: flex;
     justify-content: space-between;
@@ -2059,6 +2059,5 @@ textarea:focus~.highlight {
     top: 0
 }
 
->>>>>>> parent of d20657e... 標題主題設計
 
 /* The End */
