@@ -56,17 +56,17 @@ h3,
 h4,
 h5,
 h6 {
-  color: #304d4f;
-  font-weight: 500;
-  line-height: 1.3;
-  font-family: "Microsoft JhengHei", "helveticaneuemedium";
+    color: #000000;
+    font-weight: 500;
+    line-height: 1.3;
+    font-family: "Microsoft JhengHei", "helveticaneuemedium";
 }
 
 p {
-  color: #304d4f;
-  font-size: 14px;
-  line-height: 1.4;
-  font-family: "Microsoft JhengHei", "helveticaneuemedium";
+    color: #304D4F;
+    font-size: 14px;
+    line-height: 1.4;
+    font-family: "Microsoft JhengHei", "helveticaneuemedium";
 }
 
 a {
@@ -87,18 +87,6 @@ a:focus {
     text-decoration: none;
     outline: none;
     font-size: 20px;
-}
-
-::-webkit-input-placeholder {
-  color: #6e999c;
-}
-
-:-moz-placeholder {
-  color: #6e999c;
-}
-
-::-moz-placeholder {
-  color: #6e999c;
 }
 
 #preloader {
@@ -580,8 +568,8 @@ img {
 }
 
 .header-area .original-nav-area .classynav ul li a {
-  text-transform: uppercase;
-  color: #304d4f;
+    text-transform: uppercase;
+    color: #4f4d4d;
 }
 
 .header-area .original-nav-area .classynav ul li a:focus,
@@ -2149,30 +2137,10 @@ textarea:focus~.highlight {
 
 
 /* Sidebar CSS */
-<<<<<<< HEAD
-.info-top {
-  width: 100%;
-  height: 70px;
-  background-color: #bbe4e7;
-  border: solid 1px;
-  border-color: #bbe4e7;
-}
-
-.sidebar-bg {
-  background-color: #bbe4e7;
-  border: solid 1px;
-  border-color: #bbe4e7;
-}
-
-.sideinfo {
-  height: 100px;
-  margin-bottom: 20px;
-=======
 
 .sideinfo {
     height: 64px;
     margin-bottom: 40px;
->>>>>>> 1a8bc4822bcddae66de33f2deedce774118317ec
 }
 
 .circle {
@@ -2205,6 +2173,25 @@ textarea:focus~.highlight {
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
 }
 
+
+/* index CSS */
+
+
+/*登入後的品牌顯示頁面*/
+
+.logo {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -150px;
+    margin-left: -150px;
+}
+
+
+/* nav css */
+
 #searching {
     background-color: #ffffff;
     width: 80.5%;
@@ -2221,13 +2208,14 @@ textarea:focus~.highlight {
 }
 
 #searching #searching_submit {
-  width: 1.7em;
-  height: 1.7em;
-  -webkit-transform: translateY(50%);
-          transform: translateY(50%);
-  float: right;
-  padding: 0;
-  border: 0;
+    width: 1.8em;
+    height: 1.8em;
+    -webkit-transform: translateY(50%);
+    transform: translateY(50%);
+    margin-right: 1em;
+    float: right;
+    padding: 0;
+    border: 0;
 }
 
 #searching #searching_submit img {
@@ -2241,17 +2229,6 @@ textarea:focus~.highlight {
     padding: 0;
 }
 
-/* index CSS */
-/*登入後的品牌顯示頁面*/
-.logo {
-  width: 300px;
-  height: 300px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-top: -150px;
-  margin-left: -150px;
-}
 
 /* searching CSS */
 

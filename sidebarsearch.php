@@ -73,8 +73,13 @@ foreach($statement as $row){
                         </div>
                         <!-- searching -->
                         <div id="searching" class="sidebar-bg">
-                            <form  class="sidebar-bg" name="searched" action="searching.php" method="POST">
-                                <input type="text"  class="sidebar-bg" id="searching_keyword" name="searching_keyword" placeholder="請輸入商品關鍵字" autocomplete="off" required>
+                            <form class="sidebar-bg" name="searched" action="searching.php" method="POST">
+                                <input class="sidebar-bg" type="text" name="searching_keyword" id="searching_keyword" <?php if (isset($_GET["pro_name"])){?>
+                                       placeholder="<?php $_GET['pro_name']?>"
+                                       <?php }
+                                       else{?>
+                                        placeholder="請輸入商品關鍵字"
+                                       <?php } ?> autocomplete="off" required>
                                 <button type="submit" class="btn btn-outline-light" id="searching_submit" onclick="searching_submit()">
                                 <img src="img/searching.svg"/>
                                 </button>
