@@ -53,7 +53,7 @@
                                         <a href="#"><span>故障回報紀錄</span></a>
                                     </li>
                                     <li>
-                                        <a href="QA.php"><span>客服聯繫</span></a>
+                                        <a href="cs.php"><span>客服聯繫</span></a>
                                     </li>
                                     <li>
                                         <a href="#"><span>活動優惠</span></a>
