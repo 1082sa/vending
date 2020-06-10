@@ -2,7 +2,7 @@
         <!-- Nav Area -->
         <div class="original-nav-area" id="stickyNav">
             <div class="classy-nav-container breakpoint-off">
-                <div class="container">
+                <div class="container sidebar-bg">
                     <!-- Classy Menu -->
                     <nav class="classy-navbar">
                         <!-- Navbar Toggler -->
@@ -23,7 +23,8 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <!-- Sidebar information -->
-                                <div class="sideinfo">
+                                <div class="info-top"></div>
+                                <div class="sideinfo sidebar-bg">
                                     <div class="circle ml-15 mb-7">
                                         <a href="profile.php"><img src="img/vending-machine.png" /></a>
                                     </div>
@@ -71,9 +72,9 @@ foreach($statement as $row){
                             <!-- Nav End -->
                         </div>
                         <!-- searching -->
-                        <div id="searching">
-                            <form name="searched" action="searching.php" method="POST">
-                                <input type="text" name="searching_keyword" id="searching_keyword" placeholder="請輸入商品關鍵字" autocomplete="off" required>
+                        <div id="searching" class="sidebar-bg">
+                            <form  class="sidebar-bg" name="searched" action="searching.php" method="POST">
+                                <input type="text"  class="sidebar-bg" id="searching_keyword" name="searching_keyword" placeholder="請輸入商品關鍵字" autocomplete="off" required>
                                 <button type="submit" class="btn btn-outline-light" id="searching_submit" onclick="searching_submit()">
                                 <img src="img/searching.svg"/>
                                 </button>
