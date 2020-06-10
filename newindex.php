@@ -23,7 +23,7 @@
     <!--animation-->
     <!---The async attribute allows the browser to render the page while the API loads--->
 
-    
+
     <script>
         if ('serviceWorker' in navigator) {
             console.log("Will service worker register?");
@@ -52,7 +52,9 @@
             margin: 0;
             padding: 20;
         }
-        #data, #allData{
+
+        #data,
+        #allData {
             display: none;
         }
     </style>
@@ -69,41 +71,41 @@
         </div>
     </div>
     <div class="container">
-        <?php 
-            require 'get_value.php';
-            $val = new get_value;
-            // $coll = $val->getMachinesLatLng();
-            // $coll = json_encode($coll, true);
-            // echo '<div id="data">' . $coll . '</div>';
+        <?php
+        require 'get_value.php';
+        $val = new get_value;
+        // $coll = $val->getMachinesLatLng();
+        // $coll = json_encode($coll, true);
+        // echo '<div id="data">' . $coll . '</div>';
 
-            $allData = $val->getAllMachines();
-            $allData = json_encode($allData, true);
-            echo '<div id="allData">' . $allData . '</div>';			
+        $allData = $val->getAllMachines();
+        $allData = json_encode($allData, true);
+        echo '<div id="allData">' . $allData . '</div>';
         ?>
     </div>
-    
+
 
     <!--Map-->
     <div id="map"></div>
 
     <!-- Modal -->
     <!-- Modal -->
-    
+
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="ver">商品清單</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
-                    <?php include("ven-info.php");?>
+                    <?php include("ven-info.php"); ?>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" >Save changes</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
@@ -114,13 +116,13 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="ver">販賣機故障回報</h5>
-                    
+
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="modal-body" id ="result">
-                    <?php include("contact.php");?>
+                <div class="modal-body" id="result">
+                    <?php include("contact.php"); ?>
                 </div>
             </div>
         </div>
@@ -158,4 +160,5 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBstjRsNEnzJo4CYLYDSMu7lJ_Bu-A9w4c&libraries=places&callback=loadMap">
     </script>
 </body>
+
 </html>
