@@ -2065,5 +2065,56 @@ textarea:focus~.highlight {
     color: $c3;
 }
 
+/* error-record CSS */
+.error-content {
+    width: 100%;
+    padding: 0 5px;
+    border-radius: 10px;
+    text-align: -webkit-match-parent;
+    line-height: 1.8;
+    color: $c3;
+    margin: 30px 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    .error-title {
+        background-color: $c1;
+        color: $c2;
+        font-size: large;
+        font-weight: bold;
+    }
+    .error-empty {
+        background-color: white;
+        line-height: 1;
+    }
+    td:first-child {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+      
+    td:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    }
+    .correct {
+        width: 14px;
+        height: 14px;
+    }
+    .cross {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+
+
+
+
+.error-content-odd {
+    background-color: white;
+}
+
+.error-content-even {
+    background-color: $c5;
+}
 
 /* The End */
