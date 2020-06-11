@@ -2,7 +2,7 @@
         <!-- Nav Area -->
         <div class="original-nav-area" id="stickyNav">
             <div class="classy-nav-container breakpoint-off">
-                <div class="container">
+                <div class="container sidebar-bg">
                     <!-- Classy Menu -->
                     <nav class="classy-navbar">
                         <!-- Navbar Toggler -->
@@ -23,7 +23,8 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <!-- Sidebar information -->
-                                <div class="sideinfo">
+                                <div class="info-top"></div>
+                                <div class="sideinfo sidebar-bg">
                                     <div class="circle ml-15 mb-7">
                                         <a href="profile.php"><img src="img/vending-machine.png" /></a>
                                     </div>
@@ -49,19 +50,13 @@
                                         <a href="beforefavmap.php"><span>我的最愛</span></a>
                                     </li>
                                     <li>
-                                        <a href="#"><span>消費紀錄</span></a>
-                                    </li>
-                                    <li>
                                         <a href="#"><span>故障回報紀錄</span></a>
                                     </li>
                                     <li>
-                                        <a href="QA.php"><span>客服聯繫</span></a>
+                                        <a href="cs.php"><span>客服聯繫</span></a>
                                     </li>
                                     <li>
                                         <a href="#"><span>活動優惠</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><span>行動支付</span></a>
                                     </li>
                                     <li>
                                         <a href="logout.php"><span>登出</span></a>

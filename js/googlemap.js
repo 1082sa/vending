@@ -117,9 +117,13 @@ function loadMap() {
     //抓自己現在的位置
     navigator.geolocation.watchPosition((position) => {
         console.log(position.coords);
-        lat = position.coords.latitude;
-        lng = position.coords.longitude;
-        var pune = { lat: lat, lng: lng };
+        // lat = position.coords.latitude;
+        // lng = position.coords.longitude;
+        // var pune = { lat: lat, lng: lng };
+        var pune = {
+            lat: 25.036646,
+            lng: 121.430534
+        };
 
         // 初始化地圖
         map = new google.maps.Map(document.getElementById('map'), {
@@ -132,7 +136,6 @@ function loadMap() {
             }
 
         });
-
         //Associate the styled map with the MapTypeId and set it to display.
         map.mapTypes.set('黑夜模式', styledMapType);
         map.setMapTypeId('roadmap');
@@ -151,12 +154,10 @@ function loadMap() {
     });
 }
 
-function showAllMachines(allData,$favorite) {
+function showAllMachines(allData) {
     //infowindow內的資料
     var infoWind = new google.maps.InfoWindow;
-//     Array.prototype.forEach.call(allData, function(data) {
-//         
-//     };
+    //call back作法
     Array.prototype.forEach.call(allData, function(data) {
         var content = document.createElement('div');
         var strong = document.createElement('strong');
@@ -166,29 +167,14 @@ function showAllMachines(allData,$favorite) {
         content.appendChild(strong);
 
         //info window內的照片
-
         //收藏圖示
         var a = document.createElement('a');
         var imgfav = document.createElement("img");
         imgfav.src = 'img/unfav.svg';
         imgfav.style.width = '50px';
         a.appendChild(imgfav);
-        a.href = "fav.php?ven_num="+data.ven_num; //要改看要彈跳/跳轉頁面
+        a.href = "http://example.com"; //要改看要彈跳/跳轉頁面
         content.appendChild(a);
-
-        // function imgWindow() {
-        //     window.open("a");
-        // }
-        // a.onclick = function fav() { 
-        //     $.ajax({  
-        //         type: "post",
-        //           url: "\index.php",
-        //           success: function() {  
-        //             sid2.style.display = "inline";  
-        //             sid1.style.display = "none";  
-        //         }  
-        //     });
-        // };
 
         //路徑規劃圖示
         var b = document.createElement('a');
@@ -196,7 +182,11 @@ function showAllMachines(allData,$favorite) {
         imgrou.src = 'img/route.svg';
         imgrou.style.width = '50px';
         b.appendChild(imgrou);
-        b.href = "http://example.com";
+        b.addEventListener("click", function() {
+            b.placeId = data.location_Latitude, data.location_Longitude;
+            console.log = b.placeId;
+            alert(b);
+        })
         content.appendChild(b);
 
         //故障回報圖示
@@ -210,12 +200,9 @@ function showAllMachines(allData,$favorite) {
         c.addEventListener("click", function() {
             var points = data.ven_num;
             alert(points);
-            v = document.getElementById("ven_num_id");
+            v = document.getElementById("ven_num_id"); //id為單一，不得重複，不然會抓不到值。
             v.value = points;
-            //v.placeholder = points;
             console.log(v);
-            //console.log(points);
-            //location.href = "newindex.php?ven_num=" + points;
         });
         content.appendChild(c);
 
@@ -233,16 +220,20 @@ function showAllMachines(allData,$favorite) {
             alert(points);
             va = document.getElementById("ven_id_n");
             va.value = points;
+            document.getElementById("ven").submit();
         });
         content.appendChild(d);
-
+        //如販賣機error大於三，則顯示非正常運作
         if (data.error >= 3) {
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
                 map: map,
                 icon: 'img/marker1.png' //顯示非正常運作
             });
-        } else {
+        }
+
+        //如販賣機error小於三，則顯示正常運作
+        else {
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
                 map: map,
@@ -258,6 +249,7 @@ function showAllMachines(allData,$favorite) {
 
 
     })
+
 
     // var RouteCoordinates = [
     //     <?php
@@ -323,61 +315,32 @@ function codeAddress(cdata) {
 }
 
 
-// function returnven_num(data) {
-//     if (status == 'OK') {
-//         points = data.ven_num;
-//         AddError(points);
-//     } else {
-//         alert('Was not successful add error information: ' + status);
-//     }
-// }
+var ClickEventHandler = function(map, pune) {
+    this.origin = pune;
+    this.map = map;
+    this.directionsService = new google.maps.DirectionsService;
+    this.directionsRenderer = new google.maps.DirectionsRenderer;
+    this.directionsRenderer.setMap(map);
+    this.placesService = new google.maps.places.PlacesService(map);
 
-function callPHP(params) {
-    var httpc = new XMLHttpRequest(); // simplified for clarity
-    var url = "contact.php";
-    httpc.open("POST", url, true); // sending as POST
+    // Listen for clicks on the map.
+    this.map.addListener('click', this.handleClick.bind(this));
+};
 
-    httpc.onreadystatechange = function() { //Call a function when the state changes.
-        if (httpc.readyState == 4 && httpc.status == 200) { // complete and no errors
-            alert(httpc.responseText); // some processing here, or whatever you want to do with the response
-        }
-    };
-    httpc.send(params);
-}
+ClickEventHandler.prototype.handleClick = function(event) {
+    console.log('You clicked on: ' + event.latLng);
+    // If the event has a placeId, use it.
+    if (event.placeId) {
+        console.log('You clicked on place:' + event.placeId);
 
-
-
-function AddError(points) {
-    $.ajax({
-        url: "contact.php",
-        method: "POST",
-        data: { ven_num: points },
-
-        error: function() {
-            alert("失敗");
-        },
-        success: function() {
-
-            alert("成功");
-            console.log(data);
-        }
-    })
-
-
-}
-
-//更新map位置
-function updateMachinesWithLatLng(points) {
-    $.ajax({
-        url: "action.php",
-        method: "request",
-        data: points,
-        success: function(res) {
-            console.log(res)
-        }
-    })
-
-}
+        // Calling e.stop() on the event prevents the default info window from
+        // showing.
+        // If you call stop here when there is no placeId you will prevent some
+        // other map click event handlers from receiving the event.
+        event.stop();
+        this.calculateAndDisplayRoute(event.placeId);
+    }
+};
 //路線規劃
 ClickEventHandler.prototype.calculateAndDisplayRoute = function(placeId) {
     var me = this;
