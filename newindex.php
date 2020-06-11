@@ -54,7 +54,8 @@
         }
 
         #data,
-        #allData {
+        #allData,
+        #favorite {
             display: none;
         }
     </style>
@@ -81,6 +82,10 @@
         $allData = $val->getAllMachines();
         $allData = json_encode($allData, true);
         echo '<div id="allData">' . $allData . '</div>';
+
+        $favorite = $val->fav();
+        $favorite = json_encode($favorite, true);
+        echo '<div id="favorite">' . $favorite . '</div>';
         ?>
     </div>
 

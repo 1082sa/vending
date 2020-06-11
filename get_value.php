@@ -1,6 +1,7 @@
 <?php 
 	
 	class get_value	{
+        private $pro_name;
 		private $ven_num;
 		private $ven_note;
 		private $location_Latitude;
@@ -27,7 +28,12 @@
         
 		function seterror_num($error_num) { $this->error_num = $error_num; }
 		function geterror_num() { return $this->error_num; }
-
+        
+        function setpro_name($pro_name) { $this->pro_name = $pro_name; }
+        function getpro_name() { return $this->pro_name;}
+        function setaccount($account) { $this->account = $account; }
+		function getaccount() { return $this->pro_name;}
+		
 		public function __construct() {
 			require_once('dbm.php');
 			$conn = new DbConnect;
@@ -54,7 +60,21 @@
 			$stmt->execute();
 			return $stmt->fetchAll(PDO::FETCH_ASSOC);
 		}
-
+        public function getFavoriteMachines() {
+			//$sql = "SELECT * FROM $this->tableName"; 
+			$sql = "SELECT distinct m.ven_num , m.location_Latitude , m.location_Longitude FROM machine m,favorite f where f.account='$this->account' and m.ven_num=f.ven_num";
+            $stmt = $this->conn->prepare($sql);
+			$stmt->execute();
+			return $stmt->fetchAll(PDO::FETCH_ASSOC);
+		}
+        public function getSearchMachines() {
+            
+			//$sql = "SELECT * FROM $this->tableName"; 
+			$sql = "SELECT distinct m.ven_num , m.location_Latitude , m.location_Longitude  FROM machine m, information i where m.ven_num=i.ven_num and i.pro_name='$this->pro_name'";
+            $stmt = $this->conn->prepare($sql);
+			$stmt->execute();
+			return $stmt->fetchAll(PDO::FETCH_ASSOC);
+		}
 		public function updateMachineWithLatLng() {
 			$sql = "UPDATE $this->tableName SET location_Latitude = :location_Latitude, location_Longitude = :location_Longitude WHERE ven_num = :ven_num";
 			$stmt = $this->conn->prepare($sql);
@@ -69,5 +89,3 @@
 			}
 		}
 	}
-
-?>
