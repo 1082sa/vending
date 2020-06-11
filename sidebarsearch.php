@@ -50,9 +50,6 @@ foreach($statement as $row){
                                         <a href="beforefavmap.php"><span>我的最愛</span></a>
                                     </li>
                                     <li>
-                                        <a href="#"><span>消費紀錄</span></a>
-                                    </li>
-                                    <li>
                                         <a href="#"><span>故障回報紀錄</span></a>
                                     </li>
                                     <li>
@@ -60,9 +57,6 @@ foreach($statement as $row){
                                     </li>
                                     <li>
                                         <a href="#"><span>活動優惠</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><span>行動支付</span></a>
                                     </li>
                                     <li>
                                         <a href="logout.php"><span>登出</span></a>
@@ -91,3 +85,4 @@ foreach($statement as $row){
             </div>
         </div>
    
+        
