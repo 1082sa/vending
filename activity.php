@@ -39,10 +39,10 @@
                 <!-- Single Blog Area  -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-blog-area blog-style-2 mb-100">
-                    <h4 class=""style="font-weight: bold; text-align: center;">個人資訊</h4>
+                    <h4 class=""style="font-weight: bold; text-align: center;">活動優惠</h4>
                         <hr size="10px" width="100%">
                         <div class="single-blog-thumbnail">
-                            <img src="img/blog-img/4.jpg" alt="">
+                            <img src="img/can.svg" alt="">
                             <div class="post-date">
                                 <a href="#"><span>6/1 ~ 6/31</span></a>
                             </div>
@@ -50,9 +50,9 @@
                         <!-- Blog Content -->
                         <div class="single-blog-content mt-50">
                             <div class="line"></div>
-                            <a href="#" class="post-tag">我的最愛</a>
-                            <h4><a href="#" class="post-headline">販賣機1</a></h4>
-                            <p>台北市文山區保儀路9號</p>
+                            <a href="#" class="post-tag">活動1</a>
+                            <h5><a href="#" class="post-headline">Andy Warhol大師的藝術汽水</a></h5>
+                            <p>普普藝術家Andy Warhol與汽水攜手合作，讓您在暢飲的同時兼具藝術美感，成為新時代的潮流Icon</p>
                             <div class="post-meta">
                                 <p>By <a href="#">james smith</a></p>
                                 <p>3 comments</p>
