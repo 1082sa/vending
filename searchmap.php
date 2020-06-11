@@ -51,7 +51,7 @@
             margin: 0;
             padding: 20;
         }
-         #allData,#fav{
+         #allData,#favorite{
             display: none;
         }
     </style>
@@ -74,20 +74,22 @@
     <div class="container">
         <?php 
            $pro_name= $_GET["pro_name"];
-            require 'get_searchvalue.php';
+            require 'get_value.php';
            
-            $val2 = new get_value;
-            $favorite=$val2->fav();
-            $favorite=json_encode($favorite, true);
-        
+           
             $val = new get_value;
             $val -> setpro_name($pro_name);
-        
-            $allData = $val->getAllMachines();
+            $allData = $val->getSearchMachines() ;
             $allData = json_encode($allData, true);
+
         
-            echo '<div id="allData">' . $allData . '</div>';	
-          echo '<div id="fav">' . $favorite . '</div>';	
+            echo '<div id="allData">' . $allData . '</div>';	        
+            $favorite= new get_value;
+//            $favorite -> set_account($account); 
+            $favorite= $favorite->fav();
+            $favorite=json_encode($favorite, true);
+          echo '<div id="favorite">' . $favorite . '</div>';
+        
         ?>
     </div>
     
