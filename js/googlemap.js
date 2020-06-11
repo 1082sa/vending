@@ -2,7 +2,6 @@ var map;
 var geocoder;
 
 function loadMap() {
-
     //黑夜模式樣式
     var styledMapType = new google.maps.StyledMapType(
         [{
@@ -136,6 +135,8 @@ function loadMap() {
             }
 
         });
+
+
         //Associate the styled map with the MapTypeId and set it to display.
         map.mapTypes.set('黑夜模式', styledMapType);
         map.setMapTypeId('roadmap');
@@ -146,19 +147,26 @@ function loadMap() {
             animation: google.maps.Animation.BOUNCE
         });
         geocoder = new google.maps.Geocoder();
+
+        var clickHandler = new ClickEventHandler(map, pune);
+
+
         //var cdata = JSON.parse(document.getElementById('data').innerHTML);
         //codeAddress(cdata);
-
+        //php傳送資料庫的值給js，透過json
         var allData = JSON.parse(document.getElementById('allData').innerHTML);
-        showAllMachines(allData)
+        var favorite = JSON.parse(document.getElementById('favorite').innerHTML);
+        showAllMachines(allData, favorite);
     });
 }
 
-function showAllMachines(allData) {
+function showAllMachines(allData, favorite) {
     //infowindow內的資料
     var infoWind = new google.maps.InfoWindow;
+    console.log(favorite);
     //call back作法
     Array.prototype.forEach.call(allData, function(data) {
+        var test = 1;
         var content = document.createElement('div');
         var strong = document.createElement('strong');
 
@@ -171,9 +179,22 @@ function showAllMachines(allData) {
         var a = document.createElement('a');
         var imgfav = document.createElement("img");
         imgfav.src = 'img/unfav.svg';
+        Array.prototype.forEach.call(favorite, function(data2) {
+            if (data.ven_num == data2.ven_num) { //如果收藏過的話變愛心
+                imgfav.src = 'img/fav.svg';
+                test = 2;
+            } else {
+                if (test == 1) { //如果沒有更改過的話
+                    imgfav.src = 'img/unfav.svg';
+                } else { //有更改過的話放原本的
+                    imgfav.src = 'img/fav.svg';
+                }
+
+            }
+        })
         imgfav.style.width = '50px';
         a.appendChild(imgfav);
-        a.href = "http://example.com"; //要改看要彈跳/跳轉頁面
+        a.href = "fav.php?ven_num=" + data.ven_num;
         content.appendChild(a);
 
         //路徑規劃圖示
@@ -183,9 +204,10 @@ function showAllMachines(allData) {
         imgrou.style.width = '50px';
         b.appendChild(imgrou);
         b.addEventListener("click", function() {
-            b.placeId = data.location_Latitude, data.location_Longitude;
-            console.log = b.placeId;
-            alert(b);
+            var lat = data.location_Latitude;
+            var lon = data.location_Longitude;
+            Routev = document.getElementById("destination");
+
         })
         content.appendChild(b);
 
@@ -322,6 +344,9 @@ var ClickEventHandler = function(map, pune) {
     this.directionsRenderer = new google.maps.DirectionsRenderer;
     this.directionsRenderer.setMap(map);
     this.placesService = new google.maps.places.PlacesService(map);
+    this.infowindow = new google.maps.InfoWindow;
+    this.infowindowContent = document.getElementById('infowindow-content');
+    this.infowindow.setContent(this.infowindowContent);
 
     // Listen for clicks on the map.
     this.map.addListener('click', this.handleClick.bind(this));
@@ -339,22 +364,37 @@ ClickEventHandler.prototype.handleClick = function(event) {
         // other map click event handlers from receiving the event.
         event.stop();
         this.calculateAndDisplayRoute(event.placeId);
+        this.getPlaceInformation(event.placeId);
     }
 };
-//路線規劃
+
 ClickEventHandler.prototype.calculateAndDisplayRoute = function(placeId) {
     var me = this;
     this.directionsService.route({
-        origin: this.pune,
-        destination: {
-            placeId: placeId
-        },
+        origin: this.origin,
+        destination: { placeId: placeId },
         travelMode: 'WALKING'
     }, function(response, status) {
         if (status === 'OK') {
             me.directionsRenderer.setDirections(response);
         } else {
             window.alert('Directions request failed due to ' + status);
+        }
+    });
+};
+
+ClickEventHandler.prototype.getPlaceInformation = function(placeId) {
+    var me = this;
+    this.placesService.getDetails({ placeId: placeId }, function(place, status) {
+        if (status === 'OK') {
+            me.infowindow.close();
+            me.infowindow.setPosition(place.geometry.location);
+            me.infowindowContent.children['place-icon'].src = place.icon;
+            me.infowindowContent.children['place-name'].textContent = place.name;
+            me.infowindowContent.children['place-id'].textContent = place.place_id;
+            me.infowindowContent.children['place-address'].textContent =
+                place.formatted_address;
+            me.infowindow.open(me.map);
         }
     });
 };
