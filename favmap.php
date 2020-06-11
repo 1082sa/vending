@@ -51,7 +51,7 @@
             margin: 0;
             padding: 20;
         }
-        #data, #allData{
+        #favorite, #allData{
             display: none;
         }
     </style>
@@ -78,16 +78,18 @@
             if(isset($_SESSION["account"])){
                 $account=$_SESSION["account"];
             }
-            require 'get_favvalue.php';
+            require 'get_value.php';
             $val = new get_value;
             $val -> setaccount($account);
-//            $coll = $val->getMachinesLatLng();
-//            $coll = json_encode($coll, true);
-//            echo '<div id="data">' . $coll . '</div>';
 
-            $allData = $val->getAllMachines();
+            $allData = $val->getFavoriteMachines();
             $allData = json_encode($allData, true);
-            echo '<div id="allData">' . $allData . '</div>';			
+            echo '<div id="allData">' . $allData . '</div>';
+        
+            $favorite = new get_value;
+            $favorite = $favorite->fav();
+            $favorite = json_encode($favorite, true);
+         echo '<div id="favorite">' . $favorite . '</div>';	
         ?>
     </div>
     
