@@ -112,12 +112,13 @@ function loadMap() {
         }], {
             name: '黑夜模式'
         });
-
+    directionsService = new google.maps.DirectionsService();
+    directionsDisplay = new google.maps.DirectionsRenderer();
     //抓自己現在的位置
     navigator.geolocation.watchPosition((position) => {
         console.log(position.coords);
-        // lat = position.coords.latitude;
-        // lng = position.coords.longitude;
+        lat = position.coords.latitude;
+        lng = position.coords.longitude;
         // var pune = { lat: lat, lng: lng };
         var pune = {
             lat: 25.036646,
@@ -132,11 +133,10 @@ function loadMap() {
             gestureHandling: 'cooperative',
             mapTypeControlOptions: {
                 mapTypeIds: ['roadmap', 'satellite', '黑夜模式']
-            }
+            },
+            mapTypeId: google.maps.MapTypeId.ROADMAP
 
         });
-
-
         //Associate the styled map with the MapTypeId and set it to display.
         map.mapTypes.set('黑夜模式', styledMapType);
         map.setMapTypeId('roadmap');
@@ -150,12 +150,12 @@ function loadMap() {
 
         var clickHandler = new ClickEventHandler(map, pune);
 
-
         //var cdata = JSON.parse(document.getElementById('data').innerHTML);
         //codeAddress(cdata);
+
         //php傳送資料庫的值給js，透過json
-        var allData = JSON.parse(document.getElementById('allData').innerHTML);
-        var favorite = JSON.parse(document.getElementById('favorite').innerHTML);
+        var allData = JSON.parse(document.getElementById('allData').innerHTML); //全部販賣機資料
+        var favorite = JSON.parse(document.getElementById('favorite').innerHTML); //收藏資料
         showAllMachines(allData, favorite);
     });
 }
@@ -166,156 +166,128 @@ function showAllMachines(allData, favorite) {
     console.log(favorite);
     //call back作法
     Array.prototype.forEach.call(allData, function(data) {
-        var test = 1;
-        var content = document.createElement('div');
-        var strong = document.createElement('strong');
+            var test = 1;
+            var content = document.createElement('div');
+            var strong = document.createElement('strong');
 
-        strong.textContent = data.ven_num;
-        //strong.textContent = contentString;
-        content.appendChild(strong);
+            strong.textContent = data.ven_num;
+            //strong.textContent = contentString;
+            content.appendChild(strong);
 
-        //info window內的照片
-        //收藏圖示
-        var a = document.createElement('a');
-        var imgfav = document.createElement("img");
-        imgfav.src = 'img/unfav.svg';
-        Array.prototype.forEach.call(favorite, function(data2) {
-            if (data.ven_num == data2.ven_num) { //如果收藏過的話變愛心
-                imgfav.src = 'img/fav.svg';
-                test = 2;
-            } else {
-                if (test == 1) { //如果沒有更改過的話
-                    imgfav.src = 'img/unfav.svg';
-                } else { //有更改過的話放原本的
+            //info window內的照片
+            //收藏圖示
+            var a = document.createElement('a');
+            var imgfav = document.createElement("img");
+            imgfav.src = 'img/unfav.svg';
+            Array.prototype.forEach.call(favorite, function(data2) {
+                if (data.ven_num == data2.ven_num) { //如果收藏過的話變愛心
                     imgfav.src = 'img/fav.svg';
+                    test = 2;
+                } else {
+                    if (test == 1) { //如果沒有更改過的話
+                        imgfav.src = 'img/unfav.svg';
+                    } else { //有更改過的話放原本的
+                        imgfav.src = 'img/fav.svg';
+                    }
+
                 }
+            })
+            imgfav.style.width = '50px';
+            a.appendChild(imgfav);
+            a.href = "fav.php?ven_num=" + data.ven_num;
+            content.appendChild(a);
 
+            //路徑規劃圖示
+            var b = document.createElement('a');
+            var imgrou = document.createElement('img');
+            imgrou.src = 'img/route.svg';
+            imgrou.style.width = '50px';
+            b.appendChild(imgrou);
+            b.addEventListener("click", function() {
+                //路線規劃
+                directionsDisplay.setMap(map);
+                console.log(lat);
+                console.log(lng);
+                // var org = lat + "," + lng;
+                // var start = org.toString();
+                var start = '25.036646,121.430534';
+                console.log(start);
+                var des = data.location_Latitude + "," + data.location_Longitude;
+                var end = des.toString();
+                console.log(end);
+                var request = {
+                    origin: start,
+                    destination: end,
+                    travelMode: google.maps.DirectionsTravelMode.DRIVING
+                };
+                directionsService.route(request, function(response, status) {
+                    if (status == google.maps.DirectionsStatus.OK) {
+                        directionsDisplay.setDirections(response);
+                        var myRoute = response.routes[0];
+                    }
+                });
+
+            })
+            content.appendChild(b);
+
+            //故障回報圖示
+            var c = document.createElement('a');
+            var imgwar = document.createElement('img');
+            imgwar.src = 'img/warning.svg';
+            imgwar.style.width = '50px';
+            c.appendChild(imgwar);
+            c.setAttribute("data-target", "#exampleModalCenter");
+            c.setAttribute("data-toggle", "modal");
+            c.addEventListener("click", function() {
+                var points = data.ven_num;
+                alert(points);
+                v = document.getElementById("ven_num_id"); //id為單一，不得重複，不然會抓不到值。
+                v.value = points;
+                console.log(v);
+            });
+            content.appendChild(c);
+
+            //商品清單圖示
+            var d = document.createElement('a');
+            var imglis = document.createElement('img');
+            imglis.src = 'img/list.svg';
+            imglis.style.width = '50px';
+            d.appendChild(imglis);
+            d.setAttribute("data-target", "#exampleModalLong");
+            d.setAttribute("data-toggle", "modal");
+            d.addEventListener("click", function() {
+                var points = data.ven_num;
+                alert(points);
+                va = document.getElementById("ven_id_n");
+                va.value = points;
+                document.getElementById("ven").submit();
+            });
+            content.appendChild(d);
+
+            //如販賣機error大於三，則顯示非正常運作
+            if (data.error >= 3) {
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
+                    map: map,
+                    icon: 'img/marker1.png' //顯示非正常運作
+                });
             }
-        })
-        imgfav.style.width = '50px';
-        a.appendChild(imgfav);
-        a.href = "fav.php?ven_num=" + data.ven_num;
-        content.appendChild(a);
-
-        //路徑規劃圖示
-        var b = document.createElement('a');
-        var imgrou = document.createElement('img');
-        imgrou.src = 'img/route.svg';
-        imgrou.style.width = '50px';
-        b.appendChild(imgrou);
-        b.addEventListener("click", function() {
-            var lat = data.location_Latitude;
-            var lon = data.location_Longitude;
-            Routev = document.getElementById("destination");
+            //如販賣機error小於三，則顯示正常運作
+            else {
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
+                    map: map,
+                    icon: 'img/marker.png' //顯示正常運作
+                });
+            }
+            marker.addListener('click', function() {
+                infoWind.setContent(content);
+                infoWind.open(map, marker);
+            })
 
         })
-        content.appendChild(b);
-
-        //故障回報圖示
-        var c = document.createElement('a');
-        var imgwar = document.createElement('img');
-        imgwar.src = 'img/warning.svg';
-        imgwar.style.width = '50px';
-        c.appendChild(imgwar);
-        c.setAttribute("data-target", "#exampleModalCenter");
-        c.setAttribute("data-toggle", "modal");
-        c.addEventListener("click", function() {
-            var points = data.ven_num;
-            alert(points);
-            v = document.getElementById("ven_num_id"); //id為單一，不得重複，不然會抓不到值。
-            v.value = points;
-            console.log(v);
-        });
-        content.appendChild(c);
-
-
-        //商品清單圖示
-        var d = document.createElement('a');
-        var imglis = document.createElement('img');
-        imglis.src = 'img/list.svg';
-        imglis.style.width = '50px';
-        d.appendChild(imglis);
-        d.setAttribute("data-target", "#exampleModalLong");
-        d.setAttribute("data-toggle", "modal");
-        d.addEventListener("click", function() {
-            var points = data.ven_num;
-            alert(points);
-            va = document.getElementById("ven_id_n");
-            va.value = points;
-            document.getElementById("ven").submit();
-        });
-        content.appendChild(d);
-        //如販賣機error大於三，則顯示非正常運作
-        if (data.error >= 3) {
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
-                map: map,
-                icon: 'img/marker1.png' //顯示非正常運作
-            });
-        }
-
-        //如販賣機error小於三，則顯示正常運作
-        else {
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
-                map: map,
-                icon: 'img/marker.png' //顯示正常運作
-            });
-        }
-
-
-        marker.addListener('click', function() {
-            infoWind.setContent(content);
-            infoWind.open(map, marker);
-        })
-
-
-    })
-
-
-    // var RouteCoordinates = [
-    //     <?php
-    //         $i = 0;
-    //       while ($i < count($coordinates)) {
-    //           echo $coordinates[$i];
-    //           $i++;
-    //       }
-    //     ?>
-    // ];
-
-    //     var RoutePath = new google.maps.Polyline({
-    //         path: RouteCoordinates,
-    //         geodesic: true,
-    //         strokeColor: '#1100FF',
-    //         strokeOpacity: 1.0,
-    //         strokeWeight: 10
-    //       });
-
-    //       mark = 'img/mark.png';
-    //       flag = 'img/flag.png';
-
-    //       startPoint = pune;
-    //       endPoint = data.location_Latitude, data.location_Longitude;
-
-    //       var marker = new google.maps.Marker({
-    //           position: startPoint,
-    //           map: map,
-    //           icon: mark,
-    //           title:"Start point!",
-    //           animation: google.maps.Animation.BOUNCE
-    //       });
-
-    //       var marker = new google.maps.Marker({
-    //       position: endPoint,
-    //        map: map,
-    //        icon: flag,
-    //        title:"End point!",
-    //        animation: google.maps.Animation.DROP
-    //         });
-
-    //       RoutePath.setMap(map);
-    google.maps.event.addDomListener(window, 'load', initialize);
-
+        //       RoutePath.setMap(map);
+    google.maps.event.addDomListener(window, 'load', loadMap);
 }
 
 function codeAddress(cdata) {
@@ -336,7 +308,6 @@ function codeAddress(cdata) {
     });
 }
 
-
 var ClickEventHandler = function(map, pune) {
     this.origin = pune;
     this.map = map;
@@ -353,6 +324,11 @@ var ClickEventHandler = function(map, pune) {
 };
 
 ClickEventHandler.prototype.handleClick = function(event) {
+    var myLatLng = event.latLng;
+    var lat = myLatLng.lat();
+    var lng = myLatLng.lng();
+    var des = lat + "," + lng;
+    var end = des.toString();
     console.log('You clicked on: ' + event.latLng);
     // If the event has a placeId, use it.
     if (event.placeId) {
