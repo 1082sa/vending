@@ -25,7 +25,7 @@
 	$error_words = $_POST['error_words'];
 	$error_pic = $_FILES['my_file']['name'];
 
-	echo $ven_num;
+	// echo $ven_num;
 	
 	$cond->setaccount("michellechen58@gmail.com");
 	$cond->setven_num($ven_num);
@@ -34,18 +34,17 @@
 	
     $adderror = $cond->AddError();
 	$adderror = json_encode($adderror, true);
-	echo '<div id="adderror">' . $adderror . '</div>';
+	// echo '<div id="adderror">' . $adderror . '</div>';
 
-	echo gettype($_FILES['my_file']['name']);
-	echo "<br>";
+	// echo gettype($_FILES['my_file']['name']);
+	// echo "<br>";
 	
     
 	if($adderror == true) {
 		$updateError = $cond->updateError();
 		$updateError = json_encode($ven_num);
 		$before=getenv("HTTP_REFERER");
-
-    echo "<script>alert('故障回報成功！'); location.href = '$before';</script>";
+		echo "<script>alert('故障回報成功！'); location.href = '$before';</script>";
 	} else {
 		
     echo "<script>alert('故障回報失敗，請聯繫客服！！'); location.href = '$before';</script>";
