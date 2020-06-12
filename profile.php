@@ -63,15 +63,16 @@
     
     <!-- ##### Blog Wrapper Start ##### -->
     
-    <div class="blog-wrapper section-padding-100 clearfix" style="text-align: center;">
+    <div class="blog-wrapper section-padding-50 clearfix" style="text-align: center;">
         <div class="container">
             <div>
                 <!-- Single Blog Area -->
                 <div class="single-blog-area clearfix">
                     <!-- Blog Content -->
                     <div class="single-blog-content">
-                        <h4 class=""style="font-weight: bold; text-align: center;">個人資訊</h4>
-                        <hr size="10px" width="100%">
+                        <h3 class="our-title">個人資訊</h3>
+                        <br>
+                        <hr size="10px" class="our-hr">
                             <p style="text-align:left; animation-duration:1.5s" class="ml-70 lightSpeedIn">
                                 <br>
                                 <?php foreach($rows as $user){ ?>
