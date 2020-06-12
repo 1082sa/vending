@@ -14,6 +14,7 @@
     echo "Connection failed: " . $e->getMessage();
   }
 session_start();
+$account="0430shinyu@gmail.com";
 if(isset($_SESSION["account"])){
 $account=$_SESSION["account"];
 }

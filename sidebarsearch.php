@@ -32,8 +32,8 @@
                                     <h4>
                                         <?php
                                         require 'db.php';
-                                        $statement = $conn->query("select name from user where account='$account'");
-foreach($statement as $row){
+                                        $state = $conn->query("select name from user where account='$account'");
+foreach($state as $row){
      echo "<a href='profile.php'><h4>";
                                             echo $row['name'];
                                             echo"</h4></a>";
@@ -56,7 +56,7 @@ foreach($statement as $row){
                                         <a href="cs.php"><span>客服聯繫</span></a>
                                     </li>
                                     <li>
-                                        <a href="#"><span>活動優惠</span></a>
+                                        <a href="activity.php"><span>活動優惠</span></a>
                                     </li>
                                     <li>
                                         <a href="logout.php"><span>登出</span></a>

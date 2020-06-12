@@ -1810,6 +1810,7 @@ textarea:focus~.highlight {
     }
 }
 
+
 /* 登入後的品牌顯示頁面 */
 
 .logo {
@@ -1822,9 +1823,11 @@ textarea:focus~.highlight {
     margin-left: -150px;
 }
 
+
 /* 通用 CSS */
+
 .our-title {
-    font-weight: bold; 
+    font-weight: bold;
     text-align: center;
 }
 
@@ -2006,9 +2009,7 @@ textarea:focus~.highlight {
     }
 }
 
-
 //資訊視窗裡的顯示樣式
-
 .infoImg {
     width: 200px;
     margin: 8px 0;
@@ -2080,6 +2081,7 @@ textarea:focus~.highlight {
 }
 
 /* error-record CSS */
+
 .error-content {
     width: 100%;
     padding: 0 5px;
@@ -2103,11 +2105,10 @@ textarea:focus~.highlight {
     td:first-child {
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
-      }
-      
+    }
     td:last-child {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
     }
     .correct {
         width: 14px;
@@ -2129,6 +2130,7 @@ textarea:focus~.highlight {
 
 
 /* cs CSS */
+
 .cs-content {
     width: 80%;
     padding: 0 5px;
@@ -2140,4 +2142,6 @@ textarea:focus~.highlight {
         table-layout: fixed;
     }
 }
+
+
 /* The End */

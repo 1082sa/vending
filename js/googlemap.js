@@ -166,13 +166,19 @@ function showAllMachines(allData, favorite) {
     console.log(favorite);
     //call back作法
     Array.prototype.forEach.call(allData, function(data) {
-            var test = 1;
+            var test = 1; //用於收藏
             var content = document.createElement('div');
-            var strong = document.createElement('strong');
 
-            strong.textContent = data.ven_num;
-            //strong.textContent = contentString;
-            content.appendChild(strong);
+            var head = document.createElement('H6');
+            head.textContent = data.ven_note;
+            content.appendChild(head);
+
+            var jump = document.createElement('br');
+            content.appendChild(jump);
+
+            var num = document.createElement('strong');
+            num.textContent = data.ven_num;
+            content.appendChild(num);
 
             //info window內的照片
             //收藏圖示
@@ -227,7 +233,7 @@ function showAllMachines(allData, favorite) {
                     }
                 });
 
-            })
+            });
             content.appendChild(b);
 
             //故障回報圖示
@@ -265,7 +271,7 @@ function showAllMachines(allData, favorite) {
             content.appendChild(d);
 
             //如販賣機error大於三，則顯示非正常運作
-            if (data.error >= 3) {
+            if (data.error_num >= 3) {
                 var marker = new google.maps.Marker({
                     position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),
                     map: map,
