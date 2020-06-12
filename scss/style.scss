@@ -2065,7 +2065,9 @@ textarea:focus~.highlight {
     color: $c3;
 }
 
+
 /* error-record CSS */
+
 .error-content {
     width: 100%;
     padding: 0 5px;
@@ -2089,11 +2091,10 @@ textarea:focus~.highlight {
     td:first-child {
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
-      }
-      
+    }
     td:last-child {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
     }
     .correct {
         width: 14px;
@@ -2105,10 +2106,6 @@ textarea:focus~.highlight {
     }
 }
 
-
-
-
-
 .error-content-odd {
     background-color: white;
 }
@@ -2116,5 +2113,10 @@ textarea:focus~.highlight {
 .error-content-even {
     background-color: $c5;
 }
+
+.p-size {
+    margin-bottom: auto;
+}
+
 
 /* The End */
