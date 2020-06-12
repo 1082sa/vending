@@ -41,6 +41,8 @@
 	
     
 	if($adderror == true) {
+		$updateError = $cond->updateError();
+		$updateError = json_encode($ven_num);
 		$before=getenv("HTTP_REFERER");
 
     echo "<script>alert('故障回報成功！'); location.href = '$before';</script>";
