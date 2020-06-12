@@ -50,21 +50,30 @@
 
 
     <!-- ##### Blog Wrapper Start ##### -->
-    <div class="blog-wrapper section-padding-100 clearfix" style="text-align: center;">
+    <div class="blog-wrapper section-padding-50 clearfix" style="text-align: center;">
         <div class="container">
             <div>
                 <!-- Single Blog Area -->
-                <div class="single-blog-area clearfix mb-100">
+                <div class="single-blog-area clearfix">
                     <!-- Blog Content -->
-                    <div class="single-blog-content">
-                    <h4 style="font-weight: bold; text-align: center;">客服聯繫</h4>
-                         <hr size="10px" width="100%">
-                        <br />
-                        <p class="lightSpeedIn" style="animation-duration:1.3s">
-                            信箱&emsp;&emsp;&nbsp;&emsp;tty09183@gmail.com <br /><br /> 電話&emsp;&emsp;&nbsp;&emsp;&nbsp;&emsp;&nbsp;02-89302156&nbsp;&emsp;&emsp;
-                            <br /><br /> &emsp;&emsp;住址&emsp;&emsp;&nbsp;&emsp;新北市中正路514巷96號&nbsp;&emsp;
-                            <br>
-                            </br>
+                    <div class="single-blog-content clearfix">
+                    <h3 class="our-title">客服聯繫</h3>
+                        <br>
+                        <hr size="10px" class="our-hr">
+                            <table class="lightSpeedIn cs-content" style="animation-duration:1.3s">
+                                <tr>
+                                    <td>信箱</td>
+                                    <td>tty09183@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <td>電話</td>
+                                    <td>02-89302156</td>
+                                </tr>
+                                <tr>
+                                    <td>住址</td>
+                                    <td>新北市中正路514巷96號</td>
+                                </tr>
+                            </table>
                             <a href="QA.php"  class="btn btn-outline-dark">常見問題</a>
 
                             <p>
@@ -73,22 +82,6 @@
             </div>
         </div>
     </div>
-
-    <!-- ##### Footer Area Start ##### -->
-    <footer class="footer-area text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-
-
-
-                </div>
-            </div>
-        </div>
-        
-
-    </footer>
-    <!-- ##### Footer Area End ##### -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>

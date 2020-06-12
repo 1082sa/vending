@@ -52,7 +52,9 @@
               <div class="single-blog-area clearfix">
                   <!-- Blog Content -->
                   <div class="single-blog-content">
-                      <h3 class=""style="font-weight: bold; text-align: center;">故障回報紀錄</h3>
+                      <h3 class="our-title">故障回報紀錄</h3>
+                      <br>
+                      <hr size="10px" class="our-hr">
                       <!-- 表格 -->
                       <?php include("error_record_process.php");?>
                      
