@@ -42,7 +42,7 @@
                     <h4 class=""style="font-weight: bold; text-align: center;">活動優惠</h4>
                         <hr size="10px" width="100%">
                         <div class="single-blog-thumbnail">
-                            <img src="img/can.svg" alt="">
+                            <img src="img/can.svg" alt="" class="animated fadeIn" style="animation-duration: 3s">
                             <div class="post-date">
                                 <a href="#"><span>6/1 ~ 6/31</span></a>
                             </div>
