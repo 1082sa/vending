@@ -38,12 +38,18 @@
 
 	echo gettype($_FILES['my_file']['name']);
 	echo "<br>";
-	echo $pic;
+	
     
 	if($adderror == true) {
-		echo "Updated...";
+		$before=getenv("HTTP_REFERER");
+
+    echo "<script>alert('故障回報成功！'); location.href = '$before';</script>";
 	} else {
-		echo "Failed...";
+		
+    echo "<script>alert('故障回報失敗，請聯繫客服！！'); location.href = '$before';</script>";
 	}
-	header("location:newindex.php?situation=complete");
+
+
+
+//	header("location:newindex.php?situation=complete");
 ?>
