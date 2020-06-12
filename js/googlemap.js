@@ -167,21 +167,22 @@ function showAllMachines(allData, favorite) {
     //call back作法
     Array.prototype.forEach.call(allData, function(data) {
             var test = 1; //用於收藏
-            var content = document.createElement('div');
 
+            var content = document.createElement('div');
+            //顯示販賣機名稱
             var head = document.createElement('H6');
             head.textContent = data.ven_note;
             content.appendChild(head);
-
+            //用於跳行
             var jump = document.createElement('br');
             content.appendChild(jump);
-
+            //用於顯示販賣機號碼（方便驗收）
             var num = document.createElement('strong');
             num.textContent = data.ven_num;
             content.appendChild(num);
 
             //info window內的照片
-            //收藏圖示
+            //收藏圖示（用get傳值）
             var a = document.createElement('a');
             var imgfav = document.createElement("img");
             imgfav.src = 'img/unfav.svg';
@@ -195,15 +196,14 @@ function showAllMachines(allData, favorite) {
                     } else { //有更改過的話放原本的
                         imgfav.src = 'img/fav.svg';
                     }
-
                 }
             })
             imgfav.style.width = '50px';
             a.appendChild(imgfav);
-            a.href = "fav.php?ven_num=" + data.ven_num;
+            a.href = "fav.php?ven_num=" + data.ven_num; //跳轉到fav，用get方式傳值
             content.appendChild(a);
 
-            //路徑規劃圖示
+            //路徑規劃圖示(點選以後，從資料庫抓值給map)
             var b = document.createElement('a');
             var imgrou = document.createElement('img');
             imgrou.src = 'img/route.svg';
@@ -214,6 +214,7 @@ function showAllMachines(allData, favorite) {
                 directionsDisplay.setMap(map);
                 console.log(lat);
                 console.log(lng);
+                // 先寫死，demo前把註解用掉
                 // var org = lat + "," + lng;
                 // var start = org.toString();
                 var start = '25.036646,121.430534';
@@ -232,17 +233,16 @@ function showAllMachines(allData, favorite) {
                         var myRoute = response.routes[0];
                     }
                 });
-
             });
             content.appendChild(b);
 
-            //故障回報圖示
+            //故障回報圖示(用post抓值)
             var c = document.createElement('a');
             var imgwar = document.createElement('img');
             imgwar.src = 'img/warning.svg';
             imgwar.style.width = '50px';
             c.appendChild(imgwar);
-            c.setAttribute("data-target", "#exampleModalCenter");
+            c.setAttribute("data-target", "#exampleModalCenter"); //彈跳視窗data-target用id連接
             c.setAttribute("data-toggle", "modal");
             c.addEventListener("click", function() {
                 var points = data.ven_num;
@@ -259,7 +259,7 @@ function showAllMachines(allData, favorite) {
             imglis.src = 'img/list.svg';
             imglis.style.width = '50px';
             d.appendChild(imglis);
-            d.setAttribute("data-target", "#exampleModalLong");
+            d.setAttribute("data-target", "#exampleModalLong"); //彈跳視窗data-target用id連接
             d.setAttribute("data-toggle", "modal");
             d.addEventListener("click", function() {
                 var points = data.ven_num;
@@ -270,7 +270,7 @@ function showAllMachines(allData, favorite) {
             });
             content.appendChild(d);
 
-            //如販賣機error大於三，則顯示非正常運作
+            //如販賣機error_num大於三，則顯示非正常運作，故障回報後，我自動加入資料庫
             if (data.error_num >= 3) {
                 var marker = new google.maps.Marker({
                     position: new google.maps.LatLng(data.location_Latitude, data.location_Longitude),

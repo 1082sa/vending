@@ -1836,6 +1836,17 @@ textarea:focus~.highlight {
     width: 80%;
 }
 
+.y-bt {
+    background-color: $c4;
+    padding: 8px 15px;
+    color: $c3;
+}
+
+.g-bt {
+    background-color: $c5;
+    padding: 8px 15px;
+    color: $c3;
+}
 
 /* Sidebar CSS */
 
@@ -2068,13 +2079,6 @@ textarea:focus~.highlight {
     width: 100%;
     top: 0
 }
-
-.y-bt {
-    background-color: #FFDD92;
-    padding: 8px 15px;
-    color: $c3;
-}
-
 
 /* error-record CSS */
 

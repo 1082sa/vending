@@ -50,15 +50,16 @@
     </header>
 
     <!-- ##### Blog Wrapper Start ##### -->
-    <div class="blog-wrapper section-padding-100 clearfix" style="text-align: center;">
+    <div class="blog-wrapper section-padding-50 clearfix" style="text-align: center;">
         <div class="container">
             <div>
                 <!-- Single Blog Area -->
-                <div class="single-blog-area clearfix mb-100">
+                <div class="single-blog-area clearfix">
                     <!-- Blog Content -->
                     <div class="single-blog-content" width="100%" style="text-align:center">
-                        <h4 style="font-weight: bold; text-align: center;">常見問題</h4><br />
-                        <hr size="10px" style="align:center" width="100%">
+                        <h3 class="our-title">常見問題</h3><br />
+                        <hr size="10px" class="our-hr">
+                        <br>
                         <div id="QandA">
                             <p class="Question">Q1: 地圖無法顯示出來</p>
                             <div class="Answer">
@@ -84,22 +85,6 @@
             </div>
         </div>
     </div>
-
-    <!-- ##### Footer Area Start ##### -->
-    <footer class="footer-area text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-
-
-
-                </div>
-            </div>
-        </div>
-        
-
-    </footer>
-    <!-- ##### Footer Area End ##### -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>

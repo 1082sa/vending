@@ -39,7 +39,7 @@ class get_contact	{
 
   
   public function AddError() {
-    $sql = "INSERT INTO `error` (`account`, `ven_num`, `error_words`, `error_pic`, `error_date`) values ('0430shinyu@gmail.com', :ven_num, :error_words, :error_pic, now())";
+    $sql = "INSERT INTO `error` (`account`, `ven_num`, `error_words`, `error_pic`, `error_date`,`finish`) values ('0430shinyu@gmail.com', :ven_num, :error_words, :error_pic, now(),'0')";
     $stmt = $this->conn->prepare($sql);
     $stmt->bindParam(':ven_num', $this->ven_num);
     $stmt->bindParam(':error_words', $this->error_words);
@@ -51,6 +51,18 @@ class get_contact	{
       return false;
     }
   }
+  public function updateError(){
+    $sql = "UPDATE `machine` set `error_num` = error_num + 1 where ven_num = :ven_num";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->bindParam(':ven_num', $this->ven_num);
+    if($stmt->execute()){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+  
 }
 ?>
 

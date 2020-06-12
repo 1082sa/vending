@@ -52,23 +52,23 @@
        <?php include("sidebar.php")?>
     </header>
 
-    <div class="blog-wrapper section-padding-100 clearfix" style="text-align: center;">
+    <div class="blog-wrapper section-padding-50 clearfix" style="text-align: center;">
         <div class="container">
             <div>
                 <!-- Single Blog Area -->
-                <div class="single-blog-area clearfix mb-100">
+                <div class="single-blog-area clearfix">
                     <!-- Blog Content -->
                     <div class="single-blog-content">
-                        <h4 style="font-weight: bold; text-align: center;">重設密碼</h4>
-                         <hr size="10px" width="100%">
-                        <br />
+                        <h3 class="our-title">重設密碼</h3>
+                        <br>
+                        <hr size="10px" class="our-hr">
                         <form method="post" action="edit_password_process.php" style="margin-top:60px ">
                             <p sytle="font-color:#727272;display:inline-block">原始密碼&emsp;&emsp;
                             <input  type="password" name="password1" size="18" class="text lightSpeedIn" placeholder="PASSWORD" autocomplete="off" required style="animation-duration: 1.5s"><br /><br /> 修改密碼&emsp;&emsp;
                           
                             <input type="password" name="password2" size="18" class="text lightSpeedIn" placeholder="PASSWORD" autocomplete="off" required style="animation-duration: 1.5s"><br /><br />  <br><br>
-                            <a href="profile.php"  class="btn btn-outline-dark">取消</a>
-                            <button type="submit" class="btn btn-outline-dark">完成</button>
+                            <a href="profile.php"  class="btn g-bt">取消</a>
+                            <button type="submit" class="btn y-bt">完成</button> 
                             </p>
                             <br>
                             
