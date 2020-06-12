@@ -50,7 +50,7 @@
                                         <a href="beforefavmap.php"><span>我的最愛</span></a>
                                     </li>
                                     <li>
-                                        <a href="#"><span>故障回報紀錄</span></a>
+                                        <a href="error-record.php"><span>故障回報紀錄</span></a>
                                     </li>
                                     <li>
                                         <a href="cs.php"><span>客服聯繫</span></a>
