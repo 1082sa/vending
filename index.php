@@ -38,8 +38,10 @@
     <header class="header-area">
          <?php include("sidebarsearch.php")?>
     </header>
-    <!-- iframe 地圖 -->
-    <?php include("newindex.php")?>
+    <!-- include 地圖 -->
+    <div class="map">
+        <?php include("newindex.php")?>
+    </div>
     <!-- <iframe src="newindex.php" class="map" frameborder="0" scrolling="no"></iframe> -->
     
     
