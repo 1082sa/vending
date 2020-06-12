@@ -56,7 +56,7 @@ foreach($state as $row){
                                         <a href="cs.php"><span>客服聯繫</span></a>
                                     </li>
                                     <li>
-                                        <a href="#"><span>活動優惠</span></a>
+                                        <a href="activity.php"><span>活動優惠</span></a>
                                     </li>
                                     <li>
                                         <a href="logout.php"><span>登出</span></a>
