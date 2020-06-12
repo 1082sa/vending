@@ -2220,11 +2220,15 @@ textarea:focus ~ .highlight {
   width: 100%;
 }
 
+/* index CSS */
 .map {
   width: 100vw;
-  height: 88.7vh;
+  height: 89vh;
   margin: 0;
   padding: 0;
+  z-index: -99;
+  position: absolute;
+  top: 67px;
 }
 
 /* searching CSS */
