@@ -63,7 +63,7 @@
     
     <!-- ##### Blog Wrapper Start ##### -->
     
-    <div class="blog-wrapper section-padding-100 clearfix" style="text-align: center;">
+    <div class="blog-wrapper section-padding-50 clearfix" style="text-align: center;">
         <div class="container">
             <div>
                 <!-- Single Blog Area -->
@@ -71,8 +71,9 @@
                     <!-- Blog Content -->
                     <form action="profile_edit_process.php" METHOD="POST">
                     <div class="single-blog-content">
-                        <h4 style="font-weight: bold; text-align: center;">個人資訊</h4>
-                        <hr size="10px" width="100%">
+                        <h3 style="font-weight: bold; text-align: center;">個人資訊</h3>
+                        <br>
+                        <hr size="10px" class="our-hr">
                             <p style="text-align:left;" class="ml-70 lightSpeedIn">
                                 <br>
                                 <?php foreach($rows as $user){ ?>
@@ -125,21 +126,15 @@
                             </p>
                         
                      
-                            
-                         <hr size="10px" width="100%">
-                       <a href="profile.php" class="btn btn-outline-dark ">取消</a>
-                                <button  type="submit" class="btn btn-outline-dark ">送出</button>
-                    <hr size="10px" width="100%"> </div></form>
-                    
+                        
+                        <a href="profile.php" class="btn g-bt">取消</a>
+                        <button  type="submit" class="btn y-bt">送出</button>
+                    </from>
                 </div>
             </div>
         </div>
     </div>
-    
 
-    <!-- ##### Footer Area Start ##### -->
-   
-    <!-- ##### Footer Area End ##### -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
