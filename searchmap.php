@@ -63,7 +63,7 @@
 <body>
     <header class="header-area">
        <?php include("sidebarsearch.php");
-        include("search.php");?>
+       ?>
     </header>   
     <!-- Preloader -->
     <div id="preloader">
