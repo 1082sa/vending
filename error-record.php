@@ -56,6 +56,8 @@
                       <br>
                       <hr size="10px" class="our-hr">
                       <!-- 表格 -->
+                      <?php include("error_record_process.php");?>
+                     
                       <table class="error-content">
                         <tr class="error-title">
                           <td>時間</td>
@@ -69,19 +71,31 @@
                           <td>&nbsp;</td>
                           <td>&nbsp;</td>
                         </tr>
+                         <?php
+                            foreach($sth as $row){
                         
-                        <tr class="error-content-odd">
-                          <td>06/11</td>
-                          <td>販賣機01</td>
-                          <td>沒看到販賣機</td> <!-- 分為常見問題的那四個加其他？-->
-                          <td><img class="correct" src="img/correct.svg"></td>
+                         if ($row['ROWID']%2!=0)  {?>
+                            <tr class="error-content-odd">
+                        <?php }else{
+                            ?>  <tr class="error-content-even"><?php
+                         }
+                            ?>  
+                       
+                          <td><?php  echo $row['error_date'];?></td>
+                          <td><?php echo $row['ven_num'];?></td>
+                          <td> <?php  echo $row['error_words'];?></td> <!-- 分為常見問題的那四個加其他？-->
+                          <td> <?php if($row['finish']==1){?>
+                              
+                          <img class="correct" src="img/correct.svg">
+                         <?php }
+                              else{?>
+                                  <img class="cross" src="img/cross.svg">
+                             <?php }
+                              ?></td>
                         </tr>
-                        <tr class="error-content-even">
-                          <td>06/10</td>
-                          <td>販賣機02</td>
-                          <td>吃錢</td> <!-- 分為常見問題的那四個加其他？-->
-                          <td><img class="cross" src="img/cross.svg"></td>
-                        </tr>
+                          <?php }?>
+                      
+
                       </table>
 
                   </div>

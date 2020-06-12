@@ -39,7 +39,8 @@
          <?php include("sidebarsearch.php")?>
     </header>
     <!-- iframe 地圖 -->
-    <iframe src="newindex.php" class="map" frameborder="0" scrolling="no"></iframe>
+    <?php include("newindex.php")?>
+    <!-- <iframe src="newindex.php" class="map" frameborder="0" scrolling="no"></iframe> -->
     
     
 
