@@ -32,8 +32,8 @@
                                     <h4>
                                         <?php
                                         require 'db.php';
-                                        $statement = $conn->query("select name from user where account='$account'");
-foreach($statement as $row){
+                                        $state = $conn->query("select name from user where account='$account'");
+foreach($state as $row){
      echo "<a href='profile.php'><h4>";
                                             echo $row['name'];
                                             echo"</h4></a>";
