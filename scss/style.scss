@@ -66,7 +66,7 @@ h6 {
 
 p {
     color: $c3;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.4;
     font-family: "Microsoft JhengHei", $helvetica-medium;
 }
@@ -1810,6 +1810,28 @@ textarea:focus~.highlight {
     }
 }
 
+/* 登入後的品牌顯示頁面 */
+
+.logo {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -150px;
+    margin-left: -150px;
+}
+
+/* 通用 CSS */
+.our-title {
+    font-weight: bold; 
+    text-align: center;
+}
+
+.our-hr {
+    margin: 1rem 10%;
+    width: 80%;
+}
 
 /* Sidebar CSS */
 
@@ -1894,22 +1916,6 @@ textarea:focus~.highlight {
 }
 
 
-/* index CSS */
-
-
-/*登入後的品牌顯示頁面*/
-
-.logo {
-    width: 300px;
-    height: 300px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-top: -150px;
-    margin-left: -150px;
-}
-
-
 /* searching CSS */
 
 #result_block {
@@ -1988,7 +1994,9 @@ textarea:focus~.highlight {
     }
 }
 
+
 //資訊視窗裡的顯示樣式
+
 .infoImg {
     width: 200px;
     margin: 8px 0;
@@ -2105,10 +2113,6 @@ textarea:focus~.highlight {
     }
 }
 
-
-
-
-
 .error-content-odd {
     background-color: white;
 }
@@ -2117,4 +2121,17 @@ textarea:focus~.highlight {
     background-color: $c5;
 }
 
+
+/* cs CSS */
+.cs-content {
+    width: 80%;
+    padding: 0 5px;
+    text-align: -webkit-match-parent;
+    line-height: 3;
+    color: $c3;
+    margin: 1.5rem 12.5%;
+    td {
+        table-layout: fixed;
+    }
+}
 /* The End */

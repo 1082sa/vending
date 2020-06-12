@@ -56,7 +56,7 @@ h6 {
 
 p {
   color: #304d4f;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.4;
   font-family: "Microsoft JhengHei", "helveticaneuemedium";
 }
@@ -2107,6 +2107,28 @@ textarea:focus ~ .highlight {
   }
 }
 
+/* 登入後的品牌顯示頁面 */
+.logo {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -150px;
+  margin-left: -150px;
+}
+
+/* 通用 CSS */
+.our-title {
+  font-weight: bold;
+  text-align: center;
+}
+
+.our-hr {
+  margin: 1rem 10%;
+  width: 80%;
+}
+
 /* Sidebar CSS */
 .info-top {
   width: 100%;
@@ -2191,18 +2213,6 @@ textarea:focus ~ .highlight {
   height: 88.7vh;
   margin: 0;
   padding: 0;
-}
-
-/* index CSS */
-/*登入後的品牌顯示頁面*/
-.logo {
-  width: 300px;
-  height: 300px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-top: -150px;
-  margin-left: -150px;
 }
 
 /* searching CSS */
@@ -2432,6 +2442,20 @@ textarea:focus ~ .highlight {
 
 .error-content-even {
   background-color: #e6e6e6;
+}
+
+/* cs CSS */
+.cs-content {
+  width: 80%;
+  padding: 0 5px;
+  text-align: -webkit-match-parent;
+  line-height: 3;
+  color: #304d4f;
+  margin: 1.5rem 12.5%;
+}
+
+.cs-content td {
+  table-layout: fixed;
 }
 
 /* The End */
