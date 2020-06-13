@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Original - Lifestyle Blog Template</title>
+    <title>WEVEN - 活動優惠</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -42,7 +42,7 @@
                     <h4 class=""style="font-weight: bold; text-align: center;">活動優惠</h4>
                         <hr size="10px" width="100%">
                         <div class="single-blog-thumbnail">
-                            <img src="img/can.svg" alt="">
+                            <img src="img/can.svg" alt="" class="animated pulse" style="animation-duration: 3s">
                             <div class="post-date">
                                 <a href="#"><span>6/1 ~ 6/31</span></a>
                             </div>
@@ -50,10 +50,10 @@
                         <!-- Blog Content -->
                         <div class="single-blog-content mt-50">
                             <div class="line"></div>
-                            <h5><a href="#" class="post-tag">Andy Warhol大師的藝術汽水</a></h5>
-                            <p>普普藝術家Andy Warhol與汽水攜手合作，讓您在暢飲的同時兼具藝術美感，成為新時代的潮流Icon</p>
+                            <h5><a href="#" class="post-tag animated lightSpeedIn" style="animation-duration: 1.5s">Andy Warhol大師的藝術汽水</a></h5>
+                            <p class="animated lightSpeedIn" style="animation-duration: 1.5s">普普藝術家Andy Warhol與汽水攜手合作，讓您在暢飲的同時兼具藝術美感，成為新時代的潮流Icon</p>
                             <div class="post-meta">
-                            <p>Edit by <a href="#">WEVEN</a></p>
+                            <p class="animated lightSpeedIn" style="animation-duration: 1.5s">Edit by <a href="#">WEVEN</a></p>
                             </div>
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-blog-area blog-style-2 mb-100">
                         <div class="single-blog-thumbnail">
-                            <img src="img/snack.svg" alt="">
+                            <img src="img/snack.svg" alt="" class="animated pulse" style="animation-duration: 3s">
                             <div class="post-date">
                             <a href="#"><span>6/3 ~ 6/10</span></a>
                             </div>
@@ -70,10 +70,10 @@
                         <!-- Blog Content -->
                         <div class="single-blog-content mt-50">
                             <div class="line"></div>
-                            <h5><a href="#" class="post-tag">法國點心 C'est bon 進駐各大販賣機</a></h5>
-                            <p>法國知名手工餅乾C'est bon 舉辦為期八天的快閃活動，喜歡的朋友快來購買吧!</p>
+                            <h5><a href="#" class="post-tag animated lightSpeedIn" style="animation-duration: 1.5s">法國點心 C'est bon 進駐各大販賣機</a></h5>
+                            <p class="animated lightSpeedIn" style="animation-duration: 1.5s">法國知名手工餅乾C'est bon 舉辦為期八天的快閃活動，喜歡的朋友快來購買吧!</p>
                             <div class="post-meta">
-                                <p>Edit by <a href="#">WEVEN</a></p>
+                                <p class="animated lightSpeedIn" style="animation-duration: 1.5s">Edit by <a href="#">WEVEN</a></p>
                             </div>
                         </div>
                     </div>
