@@ -1,3 +1,4 @@
+<!-- 判斷販賣機是否收藏 -->
 <?php
 require 'db.php';
 $account=$_SESSION["account"];
