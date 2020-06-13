@@ -24,7 +24,7 @@
             <div class="col-12">
                 <div class="group">
                     
-                    <input id="txt" style="textarea  width:300px height:100px" name="error_words" required>
+                    <input id="txt" type="textarea"  width="300px" height="100px" name="error_words" required>
                     
                     <span class="highlight"></span>
                     <span class="bar"></span>
