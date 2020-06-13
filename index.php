@@ -69,89 +69,87 @@
 </header>
 
 <body>
-    <div class="map">
-        <!-- Preloader -->
-        <div id="preloader">
-            <div class="preload-content">
-                <div id="original-load"></div>
-            </div>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preload-content">
+            <div id="original-load"></div>
         </div>
-        <div class="container">
-            <?php
-            require 'get_value.php';
-            $val = new get_value;
-            // $coll = $val->getMachinesLatLng();
-            // $coll = json_encode($coll, true);
-            // echo '<div id="data">' . $coll . '</div>';
-
-            $allData = $val->getAllMachines();
-            $allData = json_encode($allData, true);
-            echo '<div id="allData">' . $allData . '</div>';
-
-            $favorite = $val->fav();
-            $favorite = json_encode($favorite, true);
-            echo '<div id="favorite">' . $favorite . '</div>';
-            ?>
-        </div>
-
-
-        <!--Map-->
-        <div id="map"></div>
-
-        <!-- Modal -->
-        <!-- Modal -->
-
-        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="ver">商品清單</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <?php include("ven-info.php"); ?>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="ver">販賣機故障回報</h5>
-
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body" id="result">
-                        <?php include("contact.php"); ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <footer>
-            <!-- 到時候要註解掉 -->
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;
-            <script>
-                document.write(new Date().getFullYear());
-            </script>
-            All rights reserved | This template is made with
-            <i class="fa fa-heart-o" aria-hidden="true"></i> by
-            <a href="https://colorlib.com" target="_blank">Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        </footer>
-        <!-- ##### Footer Area End ##### -->
     </div>
+    <div class="container">
+        <?php
+        require 'get_value.php';
+        $val = new get_value;
+        // $coll = $val->getMachinesLatLng();
+        // $coll = json_encode($coll, true);
+        // echo '<div id="data">' . $coll . '</div>';
+
+        $allData = $val->getAllMachines();
+        $allData = json_encode($allData, true);
+        echo '<div id="allData">' . $allData . '</div>';
+
+        $favorite = $val->fav();
+        $favorite = json_encode($favorite, true);
+        echo '<div id="favorite">' . $favorite . '</div>';
+        ?>
+    </div>
+
+
+    <!--Map-->
+    <div id="map"></div>
+
+    <!-- Modal -->
+    <!-- Modal -->
+
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ver">商品清單</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <?php include("ven-info.php"); ?>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ver">販賣機故障回報</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="result">
+                    <?php include("contact.php"); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <!-- 到時候要註解掉 -->
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy;
+        <script>
+            document.write(new Date().getFullYear());
+        </script>
+        All rights reserved | This template is made with
+        <i class="fa fa-heart-o" aria-hidden="true"></i> by
+        <a href="https://colorlib.com" target="_blank">Colorlib</a>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    </footer>
+    <!-- ##### Footer Area End ##### -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
@@ -163,6 +161,7 @@
     <script src="js/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+    <script src="js/contact.js"></script>
     <!--include html-->
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     <script>

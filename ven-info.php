@@ -17,13 +17,16 @@
     <link rel="manifest" href="manifest.json" />
     <?php include("ven-infolist.php"); ?>
 </head>
+<header class="header-area">
+    <?php include("sidebarsearch.php"); ?>
+</header>
 
 <body>
-    <form id ="ven" action="ven-info.php" method="POST">
+    <form id="ven" action="ven-info.php" method="POST">
         <input type="hidden" name="ven_num" id="ven_id_n">
 
         <div class="row ven_item_list">
-            
+
             <?php foreach ($rows as $product) { ?>
 
                 <div class="ven_item">
