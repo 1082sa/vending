@@ -84,6 +84,7 @@
             echo '<div id="allData">' . $allData . '</div>';
         
             $favorite = new get_value;
+          $favorite -> setaccount($account); 
             $favorite = $favorite->fav();
             $favorite = json_encode($favorite, true);
          echo '<div id="favorite">' . $favorite . '</div>';	

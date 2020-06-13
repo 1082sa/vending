@@ -2,6 +2,7 @@
 	
 	class get_value	{
         private $pro_name;
+        private $account;
 		private $ven_num;
 		private $ven_note;
 		private $location_Latitude;
@@ -55,7 +56,7 @@
 			return $stmt->fetchAll(PDO::FETCH_ASSOC);
 		}
         public function fav() {
-			$sql = "SELECT f.ven_num FROM machine m,favorite f where f.account='0430shinyu@gmail.com' and m.ven_num=f.ven_num";
+			$sql = "SELECT f.ven_num FROM machine m,favorite f where f.account='$this->account' and m.ven_num=f.ven_num";
             $stmt = $this->conn->prepare($sql);
 			$stmt->execute();
 			return $stmt->fetchAll(PDO::FETCH_ASSOC);
