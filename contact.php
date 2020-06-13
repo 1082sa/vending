@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 
     <!-- Preloader 
     <div id="preloader">
@@ -60,5 +59,4 @@
             <!-- <input type="submit" class="btn original-btn"> -->
         </center>
     </form>
-
 
