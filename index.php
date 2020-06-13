@@ -3,25 +3,32 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nav</title>
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>WEVEN - your vending machine</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico" />
 
-
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css" />
 
-    <!-- PWA manifest -->
+    <!--manifest.json-->
     <link rel="manifest" href="manifest.json" />
 
-    <!-- PWA service-Worker -->
+    <!--animation-->
+    <!---The async attribute allows the browser to render the page while the API loads--->
+
+
     <script>
-        if ("serviceWorker.js" in navigator) {
+        if ('serviceWorker' in navigator) {
             console.log("Will service worker register?");
             navigator.serviceWorker
-                .register("service-worker.js")
+                .register("./service-worker.js")
                 .then(function(reg) {
                     console.log("yes it did.");
                 })
@@ -29,20 +36,120 @@
                     console.log("No it didn,t This happened: ", err);
                 });
         }
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for (let registration of registrations) {
+                registration.unregister()
+            }
+        })
     </script>
-    
+
+    <!-- margin是調整border外的邊界；padding則是調整border內到內文之間的距離-->
+    <style type="text/css">
+        html,
+        body,
+        #map {
+            height: 100%;
+            margin: 0;
+            padding: 20;
+        }
+
+        #data,
+        #allData,
+        #favorite {
+            display: none;
+        }
+    </style>
+    <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
+
+    <script type="text/javascript" src="js/googlemap.js"></script>
 </head>
+<header class="header-area">
+    <?php include("sidebarsearch.php");
+    include("search.php"); ?>
+</header>
 
 <body>
-    <!-- include 導覽列 -->
-    <header class="header-area">
-         <?php include("sidebarsearch.php")?>
-    </header>
-    <!-- iframe 地圖 -->
-    <?php include("newindex.php")?>
-    <!-- <iframe src="newindex.php" class="map" frameborder="0" scrolling="no"></iframe> -->
-    
-    
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preload-content">
+            <div id="original-load"></div>
+        </div>
+    </div>
+    <div class="container">
+        <?php
+        require 'get_value.php';
+        $val = new get_value;
+        // $coll = $val->getMachinesLatLng();
+        // $coll = json_encode($coll, true);
+        // echo '<div id="data">' . $coll . '</div>';
+
+        $allData = $val->getAllMachines();
+        $allData = json_encode($allData, true);
+        echo '<div id="allData">' . $allData . '</div>';
+
+        $favorite = $val->fav();
+        $favorite = json_encode($favorite, true);
+        echo '<div id="favorite">' . $favorite . '</div>';
+        ?>
+    </div>
+
+
+    <!--Map-->
+    <div id="map"></div>
+
+    <!-- Modal -->
+    <!-- Modal -->
+
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ver">商品清單</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <?php include("ven-info.php"); ?>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ver">販賣機故障回報</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="result">
+                    <?php include("contact.php"); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <!-- 到時候要註解掉 -->
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy;
+        <script>
+            document.write(new Date().getFullYear());
+        </script>
+        All rights reserved | This template is made with
+        <i class="fa fa-heart-o" aria-hidden="true"></i> by
+        <a href="https://colorlib.com" target="_blank">Colorlib</a>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    </footer>
+    <!-- ##### Footer Area End ##### -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
@@ -58,6 +165,8 @@
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     <script>
         w3.includeHTML();
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBstjRsNEnzJo4CYLYDSMu7lJ_Bu-A9w4c&libraries=places&callback=loadMap">
     </script>
 </body>
 
