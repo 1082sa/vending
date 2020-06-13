@@ -154,7 +154,10 @@
     <!-- Active js -->
     <script src="js/active.js"></script>
     <!--include html-->
-    <script src="https://www.w3schools.com/lib/w3.js"></script>
+        <script src="js/contact.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js">
+        
+    </script>
     <script>
         w3.includeHTML();
     </script>
