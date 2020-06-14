@@ -84,6 +84,7 @@
             echo '<div id="allData">' . $allData . '</div>';
         
             $favorite = new get_value;
+          $favorite -> setaccount($account); 
             $favorite = $favorite->fav();
             $favorite = json_encode($favorite, true);
          echo '<div id="favorite">' . $favorite . '</div>';	
@@ -154,7 +155,10 @@
     <!-- Active js -->
     <script src="js/active.js"></script>
     <!--include html-->
-    <script src="https://www.w3schools.com/lib/w3.js"></script>
+        <script src="js/contact.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js">
+        
+    </script>
     <script>
         w3.includeHTML();
     </script>

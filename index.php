@@ -161,6 +161,7 @@
     <script src="js/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+    <script src="js/contact.js"></script>
     <!--include html-->
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     <script>
