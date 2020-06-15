@@ -91,7 +91,7 @@
                     <img style="position: absolute;
                     top:70%;
   bottom: 1em;
-  right: 1em;" src="img/edit.svg" width="50px"onclick="javascript:location.href='profile_edit.php'">
+  right: 1em;" src="img/edit.svg" width="30px"onclick="javascript:location.href='profile_edit.php'">
                 </div>
             </div>
         </div>
