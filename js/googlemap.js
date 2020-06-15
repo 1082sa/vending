@@ -198,7 +198,9 @@ function showAllMachines(allData, favorite) {
                     }
                 }
             })
-            imgfav.style.width = '50px';
+            imgfav.style.width = '40px';
+            imgfav.style.marginLeft = '6px';
+            imgfav.style.marginRight = '6px';
             a.appendChild(imgfav);
             a.href = "fav.php?ven_num=" + data.ven_num; //跳轉到fav，用get方式傳值
             content.appendChild(a);
@@ -207,7 +209,9 @@ function showAllMachines(allData, favorite) {
             var b = document.createElement('a');
             var imgrou = document.createElement('img');
             imgrou.src = 'img/route.svg';
-            imgrou.style.width = '50px';
+            imgrou.style.width = '40px';
+            imgrou.style.marginLeft = '6px';
+            imgrou.style.marginRight = '6px';
             b.appendChild(imgrou);
             b.addEventListener("click", function() {
                 //路線規劃
@@ -240,7 +244,9 @@ function showAllMachines(allData, favorite) {
             var c = document.createElement('a');
             var imgwar = document.createElement('img');
             imgwar.src = 'img/warning.svg';
-            imgwar.style.width = '50px';
+            imgwar.style.width = '40px';
+            imgwar.style.marginLeft = '6px';
+            imgwar.style.marginRight = '6px';
             c.appendChild(imgwar);
             c.setAttribute("data-target", "#exampleModalCenter"); //彈跳視窗data-target用id連接
             c.setAttribute("data-toggle", "modal");
@@ -257,7 +263,9 @@ function showAllMachines(allData, favorite) {
             var d = document.createElement('a');
             var imglis = document.createElement('img');
             imglis.src = 'img/list.svg';
-            imglis.style.width = '50px';
+            imglis.style.width = '40px';
+            imglis.style.marginLeft = '6px';
+            imglis.style.marginRight = '6px';
             d.appendChild(imglis);
             d.setAttribute("data-target", "#exampleModalLong"); //彈跳視窗data-target用id連接
             d.setAttribute("data-toggle", "modal");
