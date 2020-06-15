@@ -74,7 +74,7 @@
                         <h3 style="font-weight: bold; text-align: center;">個人資訊</h3>
                         <br>
                         <hr size="10px" class="our-hr">
-                            <p style="text-align:left;" class="ml-70 lightSpeedIn">
+                            <p style="text-align:left;" class="ml-56 lightSpeedIn">
                                 <br>
                                 <?php foreach($rows as $user){ ?>
                                     &emsp;帳號:&ensp;<input type="text" name="account" size="18" class="text lightSpeedIn" placeholder="name" style="animation-duration:1.5s" required readonly disabled value="<?=$user->account?>"/><br /><br />
@@ -126,9 +126,10 @@
                             </p>
                         
                      
-                        
-                        <a href="profile.php" class="btn g-bt">取消</a>
+                        <div class="otherselection">
+                        <a href="profile.php"><button class="btn g-bt">取消</button></a>
                         <button  type="submit" class="btn y-bt">送出</button>
+                        </div>
                     </from>
                 </div>
             </div>
