@@ -273,6 +273,10 @@ img {
     margin-left: 70px;
 }
 
+.ml-56 {
+    margin-left: 56px;
+}
+
 .mr-15 {
     margin-right: 15px;
 }
@@ -2266,15 +2270,17 @@ textarea:focus~.highlight {
     width: 100%;
 }
 
+
 /* index CSS */
+
 .map {
-  width: 100vw;
-  height: 89vh;
-  margin: 0;
-  padding: 0;
-  z-index: -99;
-  position: absolute;
-  top: 67px;
+    width: 100vw;
+    height: 89vh;
+    margin: 0;
+    padding: 0;
+    z-index: -99;
+    position: absolute;
+    top: 67px;
 }
 
 
@@ -2348,7 +2354,7 @@ textarea:focus~.highlight {
     overflow-y: scroll;
     overflow-x: hidden;
     width: 99%;
-    height: 83vh;
+    height: 88vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2366,9 +2372,7 @@ textarea:focus~.highlight {
 }
 
 .ven_item {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
+    height: 16em;
     padding: 0.8em;
     border-radius: 0.3em;
     border-color: #000000;
@@ -2404,6 +2408,8 @@ textarea:focus~.highlight {
     width: 50px;
     height: 50px;
     cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 
