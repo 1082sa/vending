@@ -62,12 +62,6 @@
 
     <script type="text/javascript" src="js/googlemap.js"></script>
 </head>
-<header class="header-area">
-    <?php include("sidebarsearch.php");
-    // include("search.php"); 
-    ?>
-</header>
-
 <body>
     <!-- Preloader -->
     <div id="preloader">
@@ -75,6 +69,12 @@
             <div id="original-load"></div>
         </div>
     </div>
+
+    <!-- Header -->
+    <header class="header-area">
+        <?php include("sidebarsearch.php")?>
+    </header>
+
     <div class="container">
         <?php
         require 'get_value.php';
