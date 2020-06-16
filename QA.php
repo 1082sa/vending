@@ -63,21 +63,21 @@
                         <div id="QandA">
                             <p class="Question">Q1: 地圖無法顯示出來</p>
                             <div class="Answer">
-                                <p>Ans: 請先重新整理頁面，若無法，請洽客服</p>
+                                <p class="c2-color">Ans: 請先重新整理頁面，若無法，請洽客服</p>
                             </div>
                         </div>
                         <br>
                         <div id="QandA">
                             <p class="Question">Q2: 商品搜尋沒有結果</p>
                             <div class="Answer">
-                                <p>Ans: 請更換關鍵字搜尋，若尚未添加的商品，請洽客服</p>
+                                <p class="c2-color">Ans: 請更換關鍵字搜尋，若尚未添加的商品，請洽客服</p>
                             </div>
                         </div>
                         <br>
                         <div id="QandA">
                             <p class="Question">Q3: 欲修改帳號怎麼辦</p>
                             <div class="Answer">
-                                <p>Ans: 我們僅提供修改密碼的服務，帳號無法被更新，請重新註冊</p>
+                                <p class="c2-color">Ans: 我們僅提供修改密碼的服務，帳號無法被更新，請重新註冊</p>
                             </div>
                         </div>
                     </div>
