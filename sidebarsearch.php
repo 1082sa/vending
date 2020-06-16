@@ -69,7 +69,7 @@ foreach($state as $row){
                         <div id="searching" class="sidebar-bg">
                             <form class="sidebar-bg" name="searched" action="searching.php" method="POST">
                                 <input class="sidebar-bg" type="text" name="searching_keyword" id="searching_keyword" <?php if (isset($_GET["pro_name"])){?>
-                                       placeholder="<?php $_GET['pro_name']?>"
+                                       placeholder="<?php echo $_GET['pro_name'] ?>"
                                        <?php }
                                        else{?>
                                         placeholder="請輸入商品關鍵字"
