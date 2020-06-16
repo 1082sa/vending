@@ -36,7 +36,7 @@
 
         </div>
         <center>
-            <button type="submit" class="btn original-btn" id="post-btn">提交 </button>
+        <button type="submit" class="btn btn-outline-dark" id="post-btn">提交 </button>
             <!-- <input type="submit" class="btn original-btn"> -->
         </center>
     </form>
