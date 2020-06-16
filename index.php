@@ -52,8 +52,7 @@
             margin: 0;
             padding: 20;
         }
-
-        #data,
+        
         #allData,
         #favorite {
             display: none;
@@ -65,7 +64,8 @@
 </head>
 <header class="header-area">
     <?php include("sidebarsearch.php");
-    include("search.php"); ?>
+    // include("search.php"); 
+    ?>
 </header>
 
 <body>
@@ -79,14 +79,14 @@
         <?php
         require 'get_value.php';
         $val = new get_value;
-        // $coll = $val->getMachinesLatLng();
-        // $coll = json_encode($coll, true);
-        // echo '<div id="data">' . $coll . '</div>';
+        $val->setaccount($account);
 
         $allData = $val->getAllMachines();
         $allData = json_encode($allData, true);
         echo '<div id="allData">' . $allData . '</div>';
-
+        
+        $favorite = new get_value;
+        $favorite -> setaccount($account); 
         $favorite = $val->fav();
         $favorite = json_encode($favorite, true);
         echo '<div id="favorite">' . $favorite . '</div>';
@@ -97,7 +97,6 @@
     <!--Map-->
     <div id="map"></div>
 
-    <!-- Modal -->
     <!-- Modal -->
 
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
