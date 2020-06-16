@@ -1,16 +1,4 @@
 
-    <!-- Preloader 
-    <div id="preloader">
-        <div class="preload-content">
-            <div id="original-load"></div>
-        </div>
-    </div>
-
-    <!-- ##### Contact Area Start ##### -->
-
-
-    <!-- Contact Form -->
-
     <input type="button" class="btn btn-sm" value="吃錢" id="btn">
     <input type="button" class="btn btn-sm" value="商品錯誤" id="btn2">
     <input type="button" class="btn btn-sm" value="存貨不足" id="btn3">
@@ -46,16 +34,9 @@
                 </div>
             </div>
 
-            <div class="col-12">
-
-
-
-
-            </div>
-
         </div>
         <center>
-            <button type="submit" class="btn btn-outline-dark" id="post-btn">提交 </button>
+            <button type="submit" class="btn original-btn" id="post-btn">提交 </button>
             <!-- <input type="submit" class="btn original-btn"> -->
         </center>
     </form>

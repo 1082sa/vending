@@ -1,4 +1,5 @@
 <?php 
+	session_start();
 	# 檢查檔案是否上傳成功
 	if ($_FILES['my_file']['error'] === UPLOAD_ERR_OK){
 	echo '檔案名稱: ' . $_FILES['my_file']['name'] . '<br/>';
@@ -20,14 +21,16 @@
 
 	require 'contact-upload.php';
 	$cond = new get_contact;
-
+	//$account = "michellechen58@gmail.com";
 	$ven_num = $_POST['ven_num'];
 	$error_words = $_POST['error_words'];
 	$error_pic = $_FILES['my_file']['name'];
-
-	// echo $ven_num;
+	if(isset($_SESSION["account"])){
+		$account=$_SESSION["account"];
+		}
 	
-	$cond->setaccount("michellechen58@gmail.com");
+	$cond->setaccount($account);
+	
 	$cond->setven_num($ven_num);
 	$cond->seterror_words($error_words);
 	$cond->seterror_pic($error_pic);

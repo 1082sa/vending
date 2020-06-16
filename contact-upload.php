@@ -39,8 +39,9 @@ class get_contact	{
 
   
   public function AddError() {
-    $sql = "INSERT INTO `error` (`account`, `ven_num`, `error_words`, `error_pic`, `error_date`,`finish`) values ('0430shinyu@gmail.com', :ven_num, :error_words, :error_pic, now(),'0')";
+    $sql = "INSERT INTO `error` (`account`, `ven_num`, `error_words`, `error_pic`, `error_date`,`finish`) values (:account, :ven_num, :error_words, :error_pic, now(),'0')";
     $stmt = $this->conn->prepare($sql);
+    $stmt->bindParam(':account', $this->account);
     $stmt->bindParam(':ven_num', $this->ven_num);
     $stmt->bindParam(':error_words', $this->error_words);
     $stmt->bindParam(':error_pic', $this->error_pic);
