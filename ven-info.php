@@ -18,7 +18,7 @@
     <?php include("ven-infolist.php"); ?>
 </head>
 <header class="header-area">
-    <?php include("sidebarsearch.php"); ?>
+    <?php include("sidebar_info.php"); ?>
 </header>
 
 <body>
