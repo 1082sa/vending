@@ -63,7 +63,7 @@
 		}
         public function getFavoriteMachines() {
 			//$sql = "SELECT * FROM $this->tableName"; 
-			$sql = "SELECT distinct m.ven_num , m.location_Latitude , m.location_Longitude FROM machine m,favorite f where f.account='$this->account' and m.ven_num=f.ven_num";
+			$sql = "SELECT distinct m.ven_num , m.location_Latitude , m.location_Longitude,m.ven_note FROM machine m,favorite f where f.account='$this->account' and m.ven_num=f.ven_num";
             $stmt = $this->conn->prepare($sql);
 			$stmt->execute();
 			return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -71,7 +71,7 @@
         public function getSearchMachines() {
             
 			//$sql = "SELECT * FROM $this->tableName"; 
-			$sql = "SELECT distinct m.ven_num , m.location_Latitude , m.location_Longitude  FROM machine m, information i where m.ven_num=i.ven_num and i.pro_name='$this->pro_name'";
+			$sql = "SELECT distinct m.ven_num , m.location_Latitude , m.location_Longitude ,m.ven_note FROM machine m, information i where m.ven_num=i.ven_num and i.pro_name='$this->pro_name'";
             $stmt = $this->conn->prepare($sql);
 			$stmt->execute();
 			return $stmt->fetchAll(PDO::FETCH_ASSOC);
