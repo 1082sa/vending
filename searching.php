@@ -55,7 +55,7 @@
         
       </div>
       <!--返回上一頁-->
-      <a href="index.php" class="btn btn-outline-light back">
+      <a href="index.php" class="back">
         <img src="img/back.svg">     
       </a>
     </div> 
