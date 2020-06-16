@@ -74,7 +74,7 @@ foreach($state as $row){
                                        else{?>
                                         placeholder="請輸入商品關鍵字"
                                        <?php } ?> autocomplete="off" required>
-                                <button type="submit" class="btn btn-outline-light" id="searching_submit" onclick="searching_submit()">
+                                <button type="submit" id="searching_submit">
                                 <img src="img/searching.svg"/>
                                 </button>
                             </form>
