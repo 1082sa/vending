@@ -17,11 +17,11 @@
     <link rel="manifest" href="manifest.json" />
     <?php include("ven-infolist.php"); ?>
 </head>
-<header class="header-area">
-    <?php include("sidebar_info.php"); ?>
-</header>
 
 <body>
+    <header class="header-area">
+        <?php include("sidebar_info.php"); ?>
+    </header>
     <form id="ven" action="ven-info.php" method="POST">
         <input type="hidden" name="ven_num" id="ven_id_n">
 
@@ -52,7 +52,18 @@
 
         </div>
     </form>
-    
+   
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+    <!-- Optional JavaScript -->
 </body>
 
 </html>
