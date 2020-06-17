@@ -11,12 +11,9 @@
 
             <div class="col-12">
                 <div class="group">
-                    
+                    <p>請敘述故障狀況</p>
                     <input id="txt" type="textarea"  width="300px" height="100px" name="error_words" required>
                     
-                    <span class="highlight"></span>
-                    <span class="bar"></span>
-                    <label>請敘述故障狀況</label>
                     
                 </div>
             </div>
@@ -24,19 +21,18 @@
             <br> <br> <br>
             <div class="col-12">
                 <div class="group">
-                    <input type="file" class="btn btn-outline-dark" name="my_file">
-                    <label>圖片上傳(可忽略)</label>
+                    <p>圖片上傳(可忽略)</p>
+                    <input type="file" class="btn" name="my_file">
                     <br>
                     <br>
 
-                    <span class="bar"></span>
 
                 </div>
             </div>
 
         </div>
         <center>
-        <button type="submit" class="btn btn-outline-dark" id="post-btn">提交 </button>
+        <button type="submit" class="btn y-bt" id="post-btn">提交 </button>
             <!-- <input type="submit" class="btn original-btn"> -->
         </center>
     </form>
