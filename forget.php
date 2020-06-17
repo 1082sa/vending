@@ -67,7 +67,7 @@
     <header class="header-area"></header>
 
     <!-- ##### Blog Wrapper Start ##### -->
-    <div class="blog-wrapper section-padding-70 clearfix" style="text-align: center;">
+    <div class="blog-wrapper section-padding-40 clearfix" style="text-align: center;">
         <div class="container">
             <div>
                 <!-- Single Blog Area -->
@@ -75,11 +75,8 @@
                     <!-- Blog Content -->
                     <form method="post" action="forget_process.php">
                         <div class="single-blog-content">
-                            <h4 style="font-weight: bold; text-align: center;">忘記密碼</h4>
-                            <br>
-                            <hr size="10px" width="100%">
-                            <br>
-                            <p>
+                        <h4 style="font-weight: bold; text-align: center;">忘記密碼</h4>
+                            <p style="padding-top:70px">
                                 帳&emsp;&emsp;號&emsp;&emsp;<input type="email" name="account" value="sasoggood@gmail.com"size="20" class="text lightSpeedIn" readonly disabled style="animation-duration: 1.5s">
                                 <br><br>
                                 新的密碼&emsp;&emsp;<input type="password" name="password1" size="20" class="text lightSpeedIn" placeholder="password" required style="animation-duration: 2s">
@@ -87,7 +84,7 @@
                                 確認密碼&emsp;&emsp;<input type="password" name="password2" size="20" class="text lightSpeedIn" placeholder="password" required style="animation-duration: 2.5s">
                                 <br><br>
                             </p>            
-                            <a href="login.php" class="post-tag">沒有忘記密碼?請回到登入畫面</a>
+                            <a href="login.php" class="post-tag" style="margin-bottom:40px">沒有忘記密碼?請回到登入畫面</a>
                             <button type="submit" class="btn btn-outline-dark" style="background-color: ghostwhite;">提交</button>
                         </div>
                     </form>
