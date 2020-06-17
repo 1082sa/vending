@@ -755,7 +755,7 @@ img {
         .post-date {
             position: absolute;
             z-index: 10;
-            left: 15px;
+            left: 12px;
             top: 15px;
             border: 1px solid #787878;
             background-color: $color-white;
@@ -2031,7 +2031,10 @@ textarea:focus~.highlight {
         }
     }
 }
+
+
 /* sidebar_info CSS */
+
 #return {
     background-color: $c1;
     width: 80.5%;
@@ -2048,6 +2051,7 @@ textarea:focus~.highlight {
         }
     }
 }
+
 
 /* index CSS */
 
@@ -2188,6 +2192,7 @@ textarea:focus~.highlight {
 .c2-color {
     color: $c2;
 }
+
 
 /* forget CSS */
 

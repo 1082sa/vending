@@ -73,7 +73,7 @@
                         <h3 class="our-title">個人資訊</h3>
                         <br>
                         <hr size="10px" class="our-hr">
-                            <p style="text-align:left; animation-duration:1.5s" class="ml-70 lightSpeedIn">
+                            <p style="text-align:left; animation-duration:1.5s" class="ml-56 lightSpeedIn">
                                 <br>
                                 <?php foreach($rows as $user){ ?>
                                     &emsp;帳號:&ensp;<?=$user->account?><br /><br />
@@ -86,7 +86,7 @@
                         <br>
                             
                          <hr size="10px" width="100%">
-                        <a href="edit_password.php" style="text-decoration:underline;"class="post-tag" onclick="">重設密碼</a> 
+                        <a href="edit_password.php" style="text-decoration:underline;animation-duration:3s"class="post-tag animated pulse" onclick="">重設密碼</a> 
                     <hr size="10px" width="100%"> </div>
                     <img style="position: absolute;
                     top:70%;
