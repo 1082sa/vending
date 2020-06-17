@@ -229,7 +229,7 @@ function showAllMachines(allData, favorite) {
                 var request = {
                     origin: start,
                     destination: end,
-                    travelMode: google.maps.DirectionsTravelMode.DRIVING
+                    travelMode: google.maps.DirectionsTravelMode.WALKING
                 };
                 directionsService.route(request, function(response, status) {
                     if (status == google.maps.DirectionsStatus.OK) {
