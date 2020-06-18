@@ -205,6 +205,11 @@ function showAllMachines(allData, favorite) {
             a.href = "fav.php?ven_num=" + data.ven_num; //跳轉到fav，用get方式傳值
             content.appendChild(a);
 
+            // var wordfav = document.createElement('p');
+            // wordfav.innerHTML = "";
+            // a.appendChild(wordfav);
+
+
             //路徑規劃圖示(點選以後，從資料庫抓值給map)
             var b = document.createElement('a');
             var imgrou = document.createElement('img');
@@ -213,6 +218,12 @@ function showAllMachines(allData, favorite) {
             imgrou.style.marginLeft = '6px';
             imgrou.style.marginRight = '6px';
             b.appendChild(imgrou);
+
+            // var wordrou = document.createElement('p');
+            // wordrou.innerHTML = "路線規劃";
+            // b.appendChild(wordrou);
+
+
             b.addEventListener("click", function() {
                 //路線規劃
                 directionsDisplay.setMap(map);
@@ -248,16 +259,23 @@ function showAllMachines(allData, favorite) {
             imgwar.style.marginLeft = '6px';
             imgwar.style.marginRight = '6px';
             c.appendChild(imgwar);
+
+            // var wordwar = document.createElement('p');
+            // wordwar.innerHTML = "故障回報";
+            // c.appendChild(wordwar);
+
             c.setAttribute("data-target", "#exampleModalCenter"); //彈跳視窗data-target用id連接
             c.setAttribute("data-toggle", "modal");
             c.addEventListener("click", function() {
                 var points = data.ven_num;
-                alert(points);
+                // alert(points);
                 v = document.getElementById("ven_num_id"); //id為單一，不得重複，不然會抓不到值。
                 v.value = points;
                 console.log(v);
             });
             content.appendChild(c);
+
+
 
             //商品清單圖示
             var d = document.createElement('a');
@@ -267,6 +285,11 @@ function showAllMachines(allData, favorite) {
             imglis.style.marginLeft = '6px';
             imglis.style.marginRight = '6px';
             d.appendChild(imglis);
+
+            // var wordlis = document.createElement('p');
+            // wordlis.innerHTML = "故障回報";
+            // d.appendChild(wordlis);
+
             d.setAttribute("data-target", "#exampleModalLong"); //彈跳視窗data-target用id連接
             d.setAttribute("data-toggle", "modal");
             d.addEventListener("click", function() {
