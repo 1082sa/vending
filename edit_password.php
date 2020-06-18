@@ -63,17 +63,15 @@
                         <br>
                         <hr size="10px" class="our-hr">
                         <form method="post" action="edit_password_process.php" style="margin-top:60px ">
-                            <p style="font-color:#727272;display:inline-block">原始密碼&emsp;&emsp;
-                            <input  type="password" name="password1" size="18" class="text lightSpeedIn" placeholder="PASSWORD" autocomplete="off" required style="animation-duration: 1.5s"><br /><br /> 修改密碼&emsp;&emsp;
+                            <p style="font-color:#727272;display:inline-block">原始密碼&emsp;&emsp;</p>
+                            <input  type="password" name="password1" size="18" class="text lightSpeedIn" placeholder="PASSWORD" autocomplete="off" required style="animation-duration: 1.5s"><br ><br > 修改密碼&emsp;&emsp;
                           
-                            <input type="password" name="password2" size="18" class="text lightSpeedIn" placeholder="PASSWORD" autocomplete="off" required style="animation-duration: 1.5s"><br /><br />  <br><br>
+                            <input type="password" name="password2" size="18" class="text lightSpeedIn" placeholder="PASSWORD" autocomplete="off" required style="animation-duration: 1.5s"><br ><br >  <br><br>
                             <div class="otherselection">
-                            <a href="profile.php"><button class="btn g-bt">取消</button></a>
+                            <a href="profile.php" class="btn g-bt">取消</a>
                             <button type="submit" class="btn y-bt">完成</button>
+                               
                             </div>
-                            </p>
-                            <br>
-                            
                         </form>
                     </div>
                 </div>
