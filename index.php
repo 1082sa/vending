@@ -62,6 +62,12 @@
 
     <script type="text/javascript" src="js/googlemap.js"></script>
 </head>
+<header class="header-area">
+    <?php include("sidebarsearch.php");
+    // include("search.php"); 
+    ?>
+</header>
+
 <body>
     <!-- Preloader -->
     <div id="preloader">
@@ -69,22 +75,17 @@
             <div id="original-load"></div>
         </div>
     </div>
-
-    <!-- Header -->
-    <header class="header-area">
-        <?php include("sidebarsearch.php")?>
-    </header>
-
     <div class="container">
         <?php
         require 'get_value.php';
         $val = new get_value;
+        //set account
         $val->setaccount($account);
-
+        //抓所有販賣機值
         $allData = $val->getAllMachines();
         $allData = json_encode($allData, true);
         echo '<div id="allData">' . $allData . '</div>';
-        
+        //抓加入最愛的販賣機值
         $favorite = new get_value;
         $favorite -> setaccount($account); 
         $favorite = $val->fav();
@@ -123,7 +124,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="ver">販賣機故障回報</h5>
+                    <h4 class="modal-title" id="ver">販賣機故障回報</h4>
 
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
