@@ -119,11 +119,11 @@ function loadMap() {
         console.log(position.coords);
         lat = position.coords.latitude;
         lng = position.coords.longitude;
-        // var pune = { lat: lat, lng: lng };
-        var pune = {
-            lat: 25.036646,
-            lng: 121.430534
-        };
+        var pune = { lat: lat, lng: lng };
+        // var pune = {
+        //     lat: 25.036646,
+        //     lng: 121.430534
+        // };
 
         // 初始化地圖
         map = new google.maps.Map(document.getElementById('map'), {
@@ -149,9 +149,6 @@ function loadMap() {
         geocoder = new google.maps.Geocoder();
 
         var clickHandler = new ClickEventHandler(map, pune);
-
-        //var cdata = JSON.parse(document.getElementById('data').innerHTML);
-        //codeAddress(cdata);
 
         //php傳送資料庫的值給js，透過json
         var allData = JSON.parse(document.getElementById('allData').innerHTML); //全部販賣機資料
@@ -205,10 +202,6 @@ function showAllMachines(allData, favorite) {
             a.href = "fav.php?ven_num=" + data.ven_num; //跳轉到fav，用get方式傳值
             content.appendChild(a);
 
-            // var wordfav = document.createElement('p');
-            // wordfav.innerHTML = "";
-            // a.appendChild(wordfav);
-
 
             //路徑規劃圖示(點選以後，從資料庫抓值給map)
             var b = document.createElement('a');
@@ -219,20 +212,15 @@ function showAllMachines(allData, favorite) {
             imgrou.style.marginRight = '6px';
             b.appendChild(imgrou);
 
-            // var wordrou = document.createElement('p');
-            // wordrou.innerHTML = "路線規劃";
-            // b.appendChild(wordrou);
-
-
             b.addEventListener("click", function() {
                 //路線規劃
                 directionsDisplay.setMap(map);
                 console.log(lat);
                 console.log(lng);
                 // 先寫死，demo前把註解用掉
-                // var org = lat + "," + lng;
-                // var start = org.toString();
-                var start = '25.036646,121.430534';
+                var org = lat + "," + lng;
+                var start = org.toString();
+                // var start = '25.036646,121.430534';
                 console.log(start);
                 var des = data.location_Latitude + "," + data.location_Longitude;
                 var end = des.toString();
@@ -275,8 +263,6 @@ function showAllMachines(allData, favorite) {
             });
             content.appendChild(c);
 
-
-
             //商品清單圖示
             var d = document.createElement('a');
             var imglis = document.createElement('img');
@@ -285,10 +271,6 @@ function showAllMachines(allData, favorite) {
             imglis.style.marginLeft = '6px';
             imglis.style.marginRight = '6px';
             d.appendChild(imglis);
-
-            // var wordlis = document.createElement('p');
-            // wordlis.innerHTML = "故障回報";
-            // d.appendChild(wordlis);
 
             d.setAttribute("data-target", "#exampleModalLong"); //彈跳視窗data-target用id連接
             d.setAttribute("data-toggle", "modal");
