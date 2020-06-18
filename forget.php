@@ -77,7 +77,7 @@
                         <div class="single-blog-content">
                         <h4 style="font-weight: bold; text-align: center;">忘記密碼</h4>
                             <p style="padding-top:70px">
-                                帳&emsp;&emsp;號&emsp;&emsp;<input type="email" name="account" value="sasoggood@gmail.com"size="20" class="text lightSpeedIn" readonly disabled style="animation-duration: 1.5s">
+                                帳&emsp;&emsp;號&emsp;&emsp;<input type="email" name="account" value="m22104416@gmail.com"size="20" class="text lightSpeedIn" readonly  style="animation-duration: 1.5s">
                                 <br><br>
                                 新的密碼&emsp;&emsp;<input type="password" name="password1" size="20" class="text lightSpeedIn" placeholder="password" required style="animation-duration: 2s">
                                 <br><br> 
