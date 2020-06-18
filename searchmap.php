@@ -47,7 +47,7 @@
         html,
         body,
         #map {
-            height: 100%;
+            height: 96.3%;
             margin: 0;
             padding: 20;
         }
@@ -132,19 +132,7 @@
         </div>
     </div>
 
-    <footer>
-        <!-- 到時候要註解掉 -->
-        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        Copyright &copy;
-        <script>
-            document.write(new Date().getFullYear());
-        </script>
-        All rights reserved | This template is made with
-        <i class="fa fa-heart-o" aria-hidden="true"></i> by
-        <a href="https://colorlib.com" target="_blank">Colorlib</a>
-        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-    </footer>
-    <!-- ##### Footer Area End ##### -->
+    
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
