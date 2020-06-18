@@ -5745,7 +5745,8 @@ button.close {
 
 .modal-title {
     margin-bottom: 0;
-    line-height: 1.5
+    line-height: 1.5;
+    font-weight: bold;
 }
 
 .modal-body {
