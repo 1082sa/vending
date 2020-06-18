@@ -38,7 +38,7 @@ class get_contact	{
   }
 
   
-  public function AddError() {
+  public function AddError() {//加入故障回報進資料庫
     $sql = "INSERT INTO `error` (`account`, `ven_num`, `error_words`, `error_pic`, `error_date`,`finish`) values (:account, :ven_num, :error_words, :error_pic, now(),'0')";
     $stmt = $this->conn->prepare($sql);
     $stmt->bindParam(':account', $this->account);
@@ -52,7 +52,7 @@ class get_contact	{
       return false;
     }
   }
-  public function updateError(){
+  public function updateError(){//資料庫`machine` error+1(滿三次顯示錯誤)
     $sql = "UPDATE `machine` set `error_num` = error_num + 1 where ven_num = :ven_num";
     $stmt = $this->conn->prepare($sql);
     $stmt->bindParam(':ven_num', $this->ven_num);

@@ -21,7 +21,6 @@
 
 	require 'contact-upload.php';
 	$cond = new get_contact;
-	//$account = "michellechen58@gmail.com";
 	$ven_num = $_POST['ven_num'];
 	$error_words = $_POST['error_words'];
 	$error_pic = $_FILES['my_file']['name'];
@@ -38,7 +37,6 @@
     $adderror = $cond->AddError();
 	$adderror = json_encode($adderror, true);
 	// echo '<div id="adderror">' . $adderror . '</div>';
-
 	// echo gettype($_FILES['my_file']['name']);
 	// echo "<br>";
 	
@@ -52,8 +50,4 @@
 		
     echo "<script>alert('故障回報失敗，請聯繫客服！！'); location.href = '$before';</script>";
 	}
-
-
-
-//	header("location:newindex.php?situation=complete");
 ?>

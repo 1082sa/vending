@@ -127,11 +127,12 @@
                         
                      
                         <div class="otherselection">
-                        <a href="profile.php"><button class="btn g-bt">取消</button></a>
+                        <a href="profile.php" class="btn g-bt">取消</a>
                         <button  type="submit" class="btn y-bt">送出</button>
                         </div>
-                    </from>
+
                 </div>
+                    </form>
             </div>
         </div>
     </div>
