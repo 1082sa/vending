@@ -5,6 +5,7 @@ require 'db.php';
 $account = $_POST["account"];
 $password = $_POST["password"];
 
+//判斷變數是否存在
 if( !isset($_POST['account']) || !isset($_POST['password']) || $_POST['account']=="" || $_POST['password']=="" ){
 	$msg = "請輸入完整";
 	header("location:login.php?msg=請輸入完整");
