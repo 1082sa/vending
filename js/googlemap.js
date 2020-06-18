@@ -119,11 +119,11 @@ function loadMap() {
         console.log(position.coords);
         lat = position.coords.latitude;
         lng = position.coords.longitude;
-        // var pune = { lat: lat, lng: lng };
-        var pune = {
-            lat: 25.036646,
-            lng: 121.430534
-        };
+        var pune = { lat: lat, lng: lng };
+        // var pune = {
+        //     lat: 25.036646,
+        //     lng: 121.430534
+        // };
 
         // 初始化地圖
         map = new google.maps.Map(document.getElementById('map'), {
@@ -149,9 +149,6 @@ function loadMap() {
         geocoder = new google.maps.Geocoder();
 
         var clickHandler = new ClickEventHandler(map, pune);
-
-        //var cdata = JSON.parse(document.getElementById('data').innerHTML);
-        //codeAddress(cdata);
 
         //php傳送資料庫的值給js，透過json
         var allData = JSON.parse(document.getElementById('allData').innerHTML); //全部販賣機資料
@@ -205,6 +202,7 @@ function showAllMachines(allData, favorite) {
             a.href = "fav.php?ven_num=" + data.ven_num; //跳轉到fav，用get方式傳值
             content.appendChild(a);
 
+
             //路徑規劃圖示(點選以後，從資料庫抓值給map)
             var b = document.createElement('a');
             var imgrou = document.createElement('img');
@@ -213,15 +211,16 @@ function showAllMachines(allData, favorite) {
             imgrou.style.marginLeft = '6px';
             imgrou.style.marginRight = '6px';
             b.appendChild(imgrou);
+
             b.addEventListener("click", function() {
                 //路線規劃
                 directionsDisplay.setMap(map);
                 console.log(lat);
                 console.log(lng);
                 // 先寫死，demo前把註解用掉
-                // var org = lat + "," + lng;
-                // var start = org.toString();
-                var start = '25.036646,121.430534';
+                var org = lat + "," + lng;
+                var start = org.toString();
+                // var start = '25.036646,121.430534';
                 console.log(start);
                 var des = data.location_Latitude + "," + data.location_Longitude;
                 var end = des.toString();
@@ -248,11 +247,16 @@ function showAllMachines(allData, favorite) {
             imgwar.style.marginLeft = '6px';
             imgwar.style.marginRight = '6px';
             c.appendChild(imgwar);
+
+            // var wordwar = document.createElement('p');
+            // wordwar.innerHTML = "故障回報";
+            // c.appendChild(wordwar);
+
             c.setAttribute("data-target", "#exampleModalCenter"); //彈跳視窗data-target用id連接
             c.setAttribute("data-toggle", "modal");
             c.addEventListener("click", function() {
                 var points = data.ven_num;
-                alert(points);
+                // alert(points);
                 v = document.getElementById("ven_num_id"); //id為單一，不得重複，不然會抓不到值。
                 v.value = points;
                 console.log(v);
@@ -267,6 +271,7 @@ function showAllMachines(allData, favorite) {
             imglis.style.marginLeft = '6px';
             imglis.style.marginRight = '6px';
             d.appendChild(imglis);
+
             d.setAttribute("data-target", "#exampleModalLong"); //彈跳視窗data-target用id連接
             d.setAttribute("data-toggle", "modal");
             d.addEventListener("click", function() {
