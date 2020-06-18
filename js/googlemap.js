@@ -305,27 +305,11 @@ function showAllMachines(allData, favorite) {
             })
 
         })
-        //       RoutePath.setMap(map);
+        //RoutePath.setMap(map);
     google.maps.event.addDomListener(window, 'load', loadMap);
 }
 
-function codeAddress(cdata) {
-    Array.prototype.forEach.call(cdata, function(data) {
-        var address = data.name + ' ' + data.address;
-        geocoder.geocode({ 'address': address }, function(results, status) {
-            if (status == 'OK') {
-                map.setCenter(results[0].geometry.location);
-                var points = {};
-                points.ven_num = data.ven_num;
-                points.location_Latitude = map.getCenter().location_Latitude();
-                points.location_Longitude = map.getCenter().location_Longitude();
-                updateCollegeWithLatLng(points);
-            } else {
-                alert('Geocode was not successful for the following reason: ' + status);
-            }
-        });
-    });
-}
+
 
 var ClickEventHandler = function(map, pune) {
     this.origin = pune;
