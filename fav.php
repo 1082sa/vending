@@ -5,7 +5,7 @@ $sqlfind="select * from favorite where account='$account' and ven_num=$ven_num";
 $result = $conn->query($sqlfind);
 $row = $result->fetch();
 
-//用getnev判別是從哪個網頁來的
+//用getnev判別是從哪個網頁來的(上一頁)
 $before=getenv("HTTP_REFERER");
 
 if (!$row) {//可以收藏
