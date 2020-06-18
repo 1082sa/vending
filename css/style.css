@@ -2461,9 +2461,7 @@ textarea:focus ~ .highlight {
 }
 
 #result_block .list_item {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 16em;
   padding: 0.8em;
   border-radius: 0.3em;
   border-color: #000000;
