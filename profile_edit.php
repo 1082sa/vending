@@ -39,7 +39,7 @@
 
     <?php 
     error_reporting(0);  
-    if(isset($_GET[situation])){?>
+    if(isset($_GET['situation'])){?>
     <script>     
            alert('密碼更改完畢！');  
     </script>
